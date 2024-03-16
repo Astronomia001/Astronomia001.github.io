@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Archives |  Hexo</title>
+      <title> Hexo</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -52,100 +52,216 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
-    
-    
-    <h1 class="page-type-title">Archives</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2024" class="archive-year">2024</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2024/03/16/2024GHCTFwp/" class="archive-article-date">
-  <time datetime="2024-03-15T23:59:52.234Z" itemprop="datePublished">03/16</time>
-</a>
-      
+  <article
+  id="post-2024GHCTFwp"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2024/03/16/2024GHCTFwp/" class="article-date">
+  <time datetime="2024-03-15T23:59:52.234Z" itemprop="datePublished">2024-03-16</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">654</span>
+        </span>
+    </span>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2024/02/05/HGAME-2024-week-1/" class="archive-article-date">
-  <time datetime="2024-02-05T10:47:10.000Z" itemprop="datePublished">02/05</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2024/02/05/HGAME-2024-week-1/"
-    >HGAME 2024 week 1</a> 
-</h2>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">2 min</span>
+        </span>
+    </span>
+</div>
  
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-  
-  </div>
-  </div>
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2023" class="archive-year">2023</a>
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/11/21/hello-world/" class="archive-article-date">
-  <time datetime="2023-11-21T13:58:40.516Z" itemprop="datePublished">11/21</time>
-</a>
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/11/21/hello-world/"
-    >Hello World</a> 
-</h2>
+  <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>队伍名：Girls CTF Party</p>
+<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="Sign-in"><a href="#Sign-in" class="headerlink" title="Sign_in"></a>Sign_in</h2><p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg" alt="img"></p>
+<p>打开题目发现是小恐龙，好像自己高中闲着无聊经常玩。</p>
+<p>题目叫我们达到1000000000分去获得flag。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg" alt="img"></p>
+<p>这种类型的题目，我第一反应是看源码。</p>
+<p>发现只要100000就会给出一个奇怪的东西。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg" alt="img"></p>
+<p>这串好像base64啊，把这串奇怪的东西拿去解码。</p>
+<p>得到flag。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg" alt="img"></p>
+<p>这里贴一篇青少年ctf的博客，我最早是从这里得到启发的：<a target="_blank" rel="noopener" href="http://t.csdnimg.cn/UZ1Pm">http://t.csdnimg.cn/UZ1Pm</a></p>
+<h1 id="CRYPTO"><a href="#CRYPTO" class="headerlink" title="CRYPTO"></a>CRYPTO</h1><h2 id="Crypto1921"><a href="#Crypto1921" class="headerlink" title="Crypto1921"></a>Crypto1921</h2><p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image032.jpg" alt="img"></p>
+<p>打开附件，发现里面还有一个zip。好奇点进去，发现加密了。</p>
+<p>先不管，看看没加密的code.txt里有什么东西。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image034.jpg" alt="img"></p>
+<p>打开发现是摩斯电码。拿去解密&#x3D;_&#x3D;</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg" alt="img"></p>
+<p>解密后发现是中文电码，再解密。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image038.jpg" alt="img"></p>
+<p>全文附上：子卿兄法租借望志路幺洞六号疑似有马列分子请前去探查坐标东经幺二幺度二八分幺六秒北纬三幺度幺三分六秒</p>
+<p>然后根据电文里面的经纬度得到密码，进而得到电文。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image040.jpg" alt="img"></p>
+<p>再逆推刚才的思路就OK了</p>
+<h2 id="2023四省联考"><a href="#2023四省联考" class="headerlink" title="2023四省联考"></a>2023四省联考</h2><p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg" alt="img"></p>
+<p>打开附件，第一眼就看到了hint。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image044.jpg" alt="img"></p>
+<p>不难知道，这题出的是椭圆曲线加密。没做过这类题，这下没头绪了，怎么办？万能的csdn来帮忙。</p>
+<p>搜索后发现hgame2022有道题ECC好像有点类似（哪是类似，简直一毛一样）。</p>
+<p>又发现zip里面有个sage文件，那直接开起来看看。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image046.jpg" alt="img"></p>
+<p>根据前辈的思路，再和out.txt结合，写脚本。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image048.jpg" alt="img"></p>
+<p>得到两个十六进制数。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image050.jpg" alt="img"></p>
+<p>再拿去化一下就得到了flag。</p>
+<h2 id="【Minecraft】还是ctf大佬"><a href="#【Minecraft】还是ctf大佬" class="headerlink" title="【Minecraft】还是ctf大佬"></a>【Minecraft】还是ctf大佬</h2><p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image052.jpg" alt="img"></p>
+<p>打开文件夹发现leve.dat修改时间有问题 使用bandzip打开后再以文本形式打开里面的文件 拉到最下面看到</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image054.jpg" alt="img">得到fakeFlagBut flag{Y0u’r3_CTF_dAL4o!_06375f38} </p>
+<p>把这个地图放到游戏根目录下面，然后开游戏进地图。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image056.jpg" alt="img"></p>
+<p>从发射器得到僵尸刷怪damn。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg" alt="img"></p>
+<p>再从火柴盒门口得到浆果。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image060.jpg" alt="img"></p>
+<p>利用铁砧提取出两端代码，进行结合。</p>
+<p>得到：</p>
+<p>U2FsdGVkX18IvcU3o3yy2+ISUlBY9rPbaxxonSVsO0lhvkBoGbyQAj&#x2F;m4ZujleTTQSQn+Y+CZlHC99WgAqasTg&#x3D;&#x3D;</p>
+<p>明显的base64格式。但是 hint:AES with salt  hint：U2FsdGVkX是重要特征。</p>
+<p>对称式加密啊。。。</p>
+<p>去找个工具解一下。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image062.jpg" alt="img"></p>
+<p>得到flag</p>
+<h1 id="ETH"><a href="#ETH" class="headerlink" title="ETH"></a>ETH</h1><h2 id="其疾如风"><a href="#其疾如风" class="headerlink" title="其疾如风"></a>其疾如风</h2><p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image064.jpg" alt="img"></p>
+<p>打开附件，发现是一个没有定位符的二维码</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image066.jpg" alt="img"></p>
+<p>那就手动添加上去吧</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image068.jpg" alt="img"></p>
+<p>扫码得到一串貌似是钱包地址的东西：</p>
+<p>ethereum:0x57F1b45c28eDaC71d0A9Ffb54B7d8d2733E8d599</p>
+<p>那不妨去看看。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image070.jpg" alt="img"></p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image072.jpg" alt="img">目光很快锁定再交易记录上面</p>
+<p>果不其然就在里面。</p>
+<p><img src="file:///C:/Users/卜令问/AppData/Local/Temp/msohtmlclip1/01/clip_image074.jpg" alt="img"></p>
  
-
-    </header>
-    
-    
-  </div>
-</article>
+      <!-- reward -->
       
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
       
     </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/03/16/2024GHCTFwp/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
   </div>
-  
-  
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2024/02/05/HGAME-2024-week-1/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">HGAME 2024 week 1</div>
+      </a>
+    
+  </nav>
 
   
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -294,6 +410,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
