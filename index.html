@@ -170,6 +170,63 @@
     
     
     <article
+  id="post-汇编语言"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"
+    >汇编语言</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" class="article-date">
+  <time datetime="2024-06-03T10:28:00.000Z" itemprop="datePublished">2024-06-03</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="二、字符数据处理"><a href="#二、字符数据处理" class="headerlink" title="二、字符数据处理"></a>二、字符数据处理</h2><p>在应用程序的设计中，经常会遇到各种字符或字符串的处理。字符处理通常包括字符的比较、检索、插入、删除和统计等。</p>
+<h3 id="1-字符串比较"><a href="#1-字符串比较" class="headerlink" title="1.字符串比较"></a>1.字符串比较</h3><p><font color=green>例1 在数据区BUF1和BUF2地址开始分别有一字符串，长度均为14字节。试比较这两个字符串，若相同，则给RES单元置0；若不同，则给RES单元置0FFH，并将失配字节地址送RES＋1开始的两个存储单元中。</font>  </p>
+<p>源程序：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">DATA     	SEGMENT</span><br><span class="line">BUF1      	DB   &#x27;I am a student&#x27;</span><br><span class="line">BUF2      	DB   &#x27;I am a studant&#x27;</span><br><span class="line">RES       	DB   3  DUP (?)</span><br><span class="line">NUMBER  	EQU  14</span><br><span class="line">DATA     	ENDS</span><br><span class="line">STACK1   	SEGMENT  PARA  STACK  &#x27;STACK&#x27;</span><br><span class="line">STA       	DB   100  DUP (?)</span><br><span class="line">STACK1   	ENDS</span><br><span class="line">CODE     	SEGMENT</span><br><span class="line">          	ASSUME  CS: CODE, DS: DATA, ES:DATA, SS: STACK1</span><br><span class="line">START：   	MOV	AX, DATA</span><br><span class="line">          	MOV	DS, AX</span><br><span class="line">          	MOV	ES, AX</span><br><span class="line">		    LEA	BX, RES</span><br><span class="line">          	LEA	SI, BUF1</span><br><span class="line">          	LEA	DI, BUF2</span><br><span class="line">          	MOV	CX, NUMBER</span><br><span class="line">          	CLD</span><br><span class="line">          	REPE CMPSB						          	</span><br><span class="line">            JNZ	UNSAME</span><br><span class="line">		    MOV	AX, 0</span><br><span class="line">		    MOV	[BX], AL</span><br><span class="line">		    MOV	DL, [BX] </span><br><span class="line">      		JMP	OVER</span><br><span class="line">UNSAME： 	MOV	AX, 0FFH</span><br><span class="line">		    MOV	[BX], AL</span><br><span class="line">          	INC	BX</span><br><span class="line">		    DEC	DI</span><br><span class="line">		    MOV	[BX], DI						</span><br><span class="line">OVER：	    MOV AH, 4CH 					          		</span><br><span class="line">            INT	21H</span><br><span class="line">CODE     	ENDS</span><br><span class="line">          	END	START</span><br><span class="line">```  </span><br><span class="line">### 2.字符串检索  </span><br><span class="line">字符串检索就是在一个字符串中寻找一些关键字符或关键字符（串）。  </span><br><span class="line">&lt;font color=green&gt;例2、在内存数据区有一数据块，首地址BUF，长度为50字节。检索其中是否有与内存单元KEYWORD中相同的字符。若有则记录第一个遇到的关键字地址；若无则DI赋0。&lt;/font&gt;  </span><br><span class="line"></span><br><span class="line">源程序：  </span><br></pre></td></tr></table></figure>
+<p>DATA 	SEGMENT<br>KEYWORD 	DB   50H<br>BUF      	DB   20H, 34H, 98H, 78H, ……<br>RES		    DW   ？<br>DATA     	ENDS<br>STACK1   	SEGMENT  PARA  STACK  ‘STACK’<br>STA       	DB   100  DUP (?)<br>STACK1   	ENDS<br>CODE     	SEGMENT<br>     ASSUME  CS: CODE, DS: DATA, ES: DATA, SS:STACK1<br>START：   	MOV	AX, DATA<br>              MOV	DS, AX<br>            MOV	ES, AX<br>            MOV	AL, KEYWORD<br>            LEA	DI, BUF<br>              MOV	CX, 50<br>              CLD<br>             REPNE  SCASB           ；重复搜索<br>              JZ	FOUND<br>            MOV	DI, 0<br>            JMP	OVER<br>FOUND：  	DEC	DI<br>            MOV	RES, DI      ；送第一个遇到的关键字地址<br>OVER：  	MOV	AH, 4CH<br>             INT	21H<br>CODE     	ENDS<br>            END	START</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">### 3.字符插入与删除  </span><br><span class="line">字符的插入和删除是字符运用的主要形式。  </span><br><span class="line">#### 1） 字符插入  </span><br><span class="line">&lt;font color=green&gt;例3、假设从BUF1地址开始有一个长度为100的字符串，串长度存于LONG单元。现要求在第一个“E”字符后插入一个字符串，其长度6。该字串存于BUF2单元开始的存储区中。若进行插入，SIGN单元置1，否则置0。&lt;/font&gt;  </span><br><span class="line"></span><br><span class="line">源程序：  </span><br></pre></td></tr></table></figure>
+<p>DATA		SEGMENT<br>LONG      	DB   100<br>BUF1		DB   ‘ABCDEFGADE……’<br>FREEDOM	DB  6  DUP (?)<br>BUF2      	DB   ‘INSERT’<br>SIGN      	DB   ？<br>DATA     	ENDS<br>STACK1	    SEGMENT  PARA  STACK  ‘STACK’<br>            STA	DB   100  DUP (?)<br>STACK1   	ENDS<br>CODE     	SEGMENT<br>              ASSUME  CS: CODE, DS: DATA, ES: DATA, SS: STACK1<br>START：   	MOV	AX, DATA<br>              MOV	DS, AX<br>              MOV	ES, AX<br>            MOV	CL, LONG<br>              LEA DI, BUF1<br>              MOV	AL, ‘E’<br>              CLD<br>              REPNE SCASB					          	<br>            JZ	FOUND<br>            MOV	SIGN, 0<br>              JMP	OVER<br>FOUND：  	MOV	SI, OFFSET	FREEDOM－1	<br>              MOV	DI, OFFSET	FREEDOM＋5	<br>             STD<br>              REP	MOVSB						<br>            LEA SI, BUF2＋5	<br>            MOV CX, 6<br>            STD<br>            REP		MOVSB<br>            MOV		SIGN, 1<br>OVER：   	MOV	AH, 4CH<br>              INT	21H<br>CODE    	ENDS<br>        END	START</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#### 2）字符删除  </span><br><span class="line">&lt;font color=green&gt;例4、假设从BUF地址开始有一个字符串，串长度存于LONG单元。现要求删除所有的“D”字符并要求修改字符长度并存入LONG单元中。&lt;/font&gt;  </span><br><span class="line"></span><br><span class="line">源程序：  </span><br></pre></td></tr></table></figure>
+<p>DATA		SEGMENT<br>LONG      	DB   100<br>BUF      	DB   ‘ABCDEFGADE……’<br>DATA     	ENDS<br>STACK1   	SEGMENT  PARA  STACK  ‘STACK’<br>STA       	DB   100  DUP (?)<br>STACK1   	ENDS<br>CODE     	SEGMENT<br>     ASSUME  CS: CODE, DS: DATA, ES: DATA, SS:STACK1<br>START：   	MOV	AX, DATA<br>              MOV	DS, AX<br>              MOV	ES, AX<br>            MOV	CL, LONG<br>              LEA	DI, BUF<br>              MOV	BL, CL						<br>            MOV	AL, ‘D’<br>NEXT：	    CLD<br>              REPNE SCASB<br>              JZ	FOUND<br>              JMP	OVER<br>FOUND：  	MOV	SI, DI<br>              DEC	DI<br>              PUSH DI							<br>            PUSH CX<br>            CLD<br>              REP	MOVSB<br>            DEC	BL<br>            POP	CX<br>            POP	DI<br>            JMP	NEXT<br>OVER：     	MOV	LONG, BL					<br>            MOV	AH, 4CH<br>              INT	21H<br>CODE     	ENDS<br>        END	START</p>
+<pre><code>
+</code></pre>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-数据结构"
   class="article article-type-post"
   itemscope
@@ -202,7 +259,8 @@
 <p><strong>2.折半插入排序</strong>  </p>
 <p><strong>3.2-路插入排序</strong>  </p>
 <p><em><font color=bluee>前面三种方法都不可避免的要移动记录</font></em>  </p>
-<p><strong>4.表插入排序</strong><br>算法思想：不移动记录<br>增量序列：<br><font color=green>eg:5,3,1<br>表示数据先每间隔5分成1组，再每间隔3分成1组，以此类推。</font><br><img src="C:\Users\hp\Desktop\blog\public\images" alt="希尔排序示例.jpg" title="希尔排序示例"><br>算法实现：  </p>
+<p><strong>4.表插入排序</strong><br>算法思想：不移动记录<br>增量序列：<br><font color=green>eg:5,3,1<br>表示数据先每间隔5分成1组，再每间隔3分成1组，以此类推。</font></p>
+<p><img src="https://s3.bmp.ovh/imgs/2024/06/03/a62466420e0cf236.jpg"><br>算法实现：  </p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N0 1001</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType; <span class="comment">//元素的类型定义</span></span><br><span class="line"></span><br><span class="line">ElemType <span class="built_in">array</span>[N0]; <span class="comment">//待排序的数据(下标0用作&#x27;哨兵&#x27;?)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**排序算法: [希尔]. 增量值为:[n/2, n/4, n/8, ..., 1]. 其它常用增量序列例如: 5, 3, 1.</span></span><br><span class="line"><span class="comment"> * L - 记录数组;</span></span><br><span class="line"><span class="comment"> * n - 记录数组的长度(元素个数);</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">shell_sort</span><span class="params">(ElemType L[], <span class="type">int</span> n)</span> &#123;</span><br><span class="line">	<span class="type">int</span> i, j, gap=n/<span class="number">2</span>; <span class="comment">//i,j-循环变量; gap-增量序列?</span></span><br><span class="line">	<span class="type">int</span> temp; <span class="comment">//用于元素交换的临时空间</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>( gap &gt;= <span class="number">1</span> ) &#123; <span class="comment">//若增量值gap&gt;=1,则进行一趟希尔排序</span></span><br><span class="line">		<span class="comment">//(1)对于增量值gap, 从数组下标gap开始(直到n-1), 进行一趟希尔排序!</span></span><br><span class="line">		<span class="keyword">for</span>(i=gap; i&lt;n; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>( L[i] &lt; L[i-gap] ) &#123; <span class="comment">//待插入元素L[i],比前1分组中对应位置元素小,...</span></span><br><span class="line">				<span class="comment">//(a)将待插入元素L[i],拷贝到哨兵(temp)位置</span></span><br><span class="line">				temp = L[i];</span><br><span class="line"></span><br><span class="line">				<span class="comment">//(b)将i对应的之前分组中,大于L[i]的元素&#x27;依次&#x27;往后移1位,直到第一个小于L[i]的元素,或之前已无元素!</span></span><br><span class="line">				j = i - gap; <span class="comment">//j为: i之前分组中,对应i的位置</span></span><br><span class="line">				<span class="keyword">do</span> &#123;</span><br><span class="line">					<span class="comment">//(b.1)将i之前对应i位置的\比L[i]大的元素,依次往后移动...</span></span><br><span class="line">					L[j+gap] = L[j];</span><br><span class="line">					</span><br><span class="line">					<span class="comment">//(b.2)对应i的&#x27;再&#x27;之前的位置(往前跳gap位)</span></span><br><span class="line">					j = j-gap;</span><br><span class="line">				&#125; <span class="keyword">while</span>( j&gt;=<span class="number">0</span> &amp;&amp; temp&lt;L[j] );</span><br><span class="line"></span><br><span class="line">				<span class="comment">//(c)将待插入元素(哨兵temp),插入到[j+gap]位置</span></span><br><span class="line">				L[j+gap] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//(2)更新增量值</span></span><br><span class="line">		gap = gap/<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*(O)输出结果数组 */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">showInfo</span><span class="params">(ElemType a[], <span class="type">int</span> n)</span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*(T)测试函数 */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;	</span><br><span class="line">	<span class="type">int</span> n; <span class="comment">//n-数组a的整数个数; a[]-存储给定的n个整数的数组</span></span><br><span class="line"></span><br><span class="line">	FILE *fp;</span><br><span class="line">	<span class="keyword">if</span>((fp=fopen(<span class="string">&quot;sort.in&quot;</span>, <span class="string">&quot;r&quot;</span>)) != <span class="literal">NULL</span> )&#123;</span><br><span class="line">		fclose(fp);  <span class="comment">//存在的话，要先把之前打开的文件关掉</span></span><br><span class="line">		</span><br><span class="line">		freopen(<span class="string">&quot;sort.in&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">		<span class="comment">//freopen(&quot;sort.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n); <span class="comment">//输入给定的整数个数n</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++ )&#123; <span class="comment">//输入n个数据，保存在数组a[]中</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;<span class="built_in">array</span>[i]); <span class="comment">//scanf(&quot;%d&quot;, array+i); </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//****************************************************************</span></span><br><span class="line">	</span><br><span class="line">	shell_sort(<span class="built_in">array</span>, n); <span class="comment">//[希尔]排序 </span></span><br><span class="line">	</span><br><span class="line">	showInfo(<span class="built_in">array</span>, n);<span class="comment">//输出结果数组 </span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//================================================================</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
 <h3 id="二、交换排序"><a href="#二、交换排序" class="headerlink" title="二、交换排序"></a>二、交换排序</h3><p><strong>1.冒泡排序（稳定）</strong><br>排序次数：至多n-1次，至少1次<br>算法实现：  </p>
@@ -301,7 +359,31 @@ int main()&#123;
 &#125;  
 </code></pre>
 <p><strong>2.快速排序（不稳定）</strong><br>算法思想：<br>a.通过快速排序，把待排序记录分成独立的两组。其中，一组的关键字均比另一组小。<br>b.采用同样的方法，对一趟快速排序产生的两个子序列进行快速排序。<br>c.递归执行a和b，直到子序列的记录个数为1。<br>排序次数C(n)：C(n)&#x3D;n-1+C(k)+C(n-k-1)<br>时间复杂度O(n)：O(n)&lt;&#x3D;n*log<sub>2</sub>n  </p>
-<h3 id="三、选择排序"><a href="#三、选择排序" class="headerlink" title="三、选择排序"></a>三、选择排序</h3><p>基本思想：<br>每次从当前待排序的记录中选取“关键字第i（i&#x3D;1,2,…,n）小的记录”, 放置在记录序列的位置i，直到所有n个记录都有序为止。<br><strong>1.简单选择排序</strong>  </p>
+<h3 id="三、选择排序"><a href="#三、选择排序" class="headerlink" title="三、选择排序"></a>三、选择排序</h3><p>基本思想：<br>每次从当前待排序的记录中选取“关键字第i（i&#x3D;1,2,…,n）小的记录”, 放置在记录序列的位置i，直到所有n个记录都有序为止。<br><strong>1.简单选择排序</strong><br>算法实现：  </p>
+<pre><code class="c">
+</code></pre>
+<p><font color=greee>拓展：树形选择排序和堆排序  </p>
+<p>a.树形选择排序  </p>
+<p>思想：<br>i.借助“淘汰赛”中的对垒过程，对关键字序列进行排序。</p>
+<blockquote>
+<p>该过程可用一棵有n个叶子结点的 完全二叉树表示。每个分枝结点的关键字都等于其左&amp;右孩子结点中较小的关键字，根结点的关键字就是最小的关键字。</p>
+</blockquote>
+<p>ii.输出最小关键字后，根据关系的可传递性，欲选取次小关键字，只需:</p>
+<blockquote>
+<p>将叶子结点中的最小关键字 改为“最大值(inf)”;<br>然后，重复上述步骤即可。</p>
+</blockquote>
+<p>b.堆排序（不稳定）<br>时间复杂度O(n)&#x3D;n*log<sub>2</sub>n<br>空间复杂度S(n)&#x3D;O(1)  </p>
+<p>思想：<br>i.对一组待排序的记录，按堆的定义建立堆。<br>ii.将堆顶记录和最后一个记录交换位置，则前n-1个记录是无序的，而最后一个记录是有序的。<br>iii.堆顶记录被交换后，前n-1个记录不再是堆，需将前n-1个待排序记录重新组织成为一个堆；然后，将堆顶记录和倒数第二个记录交换位置，即将整个序列中次小关键字值的记录调整(排除)出无序区。<br>iv.重复上述步骤，直到全部记录排好序为止。  </p>
+<p>结论：排序过程中，若采用<font color=orange>小根堆</font>，排序后得到的是<font color=orange>非递减序列</font>；若采用<font color=orange>大根堆</font>，排序后得到的是<font color=orange>非递增序列</font>。  </p>
+<p><font color=orange>实现堆排序的2个关键操作：<br>1.建堆：如何由一个无序序列建成一个堆？<br>2.堆调整：如何在输出堆顶元素之后，调整剩余元素，使之成为一个新的堆？  </font></p>
+<p>思想（后续示例，均以小根堆为例）：<br>输出堆顶元素之后，以堆中最后一个元素替代之；<br>然后，将根结点值与左、右子树的根结点值进行比较，并与其中较小者进行交换；<br>重复上述操作，直到 A)是叶子结点 或 B)其关键字值小于等于左&amp;右子树的关键字的值，即获得新的[小根]堆。<br>称: 这个从堆顶至叶子的调整过程为“筛选” 。<br><img src="https://s3.bmp.ovh/imgs/2024/06/03/5f2b75c46906183a.png" alt="堆的“筛选”">  </p>
+<p>“筛选”的算法实现：  </p>
+<pre><code class="c">
+</code></pre>
+<p>堆排序算法分析:<br> 堆排序的主要时间花销：初始建堆和重新调整成堆。设记录数为n，所对应的完全二叉树深度为h。<br>初始建堆：每个非叶子结点都要从上到下做“筛选”。<br>第 i层结点数≤2i-1，结点下移的最大深度是h-i，而每下移一层要比较2次，则比较次数C1(n)为：</p>
+<p>筛选调整：每次筛选要将根结点“下沉”到一个合适位置。<br>第 i 次筛选时：堆中元素个数为n-i+1；堆的深度是㏒2(n-i+1)+1，则进行n-1次“筛选”的比较次数C2(n)为：</p>
+<p>∴ 堆排序时间复杂度T(n)&#x3D;O(n㏒2n)；空间复杂度S(n)&#x3D;O(1) 。<br>附加空间: 为元素交换时, 所用的临时空间。<br>  </font>  </p>
+<h3 id="四、归并排序"><a href="#四、归并排序" class="headerlink" title="四、归并排序"></a>四、归并排序</h3><p><img src="https://s3.bmp.ovh/imgs/2024/06/03/e02ef988edc106e1.png" alt="归并排序"></p>
  
       <!-- reward -->
       
