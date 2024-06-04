@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>离散数学</title>
+    <link href="/2024/06/04/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"/>
+    <url>/2024/06/04/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</url>
+    
+    <content type="html"><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p><strong>定义14.1</strong><br>无向图G &#x3D; &lt;V,E&gt;, 其中：<br>(1) V ≠ ∅为顶点集，元素称为顶点<br>(2) E为V&amp;V 的多重集，其元素称为无向边，简称边<br><strong>定义14.2</strong><br>有向图D&#x3D;&lt;V,E&gt;, 只需注意E是V×V 的多重子集  </p><p>图2表示的是一个有向图，试写出它的 V 和 E<br><img src="https://ooo.0x0.ooo/2024/06/04/OJSa2a.png" alt="图2"><br><font color=orange>注意：图的数学定义与图形表示，在同构（待叙）的意义下是一一对应的</font>  </p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>汇编语言</title>
     <link href="/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
     <url>/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/</url>
