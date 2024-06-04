@@ -1,928 +1,473 @@
+
+
 <!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
 
 
-<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
-    <head>
-      <meta charset="utf-8" />
-        
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1"
-      />
-      <title> Hexo</title>
-  <meta name="generator" content="hexo-theme-ayer">
-      
-      <link rel="shortcut icon" href="/favicon.ico" />
-       
-<link rel="stylesheet" href="/dist/main.css">
 
-      
-<link rel="stylesheet" href="/css/fonts/remixicon.css">
 
-      
-<link rel="stylesheet" href="/css/custom.css">
- 
-      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
-       
- 
 
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
-      />
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
-      <!-- mermaid -->
-      
-      <style>
-        .swal2-styled.swal2-confirm {
-          font-size: 1.6rem;
-        }
-      </style>
-    </head>
-  </html>
-</html>
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
 
 
 <body>
-  <div id="app">
+  
+
+  <header>
     
-      
-    <main class="content on">
-      
-<section class="cover">
-    
-      
-      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
-        target="_blank"><img width="149" height="149" src="/images/forkme.png"
-          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
-    
-  <div class="cover-frame">
-    <div class="bg-box">
-      <img src="/images/cover1.jpg" alt="image frame" />
-    </div>
-    <div class="cover-inner text-center text-white">
-      <h1><a href="/">Hexo</a></h1>
-      <div id="subtitle-box">
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-        <span id="subtitle"></span>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
         
       </div>
-      <div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
         
+        <a href="/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" target="_self">
+          汇编语言
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" target="_self">
+        <div>
+          二、字符数据处理在应用程序的设计中，经常会遇到各种字符或字符串的处理。字符处理通常包括字符的比较、检索、插入、删除和统计等。 1.字符串比较例1 在数据区BUF1和BUF2地址开始分别有一字符串，长度均为14字节。试比较这两个字符串，若相同，则给RES单元置0；若不同，则给RES单元置0FFH，并将失配字节地址送RES＋1开始的两个存储单元中。   源程序：   12345678910111213
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-06-03 18:28" pubdate>
+              2024-06-03
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/05/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
+          数据结构--排序
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/05/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
+        <div>
+          排序内排序、外排序 排序方法一、插入排序1.直接插入排序：稳定？稳定！   2.折半插入排序   3.2-路插入排序   前面三种方法都不可避免的要移动记录   4.表插入排序算法思想：不移动记录增量序列：eg:5,3,1表示数据先每间隔5分成1组，再每间隔3分成1组，以此类推。 算法实现：   123456789101112131415161718192021222324252627282930
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-05-31 14:03" pubdate>
+              2024-05-31
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/05/24/hello/" target="_self">
+          hello
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/05/24/hello/" target="_self">
+        <div>
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-05-24 14:30" pubdate>
+              2024-05-24
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/03/09/GHCTF2024-WP/" target="_self">
+          1
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/09/GHCTF2024-WP/" target="_self">
+        <div>
+          GHCTF2024-WP基本信息队伍名：Girls CTF Party队伍成员：刘云飞（2023 级） 卜令问（2023 级） 翁崇峻（2023 级） WEBSign in解题： 卜令问打开题目发现是小恐龙，好像自己高中闲着无聊经常玩。 题目叫我们达到 1000000000 分去获得 flag。这种类型的题目，我第一反应是看源码。 发现只要 100000 就会给出一个奇怪的东西。这串好像 base
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-03-09 19:22" pubdate>
+              2024-03-09
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
-  <div class="cover-learn-more">
-    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
-  </div>
-</section>
+</div>
 
+    
 
+    
+  </main>
 
-<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
 
+  </footer>
 
-<!-- Subtitle -->
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
-        startDelay: 0,
-        typeSpeed: 200,
-        loop: true,
-        backSpeed: 100,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
   </script>
-  
-<div id="main">
-  <section class="outer">
-  
-  <ul class="ads">
-    
-        <li>
-            <a target="_blank" rel="noopener" href="https://curl.qcloud.com/kvO7hb43">
-                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5ccc.jpg" width="300" alt="云服务器限时秒杀">
-            </a>
-        </li>
-    
-        <li>
-            <a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=8630075">
-                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5cd7.png" width="300" alt="vultr优惠vps">
-            </a>
-        </li>
-    
-</ul>
-  
-  
-  
 
-<div class="notice" style="margin-top:50px">
-    <i class="ri-heart-fill"></i>
-    <div class="notice-content" id="broad"></div>
-</div>
-<script type="text/javascript">
-    fetch('https://v1.hitokoto.cn')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("broad").innerHTML = data.hitokoto;
-        })
-        .catch(console.error)
-</script>
 
-<style>
-    .notice {
-        padding: 20px;
-        border: 1px dashed #e6e6e6;
-        color: #969696;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        background: #fbfbfb50;
-        border-radius: 10px;
-    }
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
-    .notice i {
-        float: left;
-        color: #999;
-        font-size: 16px;
-        padding-right: 10px;
-        vertical-align: middle;
-        margin-top: -2px;
-    }
 
-    .notice-content {
-        display: initial;
-        vertical-align: middle;
-    }
-</style>
-  
-  <article class="articles">
-    
-    
-    
-    
-    <article
-  id="post-汇编语言"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"
-    >汇编语言</a> 
-</h2>
- 
-
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" class="article-date">
-  <time datetime="2024-06-03T10:28:00.000Z" itemprop="datePublished">2024-06-03</time>
-</a>    
-    </div>
+        typing(text);
       
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="二、字符数据处理"><a href="#二、字符数据处理" class="headerlink" title="二、字符数据处理"></a>二、字符数据处理</h2><p>在应用程序的设计中，经常会遇到各种字符或字符串的处理。字符处理通常包括字符的比较、检索、插入、删除和统计等。</p>
-<h3 id="1-字符串比较"><a href="#1-字符串比较" class="headerlink" title="1.字符串比较"></a>1.字符串比较</h3><p><font color=green>例1 在数据区BUF1和BUF2地址开始分别有一字符串，长度均为14字节。试比较这两个字符串，若相同，则给RES单元置0；若不同，则给RES单元置0FFH，并将失配字节地址送RES＋1开始的两个存储单元中。</font>  </p>
-<p>源程序：  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">DATA     	SEGMENT</span><br><span class="line">BUF1      	DB   &#x27;I am a student&#x27;</span><br><span class="line">BUF2      	DB   &#x27;I am a studant&#x27;</span><br><span class="line">RES       	DB   3  DUP (?)</span><br><span class="line">NUMBER  	EQU  14</span><br><span class="line">DATA     	ENDS</span><br><span class="line">STACK1   	SEGMENT  PARA  STACK  &#x27;STACK&#x27;</span><br><span class="line">STA       	DB   100  DUP (?)</span><br><span class="line">STACK1   	ENDS</span><br><span class="line">CODE     	SEGMENT</span><br><span class="line">          	ASSUME  CS: CODE, DS: DATA, ES:DATA, SS: STACK1</span><br><span class="line">START：   	MOV	AX, DATA</span><br><span class="line">          	MOV	DS, AX</span><br><span class="line">          	MOV	ES, AX</span><br><span class="line">		    LEA	BX, RES</span><br><span class="line">          	LEA	SI, BUF1</span><br><span class="line">          	LEA	DI, BUF2</span><br><span class="line">          	MOV	CX, NUMBER</span><br><span class="line">          	CLD</span><br><span class="line">          	REPE CMPSB						          	</span><br><span class="line">            JNZ	UNSAME</span><br><span class="line">		    MOV	AX, 0</span><br><span class="line">		    MOV	[BX], AL</span><br><span class="line">		    MOV	DL, [BX] </span><br><span class="line">      		JMP	OVER</span><br><span class="line">UNSAME： 	MOV	AX, 0FFH</span><br><span class="line">		    MOV	[BX], AL</span><br><span class="line">          	INC	BX</span><br><span class="line">		    DEC	DI</span><br><span class="line">		    MOV	[BX], DI						</span><br><span class="line">OVER：	    MOV AH, 4CH 					          		</span><br><span class="line">            INT	21H</span><br><span class="line">CODE     	ENDS</span><br><span class="line">          	END	START</span><br><span class="line">```  </span><br><span class="line">### 2.字符串检索  </span><br><span class="line">字符串检索就是在一个字符串中寻找一些关键字符或关键字符（串）。  </span><br><span class="line">&lt;font color=green&gt;例2、在内存数据区有一数据块，首地址BUF，长度为50字节。检索其中是否有与内存单元KEYWORD中相同的字符。若有则记录第一个遇到的关键字地址；若无则DI赋0。&lt;/font&gt;  </span><br><span class="line"></span><br><span class="line">源程序：  </span><br></pre></td></tr></table></figure>
-<p>DATA 	SEGMENT<br>KEYWORD 	DB   50H<br>BUF      	DB   20H, 34H, 98H, 78H, ……<br>RES		    DW   ？<br>DATA     	ENDS<br>STACK1   	SEGMENT  PARA  STACK  ‘STACK’<br>STA       	DB   100  DUP (?)<br>STACK1   	ENDS<br>CODE     	SEGMENT<br>     ASSUME  CS: CODE, DS: DATA, ES: DATA, SS:STACK1<br>START：   	MOV	AX, DATA<br>              MOV	DS, AX<br>            MOV	ES, AX<br>            MOV	AL, KEYWORD<br>            LEA	DI, BUF<br>              MOV	CX, 50<br>              CLD<br>             REPNE  SCASB           ；重复搜索<br>              JZ	FOUND<br>            MOV	DI, 0<br>            JMP	OVER<br>FOUND：  	DEC	DI<br>            MOV	RES, DI      ；送第一个遇到的关键字地址<br>OVER：  	MOV	AH, 4CH<br>             INT	21H<br>CODE     	ENDS<br>            END	START</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">### 3.字符插入与删除  </span><br><span class="line">字符的插入和删除是字符运用的主要形式。  </span><br><span class="line">#### 1） 字符插入  </span><br><span class="line">&lt;font color=green&gt;例3、假设从BUF1地址开始有一个长度为100的字符串，串长度存于LONG单元。现要求在第一个“E”字符后插入一个字符串，其长度6。该字串存于BUF2单元开始的存储区中。若进行插入，SIGN单元置1，否则置0。&lt;/font&gt;  </span><br><span class="line"></span><br><span class="line">源程序：  </span><br></pre></td></tr></table></figure>
-<p>DATA		SEGMENT<br>LONG      	DB   100<br>BUF1		DB   ‘ABCDEFGADE……’<br>FREEDOM	DB  6  DUP (?)<br>BUF2      	DB   ‘INSERT’<br>SIGN      	DB   ？<br>DATA     	ENDS<br>STACK1	    SEGMENT  PARA  STACK  ‘STACK’<br>            STA	DB   100  DUP (?)<br>STACK1   	ENDS<br>CODE     	SEGMENT<br>              ASSUME  CS: CODE, DS: DATA, ES: DATA, SS: STACK1<br>START：   	MOV	AX, DATA<br>              MOV	DS, AX<br>              MOV	ES, AX<br>            MOV	CL, LONG<br>              LEA DI, BUF1<br>              MOV	AL, ‘E’<br>              CLD<br>              REPNE SCASB					          	<br>            JZ	FOUND<br>            MOV	SIGN, 0<br>              JMP	OVER<br>FOUND：  	MOV	SI, OFFSET	FREEDOM－1	<br>              MOV	DI, OFFSET	FREEDOM＋5	<br>             STD<br>              REP	MOVSB						<br>            LEA SI, BUF2＋5	<br>            MOV CX, 6<br>            STD<br>            REP		MOVSB<br>            MOV		SIGN, 1<br>OVER：   	MOV	AH, 4CH<br>              INT	21H<br>CODE    	ENDS<br>        END	START</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#### 2）字符删除  </span><br><span class="line">&lt;font color=green&gt;例4、假设从BUF地址开始有一个字符串，串长度存于LONG单元。现要求删除所有的“D”字符并要求修改字符长度并存入LONG单元中。&lt;/font&gt;  </span><br><span class="line"></span><br><span class="line">源程序：  </span><br></pre></td></tr></table></figure>
-<p>DATA		SEGMENT<br>LONG      	DB   100<br>BUF      	DB   ‘ABCDEFGADE……’<br>DATA     	ENDS<br>STACK1   	SEGMENT  PARA  STACK  ‘STACK’<br>STA       	DB   100  DUP (?)<br>STACK1   	ENDS<br>CODE     	SEGMENT<br>     ASSUME  CS: CODE, DS: DATA, ES: DATA, SS:STACK1<br>START：   	MOV	AX, DATA<br>              MOV	DS, AX<br>              MOV	ES, AX<br>            MOV	CL, LONG<br>              LEA	DI, BUF<br>              MOV	BL, CL						<br>            MOV	AL, ‘D’<br>NEXT：	    CLD<br>              REPNE SCASB<br>              JZ	FOUND<br>              JMP	OVER<br>FOUND：  	MOV	SI, DI<br>              DEC	DI<br>              PUSH DI							<br>            PUSH CX<br>            CLD<br>              REP	MOVSB<br>            DEC	BL<br>            POP	CX<br>            POP	DI<br>            JMP	NEXT<br>OVER：     	MOV	LONG, BL					<br>            MOV	AH, 4CH<br>              INT	21H<br>CODE     	ENDS<br>        END	START</p>
-<pre><code>
-</code></pre>
- 
-      <!-- reward -->
-      
-    </div>
-    
+    })(window, document);
+  </script>
 
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
 
-   
-    
-</article>
 
-    
-    <article
-  id="post-数据结构"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/05/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-    >数据结构--排序</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/05/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-date">
-  <time datetime="2024-05-31T06:03:19.000Z" itemprop="datePublished">2024-05-31</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><p><em>内排序、外排序</em></p>
-<h2 id="排序方法"><a href="#排序方法" class="headerlink" title="排序方法"></a>排序方法</h2><h3 id="一、插入排序"><a href="#一、插入排序" class="headerlink" title="一、插入排序"></a>一、插入排序</h3><p><strong>1.直接插入排序：稳定？稳定！</strong>  </p>
-<p><strong>2.折半插入排序</strong>  </p>
-<p><strong>3.2-路插入排序</strong>  </p>
-<p><em><font color=bluee>前面三种方法都不可避免的要移动记录</font></em>  </p>
-<p><strong>4.表插入排序</strong><br>算法思想：不移动记录<br>增量序列：<br><font color=green>eg:5,3,1<br>表示数据先每间隔5分成1组，再每间隔3分成1组，以此类推。</font></p>
-<p><img src="https://s3.bmp.ovh/imgs/2024/06/03/a62466420e0cf236.jpg"><br>算法实现：  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N0 1001</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType; <span class="comment">//元素的类型定义</span></span><br><span class="line"></span><br><span class="line">ElemType <span class="built_in">array</span>[N0]; <span class="comment">//待排序的数据(下标0用作&#x27;哨兵&#x27;?)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**排序算法: [希尔]. 增量值为:[n/2, n/4, n/8, ..., 1]. 其它常用增量序列例如: 5, 3, 1.</span></span><br><span class="line"><span class="comment"> * L - 记录数组;</span></span><br><span class="line"><span class="comment"> * n - 记录数组的长度(元素个数);</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">shell_sort</span><span class="params">(ElemType L[], <span class="type">int</span> n)</span> &#123;</span><br><span class="line">	<span class="type">int</span> i, j, gap=n/<span class="number">2</span>; <span class="comment">//i,j-循环变量; gap-增量序列?</span></span><br><span class="line">	<span class="type">int</span> temp; <span class="comment">//用于元素交换的临时空间</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>( gap &gt;= <span class="number">1</span> ) &#123; <span class="comment">//若增量值gap&gt;=1,则进行一趟希尔排序</span></span><br><span class="line">		<span class="comment">//(1)对于增量值gap, 从数组下标gap开始(直到n-1), 进行一趟希尔排序!</span></span><br><span class="line">		<span class="keyword">for</span>(i=gap; i&lt;n; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>( L[i] &lt; L[i-gap] ) &#123; <span class="comment">//待插入元素L[i],比前1分组中对应位置元素小,...</span></span><br><span class="line">				<span class="comment">//(a)将待插入元素L[i],拷贝到哨兵(temp)位置</span></span><br><span class="line">				temp = L[i];</span><br><span class="line"></span><br><span class="line">				<span class="comment">//(b)将i对应的之前分组中,大于L[i]的元素&#x27;依次&#x27;往后移1位,直到第一个小于L[i]的元素,或之前已无元素!</span></span><br><span class="line">				j = i - gap; <span class="comment">//j为: i之前分组中,对应i的位置</span></span><br><span class="line">				<span class="keyword">do</span> &#123;</span><br><span class="line">					<span class="comment">//(b.1)将i之前对应i位置的\比L[i]大的元素,依次往后移动...</span></span><br><span class="line">					L[j+gap] = L[j];</span><br><span class="line">					</span><br><span class="line">					<span class="comment">//(b.2)对应i的&#x27;再&#x27;之前的位置(往前跳gap位)</span></span><br><span class="line">					j = j-gap;</span><br><span class="line">				&#125; <span class="keyword">while</span>( j&gt;=<span class="number">0</span> &amp;&amp; temp&lt;L[j] );</span><br><span class="line"></span><br><span class="line">				<span class="comment">//(c)将待插入元素(哨兵temp),插入到[j+gap]位置</span></span><br><span class="line">				L[j+gap] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//(2)更新增量值</span></span><br><span class="line">		gap = gap/<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*(O)输出结果数组 */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">showInfo</span><span class="params">(ElemType a[], <span class="type">int</span> n)</span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*(T)测试函数 */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;	</span><br><span class="line">	<span class="type">int</span> n; <span class="comment">//n-数组a的整数个数; a[]-存储给定的n个整数的数组</span></span><br><span class="line"></span><br><span class="line">	FILE *fp;</span><br><span class="line">	<span class="keyword">if</span>((fp=fopen(<span class="string">&quot;sort.in&quot;</span>, <span class="string">&quot;r&quot;</span>)) != <span class="literal">NULL</span> )&#123;</span><br><span class="line">		fclose(fp);  <span class="comment">//存在的话，要先把之前打开的文件关掉</span></span><br><span class="line">		</span><br><span class="line">		freopen(<span class="string">&quot;sort.in&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">		<span class="comment">//freopen(&quot;sort.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n); <span class="comment">//输入给定的整数个数n</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++ )&#123; <span class="comment">//输入n个数据，保存在数组a[]中</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;<span class="built_in">array</span>[i]); <span class="comment">//scanf(&quot;%d&quot;, array+i); </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//****************************************************************</span></span><br><span class="line">	</span><br><span class="line">	shell_sort(<span class="built_in">array</span>, n); <span class="comment">//[希尔]排序 </span></span><br><span class="line">	</span><br><span class="line">	showInfo(<span class="built_in">array</span>, n);<span class="comment">//输出结果数组 </span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//================================================================</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-<h3 id="二、交换排序"><a href="#二、交换排序" class="headerlink" title="二、交换排序"></a>二、交换排序</h3><p><strong>1.冒泡排序（稳定）</strong><br>排序次数：至多n-1次，至少1次<br>算法实现：  </p>
-<pre><code class="c">#include &lt;iostream&gt;
-
-#define N0 1001
-
-typedef int ElemType; //元素的类型定义
-
-ElemType array[N0]; //待排序的数据(下标0用作&#39;哨兵&#39;?)
-
-/*(1)排序算法: [冒泡] */
-void bubble_sort(ElemType a[], int n)&#123;
-    int flag; //flag-一趟冒泡排序中是否有发生过元素交换(默认没有0)
-    
-    ElemType t; //t-临时变量(用于交换) 
-    
-    /*(A)按升序(从小到大)排序a[]中的元素, 采用的&#39;冒泡&#39;排序算法, 实现(一): 【较大元素从左往右移】*/
-    for(int i=0; i &lt; n-1; i++)&#123; //n-1趟排序
-        //(A.1)一趟排序开始之前，将flag标识置为0，意即此趟排序过程中没有元素发生过交换
-        flag = 0; 
-        
-        //(A.2)进行一趟&quot;冒泡排序&quot;, 遍历j=0 ~ n-1-i的所有元素, 若a[j]比 后一个元素a[j+1]大, 则交换2个元素. 一趟排序的效果是将(0 ~ n-1-i)的最大元素交换到a[n-1-i]位置上!
-        for(int j=0; j&lt;n-1-i; j++)&#123;
-            if( a[j] &gt; a[j+1] )&#123; //若j位置上的元素 比 j+1位置上的元素大, 则交换a[j]和a[j+1]两个元素
-                flag = 1; //此趟排序过程中，有元素发生过交换
-                
-                t = a[j];
-                a[j] = a[j+1];
-                a[j+1] = t;
-            &#125;
-        &#125;
-
-        //(A.3)根据一趟排序过程中是否有元素发生过交换，决定是否进行下一趟排序
-        if( !flag )&#123;//此趟排序过程中没有发生任何元素交换，元素已经有序，不需要再排序，提前退出排序过程！
-            break;
-        &#125;
-    &#125;
-
-    /*(B)按升序(从小到大)排序a[]中的元素, 采用的&#39;冒泡&#39;排序算法, 实现(二): 【较小元素从右往左移】 
-    for(int i=0; i&lt; n-1; i++)&#123; //n-1趟排序
-        //(B.1)一趟排序开始之前，将flag标识置为0，意即此趟排序过程中没有元素发生过交换
-        flag = 0; 
-        
-        //(B.2)进行一趟&quot;冒泡排序&quot;, 遍历j=n-1 ~ 1的所有元素, 若a[j]比 前一个元素a[j-1]小, 则交换2个元素. 一趟排序的效果是将(n-1 ~ i+1)的最小元素交换到a[i]位置上!
-        for(int j=n-1; j&gt;i; j--)&#123;
-            if( a[j] &lt; a[j-1] )&#123; //若j位置上的元素 比 j-1位置上的元素小, 则交换两个元素
-                flag = 1; //此趟排序过程中，有元素发生过交换
-                
-                t = a[j];
-                a[j] = a[j-1];
-                a[j-1] = t;
-            &#125;
-        &#125;
-        
-        //(B.3)根据一趟排序过程中是否有元素发生过交换，决定是否进行下一趟排序
-        if( !flag )&#123;//此趟排序过程中没有发生任何元素交换，元素已经有序，不需要再排序，提前退出排序过程！
-            break;
-        &#125;
-    &#125;
-    */
-&#125; 
-
-/*(O)输出结果数组 */
-void showInfo(ElemType a[], int n)&#123;
-    for(int i=0; i&lt;n; i++)&#123;
-        printf(&quot; %d&quot;, a[i]);
-    &#125;
-    printf(&quot;\n&quot;);
-&#125;
-
-/*(T)测试函数 */
-int main()&#123;	
-    int n; //n-数组a的整数个数; a[]-存储给定的n个整数的数组
-
-    FILE *fp;
-    if((fp=fopen(&quot;sort.in&quot;, &quot;r&quot;)) != NULL )&#123;
-        fclose(fp);  //存在的话，要先把之前打开的文件关掉
-        
-        freopen(&quot;sort.in&quot;, &quot;r&quot;, stdin);
-        //freopen(&quot;sort.out&quot;, &quot;w&quot;, stdout);
-    &#125;
-
-    scanf(&quot;%d&quot;, &amp;n); //输入给定的整数个数n
-    for(int i=0; i&lt;n; i++ )&#123; //输入n个数据，保存在数组a[]中
-        scanf(&quot;%d&quot;, &amp;array[i]); //scanf(&quot;%d&quot;, array+i); 
-    &#125;
-    //****************************************************************
-    
-    bubble_sort(array, n); //[冒泡]排序 
-    
-    showInfo(array, n); //输出结果数组 
-
-    //================================================================
-    return 0;	
-&#125;  
-</code></pre>
-<p><strong>2.快速排序（不稳定）</strong><br>算法思想：<br>a.通过快速排序，把待排序记录分成独立的两组。其中，一组的关键字均比另一组小。<br>b.采用同样的方法，对一趟快速排序产生的两个子序列进行快速排序。<br>c.递归执行a和b，直到子序列的记录个数为1。<br>排序次数C(n)：C(n)&#x3D;n-1+C(k)+C(n-k-1)<br>时间复杂度O(n)：O(n)&lt;&#x3D;n*log<sub>2</sub>n  </p>
-<h3 id="三、选择排序"><a href="#三、选择排序" class="headerlink" title="三、选择排序"></a>三、选择排序</h3><p>基本思想：<br>每次从当前待排序的记录中选取“关键字第i（i&#x3D;1,2,…,n）小的记录”, 放置在记录序列的位置i，直到所有n个记录都有序为止。<br><strong>1.简单选择排序</strong><br>算法实现：  </p>
-<pre><code class="c">
-</code></pre>
-<p><font color=greee>拓展：树形选择排序和堆排序  </p>
-<p>a.树形选择排序  </p>
-<p>思想：<br>i.借助“淘汰赛”中的对垒过程，对关键字序列进行排序。</p>
-<blockquote>
-<p>该过程可用一棵有n个叶子结点的 完全二叉树表示。每个分枝结点的关键字都等于其左&amp;右孩子结点中较小的关键字，根结点的关键字就是最小的关键字。</p>
-</blockquote>
-<p>ii.输出最小关键字后，根据关系的可传递性，欲选取次小关键字，只需:</p>
-<blockquote>
-<p>将叶子结点中的最小关键字 改为“最大值(inf)”;<br>然后，重复上述步骤即可。</p>
-</blockquote>
-<p>b.堆排序（不稳定）<br>时间复杂度O(n)&#x3D;n*log<sub>2</sub>n<br>空间复杂度S(n)&#x3D;O(1)  </p>
-<p>思想：<br>i.对一组待排序的记录，按堆的定义建立堆。<br>ii.将堆顶记录和最后一个记录交换位置，则前n-1个记录是无序的，而最后一个记录是有序的。<br>iii.堆顶记录被交换后，前n-1个记录不再是堆，需将前n-1个待排序记录重新组织成为一个堆；然后，将堆顶记录和倒数第二个记录交换位置，即将整个序列中次小关键字值的记录调整(排除)出无序区。<br>iv.重复上述步骤，直到全部记录排好序为止。  </p>
-<p>结论：排序过程中，若采用<font color=orange>小根堆</font>，排序后得到的是<font color=orange>非递减序列</font>；若采用<font color=orange>大根堆</font>，排序后得到的是<font color=orange>非递增序列</font>。  </p>
-<p><font color=orange>实现堆排序的2个关键操作：<br>1.建堆：如何由一个无序序列建成一个堆？<br>2.堆调整：如何在输出堆顶元素之后，调整剩余元素，使之成为一个新的堆？  </font></p>
-<p>思想（后续示例，均以小根堆为例）：<br>输出堆顶元素之后，以堆中最后一个元素替代之；<br>然后，将根结点值与左、右子树的根结点值进行比较，并与其中较小者进行交换；<br>重复上述操作，直到 A)是叶子结点 或 B)其关键字值小于等于左&amp;右子树的关键字的值，即获得新的[小根]堆。<br>称: 这个从堆顶至叶子的调整过程为“筛选” 。<br><img src="https://s3.bmp.ovh/imgs/2024/06/03/5f2b75c46906183a.png" alt="堆的“筛选”">  </p>
-<p>“筛选”的算法实现：  </p>
-<pre><code class="c">
-</code></pre>
-<p>堆排序算法分析:<br> 堆排序的主要时间花销：初始建堆和重新调整成堆。设记录数为n，所对应的完全二叉树深度为h。<br>初始建堆：每个非叶子结点都要从上到下做“筛选”。<br>第 i层结点数≤2i-1，结点下移的最大深度是h-i，而每下移一层要比较2次，则比较次数C1(n)为：</p>
-<p>筛选调整：每次筛选要将根结点“下沉”到一个合适位置。<br>第 i 次筛选时：堆中元素个数为n-i+1；堆的深度是㏒2(n-i+1)+1，则进行n-1次“筛选”的比较次数C2(n)为：</p>
-<p>∴ 堆排序时间复杂度T(n)&#x3D;O(n㏒2n)；空间复杂度S(n)&#x3D;O(1) 。<br>附加空间: 为元素交换时, 所用的临时空间。<br>  </font>  </p>
-<h3 id="四、归并排序"><a href="#四、归并排序" class="headerlink" title="四、归并排序"></a>四、归并排序</h3><p><img src="https://s3.bmp.ovh/imgs/2024/06/03/e02ef988edc106e1.png" alt="归并排序"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-GHCTF2024-WP"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2024/05/24/GHCTF2024-WP/" class="article-date">
-  <time datetime="2024-05-24T06:53:34.634Z" itemprop="datePublished">2024-05-24</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="GHCTF2024-WP"><a href="#GHCTF2024-WP" class="headerlink" title="GHCTF2024-WP"></a>GHCTF2024-WP</h1><p><strong>基本信息</strong></p>
-<p>队伍名：Girls CTF Party 队伍成员：</p>
-<p>刘云飞（2023 级） 卜令问（2023 级） 翁崇峻（2023 级）</p>
-<p><strong>WEB</strong></p>
-<p><strong>Sign_in</strong></p>
-<p>解题： 卜令问</p>
-<p>打开题目发现是小恐龙，好像自己高中闲着无聊经常玩。 题目叫我们达到 1000000000 分去获得 flag。</p>
-<p>这种类型的题目，我第一反应是看源码。</p>
-<p>发现只要 100000 就会给出一个奇怪的东西。</p>
-<p>这串好像 base64 啊，把这串奇怪的东西拿去解码。 得到 flag。</p>
-<p>这里贴一篇青少年 ctf 的博客，我最早是从这里得到启发的：<a target="_blank" rel="noopener" href="http://t.csdnimg.cn/UZ1Pm">http://t.csdnimg.cn/UZ1Pm</a></p>
-<p><strong>PWN</strong></p>
-<p><strong>Helloworld</strong></p>
-<p>解题：翁崇峻</p>
-<p>1.在 kali 终端中打开题目</p>
-<p>2.ls  查看详细内容  3.cat 一下 flag ，over</p>
-<p><strong>REVERSE</strong></p>
-<p><strong>CS1.6</strong></p>
-<p>解题：刘云飞</p>
-<p>拿到附件放入 die 查看</p>
-<p>题目提示 C# 放入 ILSPY</p>
-<p>找到源代码</p>
-<p>根据源代码写出逆向脚本</p>
-<p>解出 flag</p>
-<p><strong>.?.s.?</strong></p>
-<p>解题：刘云飞</p>
-<p>下载附件直接打开</p>
-<p>根据代码写解密脚本</p>
-<p>得到 flag</p>
-<p><strong>ezam</strong></p>
-<p>解题：刘云飞</p>
-<p>拿到附件 拖入 die 查看</p>
-<p>发现打包工具为 PyInstaller</p>
-<p>使用 pyinstxtractor 进行解包得到</p>
-<p>将 ezam.pyc 拖入 python 解包工具网站中</p>
-<p>下载源代码</p>
-<p>得到了迷宫地图</p>
-<p>发现是简单的 wads 移动 手动走迷宫 记录键盘得到 flag。</p>
-<p><strong>CRYPTO</strong></p>
-<p><strong>Crypto1921</strong></p>
-<p>解题： 卜令问</p>
-<p>打开附件，发现里面还有一个 zip。好奇点进去，发现加密了。 先不管，看看没加密的 code.txt 里有什么东西。</p>
-<p>打开发现是摩斯电码。拿去解密&#x3D;_&#x3D;</p>
-<p>解密后发现是中文电码，再解密。</p>
-<p>全文附上：子卿兄法租借望志路幺洞六号疑似有马列分子请前去探查坐标东经幺二幺度二八 分幺六秒北纬三幺度幺三分六秒</p>
-<p>然后根据电文里面的经纬度得到密码，进而得到电文。</p>
-<p>再逆推刚才的思路就 OK 了</p>
-<p><strong>2023 四省联考</strong></p>
-<p>解题： 卜令问</p>
-<p>打开附件，第一眼就看到了 hint。</p>
-<p>不难知道，这题出的是椭圆曲线加密。没做过这类题，这下没头绪了，怎么办？万能的 csdn 来帮忙。</p>
-<p>搜索后发现 hgame2022 有道题 ECC 好像有点类似（哪是类似，简直一毛一样）。 又发现 zip 里面有个 sage 文件，那直接开起来看看。</p>
-<p>根据前辈的思路，再和 out.txt 结合，写脚本。</p>
-<p>得到两个十六进制数。</p>
-<p>再拿去化一下就得到了 flag。</p>
-<p><strong>MISC</strong></p>
-<p><strong>real_signin</strong></p>
-<p>解题：刘云飞</p>
-<p>password is md5((宫廷玉液酒 - (白云 -  黑土) *  小锤) ^  群英荟萃) 宫廷玉液酒 180  白云 71  黑土 75  小锤 40  群英荟萃 80</p>
-<p>进行简单计算转化为 md5 得到 flag</p>
-<p><strong>【Minecraft】还是</strong> <strong>ctf 大佬</strong></p>
-<p>解题： 卜令问（游戏内密文）、刘云飞（游戏环境密钥） 以下是刘云飞的 wp：</p>
-<p>打开文件夹发现 leve.dat 修改时间有问题 使用 bandzip  打开后再以文本形式打开里面的文 件 拉到最下面看到</p>
-<p>得到 fakeFlagBut    flag{Y0u’r3_CTF_dAL4o!_06375f38}</p>
-<p>以下是卜令问的 wp：</p>
-<p>云飞去找密钥了，那我找密文吧</p>
-<p>先把这个地图放到游戏根目录下面，然后开游戏进地图。</p>
-<p>从发射器得到僵尸刷怪 damn。</p>
-<p>再从火柴盒门口得到浆果。</p>
-<p>利用铁砧提取出两端代码，进行结合。 得到：</p>
-<p>U2FsdGVkX18IvcU3o3yy2+ISUlBY9rPbaxxonSVsO0lhvkBoGbyQAj&#x2F;m4ZujleTTQSQn+Y+CZlHC99Wg AqasTg&#x3D;&#x3D;</p>
-<p>明显的 base64 格式。但是 hint:AES with salt     hint ：U2FsdGVkX 是重要特征。</p>
-<p>对称式加密啊。。。</p>
-<p>去找个工具解一下。</p>
-<p>得到 flag</p>
-<p><strong>ETH</strong></p>
-<p><strong>其疾如风</strong></p>
-<p>解题： 卜令问</p>
-<p>打开附件，发现是一个没有定位符的二维码</p>
-<p>那就手动添加上去吧</p>
-<p>扫码得到一串貌似是钱包地址的东西：</p>
-<p>ethereum:0x57F1b45c28eDaC71d0A9Ffb54B7d8d2733E8d599 那不妨去看看。</p>
-<p>目光很快锁定再交易记录上面 果不其然就在里面。</p>
-<p><strong>IOT</strong></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-hello"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/05/24/hello/"
-    >hello</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/05/24/hello/" class="article-date">
-  <time datetime="2024-05-24T06:30:02.000Z" itemprop="datePublished">2024-05-24</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-   
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-  </article>
-  
 
   
-</section>
-</div>
-
-      <footer class="footer">
-  <div class="outer">
-    <ul>
-      <li>
-        Copyrights &copy;
-        2015-2024
-        <i class="ri-heart-fill heart_icon"></i> John Doe
-      </li>
-    </ul>
-    <ul>
-      <li>
-        
-      </li>
-    </ul>
-    <ul>
-      <li>
-        
-        
-        <span>
-  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
-  <span class="division">|</span>
-  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
-</span>
-        
-      </li>
-    </ul>
-    <ul>
-      
-    </ul>
-    <ul>
-      
-    </ul>
-    <ul>
-      <li>
-        <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
-        
-      </li>
-    </ul>
-  </div>
-</footer>    
-    </main>
-    <div class="float_btns">
-      <div class="totop" id="totop">
-  <i class="ri-arrow-up-line"></i>
-</div>
-
-<div class="todark" id="todark">
-  <i class="ri-moon-line"></i>
-</div>
-
-    </div>
-    <aside class="sidebar on">
-      <button class="navbar-toggle"></button>
-<nav class="navbar">
+    <script  src="/js/img-lazyload.js" ></script>
   
-  <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Hexo"></a>
-  </div>
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
   
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">主页</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/categories">分类</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/friends">友链</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/2019/about">关于我</a>
-    </li>
-    
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      
-      <a class="nav-item-link nav-item-search"  title="Search">
-        <i class="ri-search-line"></i>
-      </a>
-      
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="ri-rss-line"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-    </aside>
-    <div id="mask"></div>
 
-<!-- #reward -->
-<div id="reward">
-  <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
-  <div class="reward-box">
-    
-    <div class="reward-item">
-      <img class="reward-img" src="/images/alipay.jpg">
-      <span class="reward-type">支付宝</span>
-    </div>
-    
-    
-    <div class="reward-item">
-      <img class="reward-img" src="/images/wechat.jpg">
-      <span class="reward-type">微信</span>
-    </div>
-    
-  </div>
-</div>
-    
-<script src="/js/jquery-3.6.0.min.js"></script>
- 
-<script src="/js/lazyload.min.js"></script>
-
-<!-- Tocbot -->
-
-<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
-<link
-  rel="stylesheet"
-  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
-/>
-<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
-
-<script src="/dist/main.js"></script>
-
-<!-- ImageViewer -->
- <!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
-<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
-<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
-<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
-
-<script>
-    function viewer_init() {
-        let pswpElement = document.querySelectorAll('.pswp')[0];
-        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
-
-        $imgArr.forEach(($em, i) => {
-            $em.onclick = () => {
-                // slider展开状态
-                // todo: 这样不好，后面改成状态
-                if (document.querySelector('.left-col.show')) return
-                let items = []
-                $imgArr.forEach(($em2, i2) => {
-                    let img = $em2.getAttribute('data-idx', i2)
-                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
-                    let title = $em2.getAttribute('alt')
-                    // 获得原图尺寸
-                    const image = new Image()
-                    image.src = src
-                    items.push({
-                        src: src,
-                        w: image.width || $em2.width,
-                        h: image.height || $em2.height,
-                        title: title
-                    })
-                })
-                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
-                    index: parseInt(i)
-                });
-                gallery.init()
-            }
-        })
-    }
-    viewer_init()
-</script> 
-<!-- MathJax -->
-
-<!-- Katex -->
-
-<!-- busuanzi  -->
- 
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
- 
-<!-- ClickLove -->
-
-<!-- ClickBoom1 -->
-
-<!-- ClickBoom2 -->
-
-<!-- CodeCopy -->
- 
-<link rel="stylesheet" href="/css/clipboard.css">
- <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
-<script>
-  function wait(callback, seconds) {
-    var timelag = null;
-    timelag = window.setTimeout(callback, seconds);
-  }
-  !function (e, t, a) {
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      $(".article pre code").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-      clipboard.on('success', function(e) {
-        let $btn = $(e.trigger);
-        $btn.addClass('copied');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-checkbox-circle-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPIED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-checkbox-circle-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-      clipboard.on('error', function(e) {
-        e.clearSelection();
-        let $btn = $(e.trigger);
-        $btn.addClass('copy-failed');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-time-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPY FAILED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-time-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-    }
-    initCopyCode();
-  }(window, document);
-</script>
- 
-<!-- CanvasBackground -->
-
-<script>
-  if (window.mermaid) {
-    mermaid.initialize({ theme: "forest" });
-  }
-</script>
-
-
-    
-    
-
-  </div>
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
-
 </html>
