@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="zh" data-default-color-scheme=auto>
 
 
 
@@ -13,24 +13,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="4sTr0n0nn1A">
   <meta name="keywords" content="">
   
     <meta name="description" content="二、字符数据处理在应用程序的设计中，经常会遇到各种字符或字符串的处理。字符处理通常包括字符的比较、检索、插入、删除和统计等。 1.字符串比较例1 在数据区BUF1和BUF2地址开始分别有一字符串，长度均为14字节。试比较这两个字符串，若相同，则给RES单元置0；若不同，则给RES单元置0FFH，并将失配字节地址送RES＋1开始的两个存储单元中。   源程序：   12345678910111213">
 <meta property="og:type" content="article">
 <meta property="og:title" content="汇编语言">
 <meta property="og:url" content="http://example.com/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Lowlife">
 <meta property="og:description" content="二、字符数据处理在应用程序的设计中，经常会遇到各种字符或字符串的处理。字符处理通常包括字符的比较、检索、插入、删除和统计等。 1.字符串比较例1 在数据区BUF1和BUF2地址开始分别有一字符串，长度均为14字节。试比较这两个字符串，若相同，则给RES单元置0；若不同，则给RES单元置0FFH，并将失配字节地址送RES＋1开始的两个存储单元中。   源程序：   12345678910111213">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale">
 <meta property="article:published_time" content="2024-06-03T10:28:00.000Z">
-<meta property="article:modified_time" content="2024-06-04T02:21:25.426Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2024-06-04T02:42:00.708Z">
+<meta property="article:author" content="4sTr0n0nn1A">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>汇编语言 - Hexo</title>
+  <title>汇编语言 - Lowlife</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -114,7 +114,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
+                <span>Startseite</span>
               </a>
             </li>
           
@@ -126,7 +126,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
+                <span>Archiv</span>
               </a>
             </li>
           
@@ -138,7 +138,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
+                <span>Kategorien</span>
               </a>
             </li>
           
@@ -150,7 +150,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
+                <span>Schlagwörter</span>
               </a>
             </li>
           
@@ -162,7 +162,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
+                <span>Über</span>
               </a>
             </li>
           
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          644 words
+          622 wörter
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          6 mins
+          6 minuten
         
       </span>
     
@@ -275,17 +275,23 @@
                 <h2 id="二、字符数据处理"><a href="#二、字符数据处理" class="headerlink" title="二、字符数据处理"></a>二、字符数据处理</h2><p>在应用程序的设计中，经常会遇到各种字符或字符串的处理。字符处理通常包括字符的比较、检索、插入、删除和统计等。</p>
 <h3 id="1-字符串比较"><a href="#1-字符串比较" class="headerlink" title="1.字符串比较"></a>1.字符串比较</h3><p><font color=green>例1 在数据区BUF1和BUF2地址开始分别有一字符串，长度均为14字节。试比较这两个字符串，若相同，则给RES单元置0；若不同，则给RES单元置0FFH，并将失配字节地址送RES＋1开始的两个存储单元中。</font>  </p>
 <p>源程序：  </p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">DATA     	<span class="hljs-meta">SEGMENT</span><br>BUF1      	<span class="hljs-built_in">DB</span>   <span class="hljs-string">&#x27;I am a student&#x27;</span><br>BUF2      	<span class="hljs-built_in">DB</span>   <span class="hljs-string">&#x27;I am a studant&#x27;</span><br>RES       	<span class="hljs-built_in">DB</span>   <span class="hljs-number">3</span>  DUP (?)<br>NUMBER  	<span class="hljs-built_in">EQU</span>  <span class="hljs-number">14</span><br>DATA     	ENDS<br>STACK1   	<span class="hljs-meta">SEGMENT</span>  PARA  STACK  <span class="hljs-string">&#x27;STACK&#x27;</span><br>STA       	<span class="hljs-built_in">DB</span>   <span class="hljs-number">100</span>  DUP (?)<br>STACK1   	ENDS<br>CODE     	<span class="hljs-meta">SEGMENT</span><br>          	<span class="hljs-meta">ASSUME</span>  <span class="hljs-built_in">CS</span>: CODE, <span class="hljs-built_in">DS</span>: DATA, <span class="hljs-built_in">ES</span>:DATA, <span class="hljs-built_in">SS</span>: STACK1<br>START：   	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AX</span>, DATA<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">DS</span>, <span class="hljs-built_in">AX</span><br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">ES</span>, <span class="hljs-built_in">AX</span><br>		    <span class="hljs-keyword">LEA</span>	<span class="hljs-built_in">BX</span>, RES<br>          	<span class="hljs-keyword">LEA</span>	<span class="hljs-built_in">SI</span>, BUF1<br>          	<span class="hljs-keyword">LEA</span>	<span class="hljs-built_in">DI</span>, BUF2<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">CX</span>, NUMBER<br>          	<span class="hljs-keyword">CLD</span><br>          	<span class="hljs-keyword">REPE</span> <span class="hljs-keyword">CMPSB</span>						          	<br>            <span class="hljs-keyword">JNZ</span>	UNSAME<br>		    <span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AX</span>, <span class="hljs-number">0</span><br>		    <span class="hljs-keyword">MOV</span>	[<span class="hljs-built_in">BX</span>], <span class="hljs-built_in">AL</span><br>		    <span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">DL</span>, [<span class="hljs-built_in">BX</span>] <br>      		<span class="hljs-keyword">JMP</span>	OVER<br>UNSAME： 	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AX</span>, <span class="hljs-number">0FFH</span><br>		    <span class="hljs-keyword">MOV</span>	[<span class="hljs-built_in">BX</span>], <span class="hljs-built_in">AL</span><br>          	<span class="hljs-keyword">INC</span>	<span class="hljs-built_in">BX</span><br>		    <span class="hljs-keyword">DEC</span>	<span class="hljs-built_in">DI</span><br>		    <span class="hljs-keyword">MOV</span>	[<span class="hljs-built_in">BX</span>], <span class="hljs-built_in">DI</span>						<br>OVER：	    <span class="hljs-keyword">MOV</span> <span class="hljs-number">AH</span>, <span class="hljs-number">4CH</span> 					          		<br>            <span class="hljs-keyword">INT</span>	<span class="hljs-number">21H</span><br>CODE     	ENDS<br>          	END	START<br><span class="hljs-string">```</span>  <br> <br><br>### <span class="hljs-number">2</span>.字符串检索  <br>字符串检索就是在一个字符串中寻找一些关键字符或关键字符（串）。  <br>&lt;font color=green&gt;例<span class="hljs-number">2</span>、在内存数据区有一数据块，首地址BUF，长度为<span class="hljs-number">50</span>字节。检索其中是否有与内存单元KEYWORD中相同的字符。若有则记录第一个遇到的关键字地址；若无则<span class="hljs-built_in">DI</span>赋<span class="hljs-number">0</span>。&lt;/font&gt;  <br><br>源程序：  <br></code></pre></td></tr></table></figure>
-<p>DATA 	SEGMENT<br>KEYWORD 	DB   50H<br>BUF      	DB   20H, 34H, 98H, 78H, ……<br>RES		    DW   ？<br>DATA     	ENDS<br>STACK1   	SEGMENT  PARA  STACK  ‘STACK’<br>STA       	DB   100  DUP (?)<br>STACK1   	ENDS<br>CODE     	SEGMENT<br>     ASSUME  CS: CODE, DS: DATA, ES: DATA, SS:STACK1<br>START：   	MOV	AX, DATA<br>              MOV	DS, AX<br>            MOV	ES, AX<br>            MOV	AL, KEYWORD<br>            LEA	DI, BUF<br>              MOV	CX, 50<br>              CLD<br>             REPNE  SCASB           ；重复搜索<br>              JZ	FOUND<br>            MOV	DI, 0<br>            JMP	OVER<br>FOUND：  	DEC	DI<br>            MOV	RES, DI      ；送第一个遇到的关键字地址<br>OVER：  	MOV	AH, 4CH<br>             INT	21H<br>CODE     	ENDS<br>            END	START</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs clean"><br>### <span class="hljs-number">3.</span>字符插入与删除  <br>字符的插入和删除是字符运用的主要形式。  <br>#### <span class="hljs-number">1</span>） 字符插入  <br>&lt;font color=green&gt;例<span class="hljs-number">3</span>、假设从BUF1地址开始有一个长度为<span class="hljs-number">100</span>的字符串，串长度存于LONG单元。现要求在第一个“E”字符后插入一个字符串，其长度<span class="hljs-number">6</span>。该字串存于BUF2单元开始的存储区中。若进行插入，SIGN单元置<span class="hljs-number">1</span>，否则置<span class="hljs-number">0</span>。&lt;/font&gt;  <br><br>源程序：  <br></code></pre></td></tr></table></figure>
-<p>DATA		SEGMENT<br>LONG      	DB   100<br>BUF1		DB   ‘ABCDEFGADE……’<br>FREEDOM	DB  6  DUP (?)<br>BUF2      	DB   ‘INSERT’<br>SIGN      	DB   ？<br>DATA     	ENDS<br>STACK1	    SEGMENT  PARA  STACK  ‘STACK’<br>            STA	DB   100  DUP (?)<br>STACK1   	ENDS<br>CODE     	SEGMENT<br>              ASSUME  CS: CODE, DS: DATA, ES: DATA, SS: STACK1<br>START：   	MOV	AX, DATA<br>              MOV	DS, AX<br>              MOV	ES, AX<br>            MOV	CL, LONG<br>              LEA DI, BUF1<br>              MOV	AL, ‘E’<br>              CLD<br>              REPNE SCASB					          	<br>            JZ	FOUND<br>            MOV	SIGN, 0<br>              JMP	OVER<br>FOUND：  	MOV	SI, OFFSET	FREEDOM－1	<br>              MOV	DI, OFFSET	FREEDOM＋5	<br>             STD<br>              REP	MOVSB						<br>            LEA SI, BUF2＋5	<br>            MOV CX, 6<br>            STD<br>            REP		MOVSB<br>            MOV		SIGN, 1<br>OVER：   	MOV	AH, 4CH<br>              INT	21H<br>CODE    	ENDS<br>        END	START</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs clean"><br>#### <span class="hljs-number">2</span>）字符删除  <br>&lt;font color=green&gt;例<span class="hljs-number">4</span>、假设从BUF地址开始有一个字符串，串长度存于LONG单元。现要求删除所有的“D”字符并要求修改字符长度并存入LONG单元中。&lt;/font&gt;  <br><br>源程序：  <br></code></pre></td></tr></table></figure>
-<p>DATA		SEGMENT<br>LONG      	DB   100<br>BUF      	DB   ‘ABCDEFGADE……’<br>DATA     	ENDS<br>STACK1   	SEGMENT  PARA  STACK  ‘STACK’<br>STA       	DB   100  DUP (?)<br>STACK1   	ENDS<br>CODE     	SEGMENT<br>     ASSUME  CS: CODE, DS: DATA, ES: DATA, SS:STACK1<br>START：   	MOV	AX, DATA<br>              MOV	DS, AX<br>              MOV	ES, AX<br>            MOV	CL, LONG<br>              LEA	DI, BUF<br>              MOV	BL, CL						<br>            MOV	AL, ‘D’<br>NEXT：	    CLD<br>              REPNE SCASB<br>              JZ	FOUND<br>              JMP	OVER<br>FOUND：  	MOV	SI, DI<br>              DEC	DI<br>              PUSH DI							<br>            PUSH CX<br>            CLD<br>              REP	MOVSB<br>            DEC	BL<br>            POP	CX<br>            POP	DI<br>            JMP	NEXT<br>OVER：     	MOV	LONG, BL					<br>            MOV	AH, 4CH<br>              INT	21H<br>CODE     	ENDS<br>        END	START</p>
-<pre><code class="hljs">
-### 4.字符统计
-&lt;font color=green&gt;例5、在数据区STRING地址开始存有一字符串，以“$”作为结尾标志，长度不超过250个字节。统计该字符串的长度，并存于LENG单元中。&lt;/font&gt;
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">DATA     	<span class="hljs-meta">SEGMENT</span><br>BUF1      	<span class="hljs-built_in">DB</span>   <span class="hljs-string">&#x27;I am a student&#x27;</span><br>BUF2      	<span class="hljs-built_in">DB</span>   <span class="hljs-string">&#x27;I am a studant&#x27;</span><br>RES       	<span class="hljs-built_in">DB</span>   <span class="hljs-number">3</span>  DUP (?)<br>NUMBER  	<span class="hljs-built_in">EQU</span>  <span class="hljs-number">14</span><br>DATA     	ENDS<br>STACK1   	<span class="hljs-meta">SEGMENT</span>  PARA  STACK  <span class="hljs-string">&#x27;STACK&#x27;</span><br>STA       	<span class="hljs-built_in">DB</span>   <span class="hljs-number">100</span>  DUP (?)<br>STACK1   	ENDS<br>CODE     	<span class="hljs-meta">SEGMENT</span><br>          	<span class="hljs-meta">ASSUME</span>  <span class="hljs-built_in">CS</span>: CODE, <span class="hljs-built_in">DS</span>: DATA, <span class="hljs-built_in">ES</span>:DATA, <span class="hljs-built_in">SS</span>: STACK1<br>START：   	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AX</span>, DATA<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">DS</span>, <span class="hljs-built_in">AX</span><br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">ES</span>, <span class="hljs-built_in">AX</span><br>		    <span class="hljs-keyword">LEA</span>	<span class="hljs-built_in">BX</span>, RES<br>          	<span class="hljs-keyword">LEA</span>	<span class="hljs-built_in">SI</span>, BUF1<br>          	<span class="hljs-keyword">LEA</span>	<span class="hljs-built_in">DI</span>, BUF2<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">CX</span>, NUMBER<br>          	<span class="hljs-keyword">CLD</span><br>          	<span class="hljs-keyword">REPE</span> <span class="hljs-keyword">CMPSB</span>						          	<br>            <span class="hljs-keyword">JNZ</span>	UNSAME<br>		    <span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AX</span>, <span class="hljs-number">0</span><br>		    <span class="hljs-keyword">MOV</span>	[<span class="hljs-built_in">BX</span>], <span class="hljs-built_in">AL</span><br>		    <span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">DL</span>, [<span class="hljs-built_in">BX</span>] <br>      		<span class="hljs-keyword">JMP</span>	OVER<br>UNSAME： 	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AX</span>, <span class="hljs-number">0FFH</span><br>		    <span class="hljs-keyword">MOV</span>	[<span class="hljs-built_in">BX</span>], <span class="hljs-built_in">AL</span><br>          	<span class="hljs-keyword">INC</span>	<span class="hljs-built_in">BX</span><br>		    <span class="hljs-keyword">DEC</span>	<span class="hljs-built_in">DI</span><br>		    <span class="hljs-keyword">MOV</span>	[<span class="hljs-built_in">BX</span>], <span class="hljs-built_in">DI</span>						<br>OVER：	    <span class="hljs-keyword">MOV</span> <span class="hljs-number">AH</span>, <span class="hljs-number">4CH</span> 					          		<br>            <span class="hljs-keyword">INT</span>	<span class="hljs-number">21H</span><br>CODE     	ENDS<br>          	END	START<br></code></pre></td></tr></table></figure>
 
-</code></pre>
+
+<h3 id="2-字符串检索"><a href="#2-字符串检索" class="headerlink" title="2.字符串检索"></a>2.字符串检索</h3><p>字符串检索就是在一个字符串中寻找一些关键字符或关键字符（串）。<br><font color=green>例2、在内存数据区有一数据块，首地址BUF，长度为50字节。检索其中是否有与内存单元KEYWORD中相同的字符。若有则记录第一个遇到的关键字地址；若无则DI赋0。</font>  </p>
+<p>源程序：  </p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">DATA 	<span class="hljs-meta">SEGMENT</span><br>KEYWORD 	<span class="hljs-built_in">DB</span>   <span class="hljs-number">50H</span><br>BUF      	<span class="hljs-built_in">DB</span>   <span class="hljs-number">20H</span>, <span class="hljs-number">34H</span>, <span class="hljs-number">98H</span>, <span class="hljs-number">78H</span>, ……<br>RES		    <span class="hljs-built_in">DW</span>   ？<br>DATA     	ENDS<br>STACK1   	<span class="hljs-meta">SEGMENT</span>  PARA  STACK  ‘STACK’<br>STA       	<span class="hljs-built_in">DB</span>   <span class="hljs-number">100</span>  DUP (?)<br>STACK1   	ENDS<br>CODE     	<span class="hljs-meta">SEGMENT</span><br>     <span class="hljs-meta">ASSUME</span>  <span class="hljs-built_in">CS</span>: CODE, <span class="hljs-built_in">DS</span>: DATA, <span class="hljs-built_in">ES</span>: DATA, <span class="hljs-built_in">SS</span>:STACK1<br>START：   	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AX</span>, DATA<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">DS</span>, <span class="hljs-built_in">AX</span><br>        	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">ES</span>, <span class="hljs-built_in">AX</span><br>		    <span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AL</span>, KEYWORD<br>        	<span class="hljs-keyword">LEA</span>	<span class="hljs-built_in">DI</span>, BUF<br>      		<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">CX</span>, <span class="hljs-number">50</span><br>      		<span class="hljs-keyword">CLD</span><br>     		<span class="hljs-keyword">REPNE</span>  <span class="hljs-keyword">SCASB</span>           ；重复搜索<br>      		<span class="hljs-keyword">JZ</span>	FOUND<br>    		<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">DI</span>, <span class="hljs-number">0</span><br>        	<span class="hljs-keyword">JMP</span>	OVER<br>FOUND：  	<span class="hljs-keyword">DEC</span>	<span class="hljs-built_in">DI</span><br>		    <span class="hljs-keyword">MOV</span>	RES, <span class="hljs-built_in">DI</span>      ；送第一个遇到的关键字地址<br>OVER：  		<span class="hljs-keyword">MOV</span>	<span class="hljs-number">AH</span>, <span class="hljs-number">4CH</span> <br>         	<span class="hljs-keyword">INT</span>	<span class="hljs-number">21H</span><br>CODE     	ENDS<br>		END START<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-字符插入与删除"><a href="#3-字符插入与删除" class="headerlink" title="3.字符插入与删除"></a>3.字符插入与删除</h3><p>字符的插入和删除是字符运用的主要形式。  </p>
+<h4 id="1）-字符插入"><a href="#1）-字符插入" class="headerlink" title="1） 字符插入"></a>1） 字符插入</h4><p><font color=green>例3、假设从BUF1地址开始有一个长度为100的字符串，串长度存于LONG单元。现要求在第一个“E”字符后插入一个字符串，其长度6。该字串存于BUF2单元开始的存储区中。若进行插入，SIGN单元置1，否则置0。</font>  </p>
+<p>源程序：  </p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">DATA		<span class="hljs-meta">SEGMENT</span><br>LONG      	<span class="hljs-built_in">DB</span>   <span class="hljs-number">100</span><br>BUF1		<span class="hljs-built_in">DB</span>   <span class="hljs-string">&#x27;ABCDEFGADE……&#x27;</span><br>FREEDOM	<span class="hljs-built_in">DB</span>  <span class="hljs-number">6</span>  DUP (?)<br>BUF2      	<span class="hljs-built_in">DB</span>   ‘INSERT’<br>SIGN      	<span class="hljs-built_in">DB</span>   ？<br>DATA     	ENDS<br>STACK1	    <span class="hljs-meta">SEGMENT</span>  PARA  STACK  <span class="hljs-string">&#x27;STACK&#x27;</span><br>            STA	<span class="hljs-built_in">DB</span>   <span class="hljs-number">100</span>  DUP (?)<br>STACK1   	ENDS<br>CODE     	<span class="hljs-meta">SEGMENT</span><br>          	<span class="hljs-meta">ASSUME</span>  <span class="hljs-built_in">CS</span>: CODE, <span class="hljs-built_in">DS</span>: DATA, <span class="hljs-built_in">ES</span>: DATA, <span class="hljs-built_in">SS</span>: STACK1<br>START：   	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AX</span>, DATA<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">DS</span>, <span class="hljs-built_in">AX</span><br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">ES</span>, <span class="hljs-built_in">AX</span><br>		    <span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">CL</span>, LONG<br>          	<span class="hljs-keyword">LEA</span> <span class="hljs-built_in">DI</span>, BUF1<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AL</span>, <span class="hljs-string">&#x27;E&#x27;</span><br>          	<span class="hljs-keyword">CLD</span><br>          	<span class="hljs-keyword">REPNE</span> <span class="hljs-keyword">SCASB</span>					          	<br>            <span class="hljs-keyword">JZ</span>	FOUND<br>		    <span class="hljs-keyword">MOV</span>	SIGN, <span class="hljs-number">0</span><br>          	<span class="hljs-keyword">JMP</span>	OVER<br>FOUND：  	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">SI</span>, OFFSET	FREEDOM－<span class="hljs-number">1</span>	<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">DI</span>, OFFSET	FREEDOM＋<span class="hljs-number">5</span>	<br>         	<span class="hljs-keyword">STD</span> <br>          	<span class="hljs-keyword">REP</span>	<span class="hljs-keyword">MOVSB</span>						<br>            <span class="hljs-keyword">LEA</span> <span class="hljs-built_in">SI</span>, BUF2＋<span class="hljs-number">5</span>	<br>		    <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">CX</span>, <span class="hljs-number">6</span><br>		    <span class="hljs-keyword">STD</span><br>		    <span class="hljs-keyword">REP</span>		<span class="hljs-keyword">MOVSB</span><br>		    <span class="hljs-keyword">MOV</span>		SIGN, <span class="hljs-number">1</span><br>OVER：   	<span class="hljs-keyword">MOV</span>	<span class="hljs-number">AH</span>, <span class="hljs-number">4CH</span><br>          	<span class="hljs-keyword">INT</span>	<span class="hljs-number">21H</span><br>CODE    	ENDS<br>        END	START<br></code></pre></td></tr></table></figure>
+
+<h4 id="2）字符删除"><a href="#2）字符删除" class="headerlink" title="2）字符删除"></a>2）字符删除</h4><p><font color=green>例4、假设从BUF地址开始有一个字符串，串长度存于LONG单元。现要求删除所有的“D”字符并要求修改字符长度并存入LONG单元中。</font>  </p>
+<p>源程序：  </p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">DATA		<span class="hljs-meta">SEGMENT</span><br>LONG      	<span class="hljs-built_in">DB</span>   <span class="hljs-number">100</span><br>BUF      	<span class="hljs-built_in">DB</span>   <span class="hljs-string">&#x27;ABCDEFGADE……&#x27;</span><br>DATA     	ENDS<br>STACK1   	<span class="hljs-meta">SEGMENT</span>  PARA  STACK  <span class="hljs-string">&#x27;STACK&#x27;</span><br>STA       	<span class="hljs-built_in">DB</span>   <span class="hljs-number">100</span>  DUP (?)<br>STACK1   	ENDS<br>CODE     	<span class="hljs-meta">SEGMENT</span><br>     <span class="hljs-meta">ASSUME</span>  <span class="hljs-built_in">CS</span>: CODE, <span class="hljs-built_in">DS</span>: DATA, <span class="hljs-built_in">ES</span>: DATA, <span class="hljs-built_in">SS</span>:STACK1<br>START：   	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AX</span>, DATA<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">DS</span>, <span class="hljs-built_in">AX</span><br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">ES</span>, <span class="hljs-built_in">AX</span><br>		    <span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">CL</span>, LONG<br>          	<span class="hljs-keyword">LEA</span>	<span class="hljs-built_in">DI</span>, BUF<br>          	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">BL</span>, <span class="hljs-built_in">CL</span>						<br>            <span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">AL</span>, ‘D’<br>NEXT：	    <span class="hljs-keyword">CLD</span><br>          	<span class="hljs-keyword">REPNE</span> <span class="hljs-keyword">SCASB</span> <br>          	<span class="hljs-keyword">JZ</span>	FOUND<br>          	<span class="hljs-keyword">JMP</span>	OVER<br>FOUND：  	<span class="hljs-keyword">MOV</span>	<span class="hljs-built_in">SI</span>, <span class="hljs-built_in">DI</span> <br>          	<span class="hljs-keyword">DEC</span>	<span class="hljs-built_in">DI</span><br>          	<span class="hljs-keyword">PUSH</span> <span class="hljs-built_in">DI</span>							 <br>            <span class="hljs-keyword">PUSH</span> <span class="hljs-built_in">CX</span> <br>            <span class="hljs-keyword">CLD</span><br>          	<span class="hljs-keyword">REP</span>	<span class="hljs-keyword">MOVSB</span><br>		    <span class="hljs-keyword">DEC</span>	<span class="hljs-built_in">BL</span><br>		    <span class="hljs-keyword">POP</span>	<span class="hljs-built_in">CX</span><br>		    <span class="hljs-keyword">POP</span>	<span class="hljs-built_in">DI</span><br>		    <span class="hljs-keyword">JMP</span>	NEXT<br>OVER：     	<span class="hljs-keyword">MOV</span>	LONG, <span class="hljs-built_in">BL</span>					<br>		    <span class="hljs-keyword">MOV</span>	<span class="hljs-number">AH</span>, <span class="hljs-number">4CH</span><br>          	<span class="hljs-keyword">INT</span>	<span class="hljs-number">21H</span><br>CODE     	ENDS<br>        END	START<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-字符统计"><a href="#4-字符统计" class="headerlink" title="4.字符统计"></a>4.字符统计</h3><p><font color=green>例5、在数据区STRING地址开始存有一字符串，以“$”作为结尾标志，长度不超过250个字节。统计该字符串的长度，并存于LENG单元中。</font></p>
 
                 
               </div>
@@ -309,20 +315,20 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
-          <div>John Doe</div>
+          <div>Beitragsautor</div>
+          <div>4sTr0n0nn1A</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
+          <div>Veröffentlicht am</div>
           <div>June 3, 2024</div>
         </div>
       
       
       
         <div class="license-meta-item">
-          <div>Licensed under</div>
+          <div>Urheberrechtshinweis</div>
           <div>
             
               
@@ -351,7 +357,7 @@
                       <a href="/2024/06/04/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" title="离散数学">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">离散数学</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">Vorheriger</span>
                       </a>
                     
                   </article>
@@ -360,7 +366,7 @@
                     
                       <a href="/2024/05/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构--排序">
                         <span class="hidden-mobile">数据结构--排序</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">Nächster</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -381,7 +387,7 @@
     <div id="toc">
   <p class="toc-header">
     <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
+    <span>Inhaltsverzeichnis</span>
   </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
@@ -437,7 +443,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -445,7 +451,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -624,7 +630,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
   </noscript>
 </body>
 </html>
