@@ -4,11 +4,24 @@
   
   
   <entry>
+    <title>常见RSA解密</title>
+    <link href="/2024/06/04/%E5%B8%B8%E8%A7%81RSA%E8%A7%A3%E5%AF%86/"/>
+    <url>/2024/06/04/%E5%B8%B8%E8%A7%81RSA%E8%A7%A3%E5%AF%86/</url>
+    
+    <content type="html"><![CDATA[<h1 id="常见RSA解密脚本"><a href="#常见RSA解密脚本" class="headerlink" title="常见RSA解密脚本"></a>常见RSA解密脚本</h1><h2 id="1-已知c-n-r-p-q"><a href="#1-已知c-n-r-p-q" class="headerlink" title="1.已知c,n,r,p,q"></a>1.已知c,n,r,p,q</h2><p>例题：[LitCTF2023]</p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs makefile">import gmpy2<br>from Crypto.Util.number import long_to_bytes<br> <br> <br>q = 189239861511125143212536989589123569301<br>p = 386123125371923651191219869811293586459<br> <br>e = 65537<br>c = 28767758880940662779934612526152562406674613203406706867456395986985664083182<br><br>n = q*p<br><br>d = gmpy2.invert(e, (p - 1) * (q - 1))<br>print(<span class="hljs-string">&quot;d=&quot;</span>,d)<br>m = pow(c, d, n)<br>print(m)<br>print(long_to_bytes(m))<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>离散数学</title>
     <link href="/2024/06/04/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"/>
     <url>/2024/06/04/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</url>
     
-    <content type="html"><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p><strong>定义14.1</strong><br>无向图G &#x3D; &lt;V,E&gt;, 其中：<br>(1) V ≠ ∅为顶点集，元素称为顶点<br>(2) E为V&amp;V 的多重集，其元素称为无向边，简称边<br><strong>定义14.2</strong><br>有向图D&#x3D;&lt;V,E&gt;, 只需注意E是V×V 的多重子集  </p><p>图2表示的是一个有向图，试写出它的 V 和 E<br><img src="https://ooo.0x0.ooo/2024/06/04/OJSa2a.png" alt="图2"><br><font color=orange>注意：图的数学定义与图形表示，在同构（待叙）的意义下是一一对应的</font>  </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="命题演算的基本规律"><a href="#命题演算的基本规律" class="headerlink" title="命题演算的基本规律"></a>命题演算的基本规律</h1><h2 id="1-命题的基本概念"><a href="#1-命题的基本概念" class="headerlink" title="1.命题的基本概念"></a>1.命题的基本概念</h2><h1 id="关系与映射"><a href="#关系与映射" class="headerlink" title="关系与映射"></a>关系与映射</h1><h2 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h2><p>1.关系、映射、函数的概念</p><p>2.单射、满射、一一映射</p><p>3.集合的运算</p><h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p><strong>定义14.1</strong><br>无向图G &#x3D; &lt;V,E&gt;, 其中：<br>(1) V ≠ ∅为顶点集，元素称为顶点<br>(2) E为V&amp;V 的多重集，其元素称为无向边，简称边<br><strong>定义14.2</strong><br>有向图D&#x3D;&lt;V,E&gt;, 只需注意E是V×V 的多重子集  </p><p>图2表示的是一个有向图，试写出它的 V 和 E<br><img src="https://ooo.0x0.ooo/2024/06/04/OJSa2a.png" alt="图2"><br><font color=orange>注意：图的数学定义与图形表示，在同构（待叙）的意义下是一一对应的</font>  </p>]]></content>
     
     
     
