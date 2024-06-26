@@ -16,24 +16,26 @@
   <meta name="author" content="4sTr0n0nn1A">
   <meta name="keywords" content="">
   
-    <meta name="description" content="排序内排序、外排序 排序方法一、插入排序1.直接插入排序：稳定？稳定！   2.折半插入排序   3.2-路插入排序   前面三种方法都不可避免的要移动记录   4.表插入排序算法思想：不移动记录增量序列：eg:5,3,1表示数据先每间隔5分成1组，再每间隔3分成1组，以此类推。 算法实现：   123456789101112131415161718192021222324252627282930">
+    <meta name="description" content="第一部分 线性表一、顺序表注意：线性表中的位序是从1开始，而数组中的元素下标从0开始。储存：一定连续时间复杂度：O(1)   基本操作1：初始化基本操作2：取值基本操作3：按值查找   二、链表存储：非顺序时间复杂度：O(n)   两类：带头结点和不带头结点   带头结点单链表为空： 1L-&gt;next&#x3D;&#x3D;NULL; 不带头结点单链表为空： 1L&#x3D;&#x3D;NULL;  基本操作1：初始化基本操作2：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构--排序">
-<meta property="og:url" content="http://example.com/2024/05/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:title" content="数据结构速成（更新中）">
+<meta property="og:url" content="http://example.com/2024/06/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Lowlife">
-<meta property="og:description" content="排序内排序、外排序 排序方法一、插入排序1.直接插入排序：稳定？稳定！   2.折半插入排序   3.2-路插入排序   前面三种方法都不可避免的要移动记录   4.表插入排序算法思想：不移动记录增量序列：eg:5,3,1表示数据先每间隔5分成1组，再每间隔3分成1组，以此类推。 算法实现：   123456789101112131415161718192021222324252627282930">
+<meta property="og:description" content="第一部分 线性表一、顺序表注意：线性表中的位序是从1开始，而数组中的元素下标从0开始。储存：一定连续时间复杂度：O(1)   基本操作1：初始化基本操作2：取值基本操作3：按值查找   二、链表存储：非顺序时间复杂度：O(n)   两类：带头结点和不带头结点   带头结点单链表为空： 1L-&gt;next&#x3D;&#x3D;NULL; 不带头结点单链表为空： 1L&#x3D;&#x3D;NULL;  基本操作1：初始化基本操作2：">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2024/06/03/a62466420e0cf236.jpg">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2024/06/03/e02ef988edc106e1.png">
-<meta property="article:published_time" content="2024-05-31T06:03:19.000Z">
-<meta property="article:modified_time" content="2024-06-07T07:18:59.835Z">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2024/06/14/cd7154e63f7e9c59.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2024/06/14/0a91a2db7ca81008.png">
+<meta property="article:published_time" content="2024-06-24T06:03:19.000Z">
+<meta property="article:modified_time" content="2024-06-26T11:54:53.765Z">
 <meta property="article:author" content="4sTr0n0nn1A">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2024/06/03/a62466420e0cf236.jpg">
   
   
   
-  <title>数据结构--排序 - Lowlife</title>
+  <title>数据结构速成（更新中） - Lowlife</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数据结构--排序"></span>
+            <span id="subtitle" data-typed-text="数据结构速成（更新中）"></span>
           
         </div>
 
@@ -210,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-31 14:03" pubdate>
-          May 31, 2024 pm
+        <time datetime="2024-06-24 14:03" pubdate>
+          June 24, 2024 pm
         </time>
       </span>
     
@@ -222,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k words
+          5.6k words
         
       </span>
     
@@ -233,7 +235,7 @@
         
         
         
-          23 mins
+          48 mins
         
       </span>
     
@@ -270,12 +272,50 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数据结构--排序</h1>
+            <h1 id="seo-header">数据结构速成（更新中）</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><p><em>内排序、外排序</em></p>
+                <h1 id="第一部分-线性表"><a href="#第一部分-线性表" class="headerlink" title="第一部分 线性表"></a>第一部分 线性表</h1><h3 id="一、顺序表"><a href="#一、顺序表" class="headerlink" title="一、顺序表"></a>一、顺序表</h3><p>注意：线性表中的位序是从1开始，而数组中的元素下标从0开始。<br>储存：一定连续<br>时间复杂度：O(1)  </p>
+<p><strong>基本操作1：初始化</strong><br><strong>基本操作2：取值</strong><br><strong>基本操作3：按值查找</strong>  </p>
+<h3 id="二、链表"><a href="#二、链表" class="headerlink" title="二、链表"></a>二、链表</h3><p>存储：非顺序<br>时间复杂度：O(n)  </p>
+<p>两类：带头结点和不带头结点  </p>
+<p>带头结点单链表为空：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">L-&gt;next==<span class="hljs-literal">NULL</span>;<br></code></pre></td></tr></table></figure>
+<p>不带头结点单链表为空：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">L==<span class="hljs-literal">NULL</span>;<br></code></pre></td></tr></table></figure>
+
+<p><strong>基本操作1：初始化</strong><br><strong>基本操作2：取值</strong><br><strong>基本操作3：插入</strong><br><strong>基本操作4：删除</strong></p>
+<hr>
+<h1 id="第二部分-栈和队列"><a href="#第二部分-栈和队列" class="headerlink" title="第二部分 栈和队列"></a>第二部分 栈和队列</h1><p>栈的表尾为栈顶，栈的表头为栈顶。只允许栈顶元素出入栈。<font color=orange>先进后出，后进先出。 </font><br>队列只允许在队尾删除，在队顶插入。<font color=orange>先进先出，后进后出。  </font></p>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><h3 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h3><p><font color=red>注意：top指向栈顶元素后一位。  </font></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">S.top==<span class="hljs-number">0</span> <span class="hljs-comment">//栈空  </span><br>S.top==maxsize <span class="hljs-comment">//栈满  </span><br></code></pre></td></tr></table></figure>
+<p><strong>基本操作1：初始化</strong><br><strong>基本操作2：入栈</strong><br><strong>基本操作3：出栈</strong><br><strong>基本操作4：顺序取栈顶元素</strong>  </p>
+<p><em><font color=greee>栈的操作是线性表操作的特例。</font></em>  </p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p><em><font color=greee>链式存储与线性表类似</font></em></p>
+<h3 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h3><p>需要附设front和rear两个指针表示队头和队尾。  </p>
+<p><font color=red>注意：<br>1.front指向队头，rear指向队尾的后一个元素。<br>2.队列空和队列满时，front和rear都指向同一结点。  </font></p>
+<p><font color=greee><em>如何判断队列是空是满？</em><br>1.少用一个元素空间。<br>2.另设一个标志位。</font></p>
+<p><strong>基本操作1：定义储存结构</strong><br><strong>基本操作2：初始化</strong><br><strong>基本操作3：求长度</strong><br><strong>基本操作4：插入新元素</strong><br><strong>基本操作5：删除元素</strong></p>
+<hr>
+<h1 id="第三部分-串、数组、广义表"><a href="#第三部分-串、数组、广义表" class="headerlink" title="第三部分 串、数组、广义表"></a>第三部分 串、数组、广义表</h1><h2 id="串"><a href="#串" class="headerlink" title="串"></a>串</h2><p><strong>储存方式：定长顺序存储、堆分配存储、块链存储</strong>  </p>
+<p>1.定长顺序存储：预定义数组长度，为每个串分配固定长度的存储区。<br>-1.1显式存储串长。<br>–1.1.1以下标为0的数组分量存放（数组）。<br>–1.1.2专设一个字段（结构体）。<br>-1.2隐式存储串长。<br>2.堆分配存储：一组地址连续的存储单元，但存储空间是动态分配。<br>3.串的块链存储：采用链式存储。一个结点可以存储多个字符。结点的字符个数就是结点大小。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><font color=greee><em>数组是线性表的推广，特点是结构中的元素本身可以是具有某种结构的数据，但属于同一数据类型。</em></font><br>一维数组：看作线性表或向量。适合随机查找。<br>二位数组：看作矩阵。不是线性表，是线性表的推广。  </p>
+<h2 id="广义表"><a href="#广义表" class="headerlink" title="广义表"></a>广义表</h2><p>线性表的推广。可以在广义表里面嵌套广义表。<br><strong>长度：</strong>包含数据元素个数。<br><strong>深度：</strong>匹配最多括号的元素的括号层数。  </p>
+<h1 id="第四部分-树和二叉树"><a href="#第四部分-树和二叉树" class="headerlink" title="第四部分 树和二叉树"></a>第四部分 树和二叉树</h1><h2 id="树和二叉树"><a href="#树和二叉树" class="headerlink" title="树和二叉树"></a>树和二叉树</h2><p><strong>树的定义：</strong><br>树是一种非线性的数据结构，它是由n个有限结点组成有层次关系的集合。</p>
+<p>树的特点：<br>每个结点具有0个或多个子结点<br>每个子结点只有一个父结点<br>没有前驱的结点为根结点<br>除了根结点外，每个子结点又可以由m棵不相关的子树组成  </p>
+<p>树的基本术语：<br>1.结点的度：结点拥有的子树数量称为结点的度<br>2.树的度：树内各结点度的最大值，即上图 D 结点的度就是此树的度<br>3.叶子：度为 0 的节点称为叶子或终端节点<br>结点的层次和树的深度<br>4.森林：m棵互不相交的树的集合</p>
+<p><em>二叉树的性质：<br>性质1：在二叉树的第i层上至多有2i-1个结点（i&gt;&#x3D;1）。<br>性质2：深度为k的二叉树至多有2k-1个结点（k&gt;&#x3D;1）。<br>性质3：对任何一棵二叉树T，如果其终端结点数为n0,度为2的结点数为n2，则$n_0$ &#x3D; $n_2+1$。<br>性质4：具有n个结点的完全二叉树的深度为$⌊log_2n⌋ + 1$。<br>性质5：如果对一颗有n个结点的完全二叉树（其深度为$⌊log_2n⌋ + 1$）的结点按层序编号（从第1层到第 $⌊log_2n⌋ + 1$ 层，每层从左到右），对任一结点i(1&lt;&#x3D;i&lt;&#x3D;n)有：<br>a.如果i&#x3D;1，则结点i是二叉树的根，无双亲；b.如果i&gt;1，则其双亲是结点 $⌊i&#x2F;2⌋$；<br>c.如果 2i&gt;n ,则结点 i 无孩子（结点i为叶子结点）；否则其左孩子是结点 2i；<br>d.如果 2i+1&gt;n ,则结点 i 无右孩子；否则其右孩子是结点 2i+1。</em>  </p>
+<p><em>二叉树的存储：顺序（通常用于完全二叉树）、链式</em>  </p>
+<p><em>二叉树的遍历方法：先序、中序、后序、层序<br>1.先序：<br>访问根结点–先序遍历左子树–先序遍历右子树（根左右）<br>2.中序：<br>中序遍历左子树–访问根结点–中序遍历右子树（左根右）<br>3.后序：<br>后序遍历左子树–后序遍历右子树–访问根结点（左右根）<br>4.层序：<br>按层次（1-k层），每层从左到右依次访问二叉树中的每一个结点。</em>  </p>
+<h2 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h2><p><strong>基本概念：</strong><br>1.路径：从一个结点到另一个结点之间的分支序列。<br>2.​路径长度：从一个结点到另一个结点所经过的分支数目。<br>3.​结点的权：根据应用的需要可以给树的结点赋权值。<br>4.​结点的带权路径长度：从根到该结点的路径长度与该结点权的乘积。<br>5.​树的带权路径长度：树中所有叶子结点的带权路径之和$\sum_{k&#x3D;1}^nw_k*l_k$。<br>6.​哈夫曼树：由n个带权叶子结点构成的所有二叉树中带权路径长度最短的二叉树。<br><font color=red>注意：<br>1.n个叶子结点的哈弗曼树有 2n-1 个结点。<br>2. 在构造哈弗曼树时，是从叶子结点向根节点的方向进行的，每次都是两个两个成对的结点来形成一个新的分支结点，所以不存在度为1的结点。</font></p>
+<p><strong>哈夫曼树的构造</strong><br>对于有n个叶子结点，可以构造出多个二叉树。<br>但Huffman树是一个带权路径长度最小的二叉树，又称<em>最优二叉树</em>。<br>方法：<br>（1）将{w1,w2,…….,wn}看成n个二叉树；<br>（2）选择 2 个根结点的值最小（权值最小）的二叉树，构造1个新的二叉树；…….；直至剩1个树止。  </p>
+<h2 id="哈夫曼编码"><a href="#哈夫曼编码" class="headerlink" title="哈夫曼编码"></a>哈夫曼编码</h2><p><strong>前缀码：</strong><br>如果在一个编码系统中，任一个编码都不是其他任何编码的前缀，则称该编码系统中的编码是前缀码。例如，一组编码01,001,010,100,110就不是前缀码，因为01是010的前缀，若去掉01或010就是前缀码。</p>
+<p><strong>哈夫曼编码：</strong><br>对一棵具有n个叶子的哈夫曼树，若对树中的每个左分支赋予0，右分支赋予1，则从根到每个叶子的通路上，各分支的赋值分别构成一个二进制串，该二进制串就称为哈夫曼编码。</p>
+<hr>
+<h1 id="第六部分-图"><a href="#第六部分-图" class="headerlink" title="第六部分 图"></a>第六部分 图</h1><hr>
+<h1 id="第九部分-排序"><a href="#第九部分-排序" class="headerlink" title="第九部分 排序"></a>第九部分 排序</h1><p><em>内排序、外排序</em></p>
 <h2 id="排序方法"><a href="#排序方法" class="headerlink" title="排序方法"></a>排序方法</h2><h3 id="一、插入排序"><a href="#一、插入排序" class="headerlink" title="一、插入排序"></a>一、插入排序</h3><p><strong>1.直接插入排序：稳定？稳定！</strong>  </p>
 <p><strong>2.折半插入排序</strong>  </p>
 <p><strong>3.2-路插入排序</strong>  </p>
@@ -296,6 +336,34 @@
 <p>∴ 堆排序时间复杂度T(n)&#x3D;O(n㏒2n)；空间复杂度S(n)&#x3D;O(1) 。<br>附加空间: 为元素交换时, 所用的临时空间。<br>  </font>  </p>
 <h3 id="四、归并排序（稳定）"><a href="#四、归并排序（稳定）" class="headerlink" title="四、归并排序（稳定）"></a>四、归并排序（稳定）</h3><p><img src="https://s3.bmp.ovh/imgs/2024/06/03/e02ef988edc106e1.png" srcset="/img/loading.gif" lazyload alt="归并排序"><br><strong><font color=red>需要注意的是，每次归并后各个区块的长度不一定相等。</font></strong><br>归并次数为log<sub>2</sub>n，时间复杂度O(n)也是log<sub>2</sub>n，空间复杂度仍为log<sub>2</sub>n。  </p>
 <h3 id="五、基数排序-桶排序-数字排序"><a href="#五、基数排序-桶排序-数字排序" class="headerlink" title="五、基数排序&#x2F;桶排序&#x2F;数字排序"></a>五、基数排序&#x2F;桶排序&#x2F;数字排序</h3><p><em><font color=bluee>与前面四种的不同点：不需要进行关键字的比较和记录的移动。</font></em>  </p>
+<h1 id="查找-搜索"><a href="#查找-搜索" class="headerlink" title="查找&amp;搜索"></a>查找&amp;搜索</h1><p><strong>概念：</strong>  </p>
+<p>i.查找表(Search Table)：相同类型的数据元素(对象)组成的集合，每个元素通常由若干数据项构成。</p>
+<p>ii.关键字(Key，码)：数据元素中某个(或几个)数据项的值，它可以标识一个数据元素。<br>若关键字能唯一标识一个数据元素，则关键字称为主关键字；将能标识若干个数据元素的关键字称为次关键字。  </p>
+<p>iii.查找&#x2F;检索(Searching)：根据给定的Key值，在查找表中确定一个关键字等于给定值的记录或数据元素。<br>查找表中存在满足条件的记录：查找成功；<br>查找结果：所查到的记录信息 或记录在查找表中的位置。<br>查找表中不存在满足条件的记录：查找失败。 </p>
+<p><strong>查找的基本形式：静态、动态</strong>  </p>
+<p>a.静态查找(Static Search)：在查找时只对数据元素进行查询或检索；<br>实施静态查找的查找表  称为静态查找表。</p>
+<p>b.动态查找(Dynamic Search)：在实施查找的同时，插入查找表中不存在的记录，或从查找表中删除已存在的某个记录；<br>实施动态查找的查找表  称为动态查找表。  </p>
+<p><strong>采用何种查找方法？</strong>  </p>
+<p>根据存储结构的不同，查找方法可分为3大类：  </p>
+<p>i.顺序表和链表的查找：将给定的K值与查找表中记录的关键字逐个进行比较， 找到要查找的记录；  </p>
+<p>ii.散列表的查找：根据给定的K值直接访问查找表， 从而找到要查找的记录；  </p>
+<p>iii.索引查找表的查找：首先根据索引确定待查找记录所在的块 ，然后再从块中找到要查找的记录。  </p>
+<p><strong>方法的评价指标</strong></p>
+<p>查找过程中主要操作是：关键字的比较。<br>查找过程中关键字的平均比较次数（平均查找长度<strong>ASL</strong>：<strong>A</strong>verage <strong>S</strong>earch <strong>L</strong>ength）常作为衡量一个查找算法效率高低的标准。<br>ASL定义为：  </p>
+<p><img src="https://s3.bmp.ovh/imgs/2024/06/14/cd7154e63f7e9c59.png" srcset="/img/loading.gif" lazyload></p>
+<p>Pi：查找第i个记录的概率。不失一般性，认为查找每个记录的概率相等，即P1&#x3D;P2&#x3D;…&#x3D;Pn&#x3D;1&#x2F;n；<br>Ci：查找第i个记录需要进行比较的次数。</p>
+<h2 id="1-静态查找"><a href="#1-静态查找" class="headerlink" title="1.静态查找"></a>1.静态查找</h2><p>因为线性表是查找表最简单的一种组织方式，因此本节将介绍 4种(主要的)关于顺序存储结构 的查找方法。<br>a.顺序查找(Sequential Search)<br>b.折半查找(Binary Search)<br>c.分块查找<br>d.Fibonacci查找  </p>
+<h3 id="1-1顺序查找"><a href="#1-1顺序查找" class="headerlink" title="1.1顺序查找"></a>1.1顺序查找</h3><p><strong>思路：</strong><br>从表的一端开始逐个将记录的关键字和给定K值进行比较，<br>若某个记录的关键字和给定K值相等，则查找成功；<br>若扫描完整个表，仍然没有找到相应的记录，则查找失败。  </p>
+<p><strong>样例：</strong><br><img src="https://s3.bmp.ovh/imgs/2024/06/14/0a91a2db7ca81008.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>查找成功 ：</strong><br>查找第n个元素：1 次<br>……….<br>查找第 i个元素： n-i+1 次<br>查找第1个元素： n 次  </p>
+<p><strong>查找失败：</strong>n+1 次(查找元素非a1,a2,…,an)</p>
+<p>算法实现：  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c">```<br>### <span class="hljs-number">1.2</span>折半查找<br>**思路：**  <br>&lt;font color=red&gt;前提条件：查找表中的所有记录是按关键字有序(升序或降序) 。&lt;/font&gt;  <br>查找时，  <br>【首先】确定待查找记录在表中的范围，  <br>【然后】逐步缩小范围（每次将待查记录所在区间缩小一半）  <br>直到：找到 或 找不到 记录为止。  <br><br>**示例：**  <br>查找成功：<br>![](https:<span class="hljs-comment">//s3.bmp.ovh/imgs/2024/06/14/6c700b417f1d9256.png)</span><br>查找不成功：<br>![](https:<span class="hljs-comment">//s3.bmp.ovh/imgs/2024/06/14/036fc8bb898f1360.png)</span><br><br>**算法实现：**<br>```c<br></code></pre></td></tr></table></figure>
+<h3 id="1-3分块查找"><a href="#1-3分块查找" class="headerlink" title="1.3分块查找"></a>1.3分块查找</h3><p><strong>数据组织与查找思想：</strong>  </p>
+<p>1.查找表（不同于普通的数据记录表）的组织<br>将查找表分成几块。<br>块间有序，即第i+1块的所有记录关键字均大于(或小于)第i块记录关键字；块内无序。<br>在查找表的基础上附加一个索引表，<br>索引表是按关键字有序的，索引表中记录的构成（如图所示）；  </p>
+<p>2.分块查找思想<br>A.先确定待查记录所在块， B.再在块内’顺序’查找。  </p>
+<p><strong>算法实现：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -313,8 +381,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数据结构--排序</div>
-      <div>http://example.com/2024/05/31/数据结构/</div>
+      <div>数据结构速成（更新中）</div>
+      <div>http://example.com/2024/06/24/数据结构/</div>
     </div>
     <div class="license-meta">
       
@@ -326,7 +394,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 31, 2024</div>
+          <div>June 24, 2024</div>
         </div>
       
       
@@ -358,18 +426,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" title="汇编语言">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">汇编语言</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/24/hello/" title="hello">
-                        <span class="hidden-mobile">hello</span>
+                      <a href="/2024/06/22/web%E5%AD%A6%E4%B9%A0/" title="web学习">
+                        <span class="hidden-mobile">web学习</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
