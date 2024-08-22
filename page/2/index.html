@@ -193,83 +193,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/06/04/%E5%B8%B8%E8%A7%81RSA%E8%A7%A3%E5%AF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Astronomia001">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/06/04/%E5%B8%B8%E8%A7%81RSA%E8%A7%A3%E5%AF%86/" class="post-title-link" itemprop="url">常见RSA解密</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-06-04 14:57:39" itemprop="dateCreated datePublished" datetime="2024-06-04T14:57:39+08:00">2024-06-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-07-03 11:26:33" itemprop="dateModified" datetime="2024-07-03T11:26:33+08:00">2024-07-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CTF-study/" itemprop="url" rel="index"><span itemprop="name">CTF study</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="常见rsa解密脚本">常见RSA解密脚本</h1>
-<h2 id="已知cnrpq">1.已知c,n,r,p,q</h2>
-<p>例题：[LitCTF2023]</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import gmpy2</span><br><span class="line">from Crypto.Util.number import long_to_bytes</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">q = 189239861511125143212536989589123569301</span><br><span class="line">p = 386123125371923651191219869811293586459</span><br><span class="line"> </span><br><span class="line">e = 65537</span><br><span class="line">c = 28767758880940662779934612526152562406674613203406706867456395986985664083182</span><br><span class="line"></span><br><span class="line">n = q*p</span><br><span class="line"></span><br><span class="line">d = gmpy2.invert(e, (p - 1) * (q - 1))</span><br><span class="line">print(&quot;d=&quot;,d)</span><br><span class="line">m = pow(c, d, n)</span><br><span class="line">print(m)</span><br><span class="line">print(long_to_bytes(m))</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/06/04/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -736,7 +659,7 @@ AqasTg==</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
