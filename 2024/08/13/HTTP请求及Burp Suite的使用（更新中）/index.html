@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"astronomia001.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前言 HTTP请求是客户端（通常是用户的网页浏览器）与服务器之间进行通信的一种方式。它遵循超文本传输协议（HTTP, Hypertext Transfer Protocol）的标准，用于在Web上传输数据。 以下是HTTP请求的基本组成部分和过程： ### 1. HTTP请求的组成部分 一个HTTP请求通常包含以下几个部分： - 请求行：包括请求方法、URL和HTTP版本。 - 请求头">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP请求及Burp Suite的使用（更新中）">
+<meta property="og:url" content="http://astronomia001.github.io/2024/08/13/HTTP%E8%AF%B7%E6%B1%82%E5%8F%8ABurp%20Suite%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言 HTTP请求是客户端（通常是用户的网页浏览器）与服务器之间进行通信的一种方式。它遵循超文本传输协议（HTTP, Hypertext Transfer Protocol）的标准，用于在Web上传输数据。 以下是HTTP请求的基本组成部分和过程： ### 1. HTTP请求的组成部分 一个HTTP请求通常包含以下几个部分： - 请求行：包括请求方法、URL和HTTP版本。 - 请求头">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-13T15:12:49.000Z">
+<meta property="article:modified_time" content="2024-08-21T13:47:39.138Z">
+<meta property="article:author" content="Astronomia001">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://astronomia001.github.io/2024/08/13/HTTP%E8%AF%B7%E6%B1%82%E5%8F%8ABurp%20Suite%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>HTTP请求及Burp Suite的使用（更新中） | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="fa fa-download fa-fw"></i>资源</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/08/13/HTTP%E8%AF%B7%E6%B1%82%E5%8F%8ABurp%20Suite%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HTTP请求及Burp Suite的使用（更新中）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-13 23:12:49" itemprop="dateCreated datePublished" datetime="2024-08-13T23:12:49+08:00">2024-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-08-21 21:47:39" itemprop="dateModified" datetime="2024-08-21T21:47:39+08:00">2024-08-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF-study/" itemprop="url" rel="index"><span itemprop="name">CTF study</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前言">前言</h2>
+<p>HTTP请求是客户端（通常是用户的网页浏览器）与服务器之间进行通信的一种方式。它遵循超文本传输协议（HTTP,
+Hypertext Transfer Protocol）的标准，用于在Web上传输数据。
+以下是HTTP请求的基本组成部分和过程： ### 1. HTTP请求的组成部分
+一个HTTP请求通常包含以下几个部分： -
+<strong>请求行</strong>：包括请求方法、URL和HTTP版本。 -
+<strong>请求头</strong>（Headers）：包含关于客户端环境和请求本身的信息，例如用户代理、内容类型、接受类型等。
+- <strong>空行</strong>：请求头和请求体之间必须有一个空行。 -
+<strong>请求体</strong>（Body）：包含要发送给服务器的数据，不是所有请求都有请求体。
+### 2. HTTP请求方法 以下是一些常见的HTTP请求方法： -
+<strong>GET</strong>：请求指定的资源。 -
+<strong>POST</strong>：向服务器提交数据，通常用于提交表单或上传文件。 -
+<strong>PUT</strong>：更新服务器上的资源。 -
+<strong>DELETE</strong>：删除服务器上的资源。 -
+<strong>HEAD</strong>：类似于GET请求，但服务器不会返回请求体，只返回响应头。
+- <strong>OPTIONS</strong>：用于描述目标资源的通信选项。 -
+<strong>PATCH</strong>：用于对资源进行部分更新。 ### 3. 例子
+以下是一个简单的HTTP GET请求的例子： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GET /index.html HTTP/1.1</span><br><span class="line">Host: www.example.com</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line">Accept-Language: en-US,en;q=0.5</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: keep-alive</span><br></pre></td></tr></table></figure> 在这个例子中： -
+<code>GET</code> 是请求方法。 - <code>/index.html</code> 是请求的资源。
+- <code>HTTP/1.1</code> 是使用的HTTP版本。 - <code>Host</code>
+是请求的服务器地址。 -
+其他行都是请求头，提供了关于客户端环境和请求的附加信息。 ### 4.
+发起HTTP请求 可以通过多种方式发起HTTP请求： -
+<strong>浏览器</strong>：用户在浏览器地址栏输入URL或点击链接时，浏览器会发起HTTP请求。
+-
+<strong>cURL</strong>：命令行工具，常用于服务器端脚本或在命令行中发起HTTP请求。
+-
+<strong>编程语言</strong>：大多数编程语言都提供了HTTP请求的库或模块，例如Python的<code>requests</code>库、JavaScript的<code>fetch</code>
+API等。 ### 5. 响应
+服务器在接收到HTTP请求后，会处理请求并返回一个HTTP响应，响应包含状态码（如200表示成功）、响应头和响应体。
+HTTP请求和响应是Web工作的基础，对于Web开发人员来说，理解HTTP请求的细节对于调试和优化Web应用至关重要。
+# Burp Suite工具（Proxy、Intruder、Repeater）使用 ## 1.Proxy 模块的使用
+Burp
+Suite中的Proxy模块是其中一个最常用和最强大的模块之一，它允许用户拦截、查看和修改Web应用程序的HTTP和HTTPS流量，使用户能够识别和利用各种不同类型的漏洞。Proxy模块又分为四部分，分别是Intercept(拦截)，HTTP
+history，WebSockets history，Option(选项)。</p>
+<p>下面是对四部分的基本解释： 1. <strong>Intercept（拦截）</strong>: -
+拦截功能允许Proxy服务器监控并修改客户端和服务器之间的数据传输。 -
+开发者可以利用这个功能来调试应用，例如查看、修改请求和响应。 -
+安全测试人员可能会用它来注入攻击载荷，测试应用的漏洞。<br />
+- 该模块功能如图所示： <img
+src="https://i-blog.csdnimg.cn/blog_migrate/d4edc8579687a4ae69431e352f5f29a2.png" />
+2. <strong>HTTP history</strong>: -
+HTTP历史记录了通过Proxy的所有HTTP请求的详细信息。 -
+这包括请求的方法、URL、头部信息、发送的数据和从服务器接收的响应。 -
+开发者可以通过历史记录来分析应用的行为，检查错误，优化性能。 -
+该模块功能如图所示： <img
+src="https://i-blog.csdnimg.cn/blog_migrate/8c5d9f68fe52589dcad4eb04362f4926.png" />
+3. <strong>WebSockets history</strong>: -
+WebSocket历史记录了WebSocket连接的详细信息，这包括打开的连接、通过连接发送的消息和从服务器接收的消息。
+-
+WebSocket是一种在单个TCP连接上进行全双工通信的协议，常用于需要快速、实时通信的应用，如在线游戏、实时交易系统等。
+- 通过查看WebSocket历史，开发者可以调试和优化实时通信功能。 -
+该模块功能如图所示： <img
+src="https://i-blog.csdnimg.cn/blog_migrate/fc7c0e91aec7b662c9a13cb425474aff.png" />
+4. <strong>Option（选项）</strong>: - 选项部分允许用户配置Proxy的行为。
+-
+这可能包括设置规则来拦截特定的请求，配置证书用于解密HTTPS流量，设置流量规则，以及调整其他各种代理设置。
+- 通过这些选项，用户可以根据自己的需求定制Proxy的工作方式。 -
+该模块功能如图所示： <img
+src="https://i-blog.csdnimg.cn/blog_migrate/ec979601a91f43a84249ca206eba8977.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/17fe9e2f787479c4da81eb07e323327c.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/d6a8275746d078410d9dbc46354a63e3.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/d6a8275746d078410d9dbc46354a63e3.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/8cc5c2c82bfcef92877ea0c9c311c1d8.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/cb432bfe5e294cb4d37ce38c271c3774.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/cb432bfe5e294cb4d37ce38c271c3774.png" /></p>
+<h2 id="intruder-模块的使用">2.Intruder 模块的使用</h2>
+<p>Burp
+Suite的Intruder模块是一个非常强大的工具，用于自动化定制攻击以发现Web应用程序中的安全漏洞。以下是简要介绍：
+### 功能： 1. <strong>攻击类型</strong>: -
+<strong>Sniper</strong>：使用相同的载荷集合，一次更改一个目标位置。 -
+<strong>Battering
+ram</strong>：使用相同的载荷集合，同时更改所有目标位置。 -
+<strong>Pitchfork</strong>：为每个目标位置使用不同的载荷集合，组合不同的载荷。
+- <strong>Cluster
+bomb</strong>：为每个目标位置使用不同的载荷集合，尝试所有可能的载荷组合。
+2. <strong>目标</strong>: -
+用户可以指定HTTP请求中的哪些部分（如参数、头、cookie等）作为攻击的目标位置。
+3. <strong>载荷</strong>: - Intruder允许用户从文件、自定义列表或内置的
+payloads 列表中选择载荷。 - 支持使用变量和宏来生成复杂的载荷。 4.
+<strong>攻击配置</strong>: -
+用户可以配置攻击的详细信息，如并发线程数、请求延迟、重试策略等。 5.
+<strong>结果分析</strong>: -
+Intruder捕获每个请求的响应，并允许用户根据响应长度、状态码、响应时间或其他自定义参数来筛选和排序结果。
+- 支持使用正则表达式来识别感兴趣的响应模式。 ### 使用步骤： 1.
+<strong>发送请求</strong>: -
+在浏览器或其他Burp工具（如Proxy或Repeater）中捕获一个HTTP请求。 -
+将该请求发送到Intruder模块。 2. <strong>配置攻击</strong>: -
+选择攻击类型。 - 标记目标位置。 - 选择或创建载荷。 3.
+<strong>启动攻击</strong>: - 配置攻击选项并启动攻击。 -
+Intruder开始发送请求并捕获响应。 4. <strong>分析结果</strong>: -
+查看结果表格，分析异常或有趣的响应。 - 使用结果过滤器来识别潜在的漏洞。
+### 应用场景： -
+<strong>密码破解</strong>：通过自动化尝试密码组合来破解登录表单。 -
+<strong>参数篡改</strong>：测试应用程序对异常输入的响应。 -
+<strong>目录/文件枚举</strong>：发现Web服务器上的隐藏目录或文件。 -
+<strong>SQL注入</strong>：检测和利用SQL注入漏洞。</p>
+<p><img
+src="https://i-blog.csdnimg.cn/blog_migrate/e90df3902de09cafcef6d6c7cbf9ca7f.png" /><br />
+该模块界面如上图所示。</p>
+<p>由四个部分组成： 1. Target（目标）：攻击的目标URL或网站。 2.
+Positions（位置）：在HTTP请求中插入负载的位置，如GET参数、POST表单字段等。
+3.
+Payloads（负载）：要插入到请求中的数据，可以是文本、二进制文件或其他类型的数据。
+4.
+Options（选项）：附加的设置或配置，例如攻击类型、延迟时间、重复次数等。</p>
+<h3 id="position部分">Position部分</h3>
+<p><strong>Intruder模块的测试模式分为4种：</strong><br />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/b5229292e85046aac022caf3fb14f406.png" />
+-
+Sniper(Sniper)：逐个地对每个目标参数进行测试。这种方式适用于需要具体指定某个参数值进行测试的情况。<br />
+- Battering
+Ram(破城槌)：选择多个不同的参数值集合作为测试数据进行并行测试，以找出所有可能的漏洞点。这种方式适用于需要大量测试数据的情况。<br />
+-
+Pitchfork(干草叉)：同时对多个参数进行测试，将不同的参数组合在一起进行测试。这种方式适用于需要测试多个参数交互情况的情况。<br />
+- Cluster Bomb(集束炸弹)：类似于Battering
+Ram，不同之处在于它将多个参数值集合作为测试数据，但会对每个参数集合都进行逐次的单元素组合测试。这种方式适用于需要详细测试每个参数值的情况。</p>
+<p>说人话：<br />
+- <strong>Sniper</strong><br />
+就是爆破单个位置，你指定哪就爆破哪<br />
+如下图，就是不同的用户名，密码不变为123456。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zhangsan 123456  </span><br><span class="line">lisi 123456  </span><br><span class="line">wangwu 123456  </span><br></pre></td></tr></table></figure> -
+<strong>Battering Ram</strong><br />
+指定多个位置 他只需要你一个字典文件，所有位置的参数一样。<br />
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">admin admin  </span><br><span class="line">1111 1111  </span><br><span class="line">zhangsan zhangsan  </span><br><span class="line">lisi lisi  </span><br></pre></td></tr></table></figure> - <strong>Pitchfork(干草叉)</strong><br />
+一般加入两个变量值进去，比如说dict1: admin,test,root dict2: 123456,
+admin123,root.<br />
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">admin 123456  </span><br><span class="line">test admin123  </span><br><span class="line">root root  </span><br></pre></td></tr></table></figure> - <strong>Cluster Bomb(集束炸弹)</strong><br />
+一般加入两个变量值进去，比如说dict1: admin,test,root dict2: 123456,
+admin123,root. <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">admin 123456</span><br><span class="line">admin admin123</span><br><span class="line">admin root</span><br><span class="line">test 123456</span><br><span class="line">test admin123</span><br><span class="line">test root</span><br><span class="line">root 123456</span><br><span class="line">root admin123</span><br><span class="line">root root</span><br></pre></td></tr></table></figure></p>
+<h3 id="payloads部分">Payloads部分</h3>
+<p>在Payload
+Type选项中共有：<code>Simple list</code>，<code>Runtime file</code>，<code>Custom iterator</code>，<code>Character substitution</code>，<code>Case modification</code>，<code>Recursive grep</code>，<code>Illegal Unicode</code>，<code>Character blocks</code>，<code>Numbers</code>，<code>Dates</code>，<code>Brute forcer</code>，<code>Null payloads</code>，<code>Character frobber</code>，<code>Bit flipper</code>，<code>Username generator</code>，<code>ECB block shuffler</code>，<code>Extension-generated</code>，<code>Copy other payload</code>
+这18种类型，接下来我将一一介绍。</p>
+<p><strong>1.Simple list(简单列表)</strong><br />
+-
+描述：提供一组预定义的payload列表。这些payload可以是手动输入的，也可以是从文件中导入的。
+- 用途：适用于当已知一组特定的测试用例，需要重复测试这些用例时。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/13f5998e05041f20ede1ae52dc42dcbf.png" /></p>
+<p><strong>2.Runtime file（运行时文件）</strong> -
+描述：引用一个外部文件，该文件在测试过程中可以动态更新。 -
+用途：当payload需要实时更新，或者是从其他工具或脚本生成的动态列表时。
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/ff0813936a7940c31a91b3f12657e970.png" /></p>
+<p><strong>3.Custom iterator(自定义迭代)</strong> -
+描述：基于多个参数的笛卡尔积生成payload。可以设置多个参数，每个参数都有自己的值列表。
+- 用途：用于需要测试大量组合的情况，如参数化攻击。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/67f52444daf97a2ebab1f691e8d8d331.png" /></p>
+<p><strong>4.Character substitution(单个字符替换)</strong><br />
+- 描述：将payload中的字符替换为指定的替代字符。 -
+用途：测试字符编码问题或输入过滤器的绕过。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/311c3e212c6ea7fd70eb29c541544cd0.png" /></p>
+<p><strong>5.Case modification（大小写替换）</strong> -
+描述：生成原始payload的所有大小写变体。 -
+用途：测试应用程序是否对大小写敏感。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/158418619c7df200d078fca60b0031ad.png" /></p>
+<p><strong>6.Recursive grep（递归grep）</strong> -
+描述：从应用程序的响应中提取信息，并使用这些信息作为新的payload。 -
+用途：发现并利用应用程序的动态行为。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/a6f7b9e2f1d91430f595ce4915214575.png" /></p>
+<p><strong>7. Illegal Unicode</strong> -
+描述：生成包含非法Unicode字符序列的payload。 -
+用途：测试应用程序对异常或非法字符序列的处理。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/4a5742563baaae32c2329f759df25c3e.png" /></p>
+<p><strong>8. Character blocks</strong> -
+描述：生成包含预定义字符块（如字母、数字、符号等）的payload。 -
+用途：测试应用程序对特定字符集的过滤和验证。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/11fa18c31c361cf596f2b29cc0ea9f75.png" /></p>
+<p><strong>9. Numbers</strong> -
+描述：生成一系列数字，可以指定起始值、结束值和步长。 -
+用途：测试数字输入字段，例如ID、序列号或日期。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/3edf20d338ab9b7e9ec0a1f24c706358.png" /></p>
+<p><strong>10. Dates</strong><br />
+- 描述：生成一系列日期，可以指定日期格式、起始日期和结束日期。 -
+用途：测试日期输入字段，特别是格式化错误或SQL注入。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/5db1b03c411c4ec9dc257367cb694be9.png" /></p>
+<p><strong>11. Brute forcer</strong> -
+描述：基于预定义的字符集和长度范围生成payload。 -
+用途：用于执行暴力破解攻击，如密码破解。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/c34d905b1695c719884097aa3c22221a.png" /></p>
+<p><strong>12. Null payloads</strong> - 描述：生成空或null的payload。 -
+用途：测试应用程序如何处理空值或缺失的参数。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/c68bbbee38d52e8fb36ea2443b8f6e50.png" /></p>
+<p><strong>13. Character frobber</strong> -
+描述：随机修改原始payload中的字符，通常用于测试缓冲区溢出。 -
+用途：检测应用程序对字符变异的稳健性。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/c4780d56693d7de5692a4a7470edbf4a.png" /></p>
+<p><strong>14. Bit flipper</strong> -
+描述：对原始payload中的每个字符进行位翻转操作。 -
+用途：测试应用程序对数据损坏的敏感度。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/b95195bf9f6e49b5cd37e76f3dbe98bc.png" /></p>
+<p><strong>15. Username generator</strong> -
+描述：结合常见的前缀、后缀和单词列表生成用户名字符串。 -
+用途：用于测试用户认证机制，特别是当需要猜测或枚举用户名时。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/96ee1536136d2204a8872a67e9e45b8e.png" /></p>
+<p><strong>16.ECB block shuffler</strong> -
+描述：这个payload类型专门用于测试基于ECB（Electronic
+Codebook）模式的加密。它会对加密块进行重新排列，以尝试破坏加密数据的完整性或发现模式。
+-
+用途：用于检测加密实现中的弱点，尤其是当使用ECB模式时，该模式因其对相同明文块产生相同密文块的特性而容易受到某些类型攻击的影响。
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/7266d16f33b67d4aac01986ff292fee3.png" /></p>
+<p><strong>17.Extension-generated</strong> -
+描述：这种payload类型允许用户使用Burp
+Suite的扩展来生成payload。这意味着任何编写了Burp扩展的开发者都可以创建自定义的payload生成器。
+-
+用途：当内置的payload类型不足以满足特定测试需求时，可以使用扩展来生成更复杂的payload。
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/3858231f870c2490ef963a67147edbdb.png" /></p>
+<p><strong>18.Copy other payload</strong> -
+描述：这个payload类型允许用户从一个payload位置复制另一个位置的payload。例如，你可以将一个请求参数的值复制到另一个参数中。
+-
+用途：当需要在不同的位置测试相同的payload，或者需要根据其他参数的值动态生成payload时，这个功能非常有用。
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/c5ef76a6817cff29fcfd08b06c46cf8f.png" /></p>
+<h2 id="target-模块的使用">3.Target 模块的使用</h2>
+<p>Target模块是一个功能强大的工具，用于管理和分析在渗透测试期间涉及的目标应用程序。以下是Target模块的简要介绍：
+-
+<strong>功能</strong>：Target模块提供了一个结构化的视图，帮助测试人员理解目标应用程序的结构、功能和潜在的安全漏洞。
+-
+<strong>站点地图</strong>：该模块的核心是站点地图，它以可视化的方式展示应用程序的URL结构，包括所有的页面、目录和参数。
+- <strong>应用程序分析</strong>： -
+<strong>Scope</strong>：允许测试人员定义测试的范围，包括哪些URL应该包含在测试中，哪些应该排除。
+-
+<strong>Annotations</strong>：可以在站点地图上添加注释，记录观察到的信息或未来的测试计划。
+-
+<strong>Issues</strong>：Target模块会显示由其他Burp工具（如Scanner、Intruder等）发现的安全问题。
+- <strong>内容发现</strong>： -
+<strong>Spider</strong>：Target模块可以启动Spider工具来自动发现应用程序的内容。
+-
+<strong>Scanner</strong>：可以启动Scanner工具来自动识别已知的安全漏洞。
+- <strong>手动测试</strong>： -
+<strong>Repeater</strong>：Target模块允许将请求发送到Repeater工具进行手动测试和修改。
+- <strong>Decoder</strong>：可以快速解码或编码URL、HTML实体等。 -
+<strong>配置和监控</strong>： -
+<strong>Cookies</strong>：可以查看和管理应用程序的cookies。 -
+<strong>WebSockets</strong>：支持监控和分析WebSocket通信。 -
+<strong>HTTP请求和响应</strong>：Target模块可以记录所有的HTTP请求和响应，便于后续分析。
+- <strong>报告</strong>： -
+Target模块可以生成详细的报告，总结应用程序的安全状况和发现的问题。</p>
+<p>总的来说，Target模块是Burp
+Suite的一个组织中心，它帮助测试人员更好地理解、管理和测试目标应用程序，同时确保测试活动是有序和高效的。</p>
+<p>接下来我将开始学习如何使用Target模块。</p>
+<h3 id="site-map">1.Site map</h3>
+<h3 id="scope">2.Scope</h3>
+<h3 id="issue-definitions">3.Issue definitions</h3>
+<hr />
+<ul>
+<li><p>声明：本文借鉴自CSDN平台文章</p></li>
+<li><p>原文链接：</p>
+<ul>
+<li>https://blog.csdn.net/Javachichi/article/details/135837378<br />
+</li>
+<li>https://blog.csdn.net/2201_75735270/article/details/137224361</li>
+<li>https://blog.csdn.net/elmoyan/article/details/127243467</li>
+</ul></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Astronomia001
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://astronomia001.github.io/2024/08/13/HTTP%E8%AF%B7%E6%B1%82%E5%8F%8ABurp%20Suite%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="HTTP请求及Burp Suite的使用（更新中）">http://astronomia001.github.io/2024/08/13/HTTP请求及Burp Suite的使用（更新中）/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CTF/" rel="tag"># CTF</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/08/13/SQL%E6%B3%A8%E5%85%A5%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" rel="prev" title="SQL注入（更新中）">
+      <i class="fa fa-chevron-left"></i> SQL注入（更新中）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/08/14/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%EF%BC%88%E5%B7%B2%E5%AE%8C%E7%BB%93%EF%BC%89/" rel="next" title="信息收集（已完结）">
+      信息收集（已完结） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intruder-%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">2.Intruder 模块的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#position%E9%83%A8%E5%88%86"><span class="nav-number">2.1.</span> <span class="nav-text">Position部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#payloads%E9%83%A8%E5%88%86"><span class="nav-number">2.2.</span> <span class="nav-text">Payloads部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#target-%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">3.Target 模块的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#site-map"><span class="nav-number">3.1.</span> <span class="nav-text">1.Site map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scope"><span class="nav-number">3.2.</span> <span class="nav-text">2.Scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#issue-definitions"><span class="nav-number">3.3.</span> <span class="nav-text">3.Issue definitions</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Astronomia001"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Astronomia001</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Astronomia001</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

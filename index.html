@@ -276,8 +276,1236 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/08/14/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%EF%BC%88%E5%B7%B2%E5%AE%8C%E7%BB%93%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/08/14/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%EF%BC%88%E5%B7%B2%E5%AE%8C%E7%BB%93%EF%BC%89/" class="post-title-link" itemprop="url">信息收集（已完结）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-14 18:31:52" itemprop="dateCreated datePublished" datetime="2024-08-14T18:31:52+08:00">2024-08-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-08-22 21:02:29" itemprop="dateModified" datetime="2024-08-22T21:02:29+08:00">2024-08-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF-study/" itemprop="url" rel="index"><span itemprop="name">CTF study</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言">前言</h2>
+<p>网络攻防中的信息收集是网络安全防护和渗透测试过程中的重要环节。这一阶段的目标是尽可能地了解目标系统的详细信息，为后续的安全评估或攻击做准备。以下是一些信息收集的类别和方法：
+### 1. 主动信息收集
+主动信息收集可能会与目标系统产生交互，可能会被目标系统的安全设备检测到。
+-
+<strong>端口扫描</strong>：使用工具如Nmap扫描目标系统开放的端口，了解可能的服务。
+-
+<strong>服务识别</strong>：识别端口上运行的具体服务版本，例如HTTP、FTP、SMTP等。
+- <strong>漏洞扫描</strong>：利用漏洞扫描工具（如 Nessus）扫描已知漏洞。
+-
+<strong>网络拓扑发现</strong>：绘制网络结构图，了解网络设备和它们之间的连接关系。
+### 2. 被动信息收集
+被动信息收集尽量不与目标系统产生直接交互，减少被检测的风险。 -
+<strong>DNS查询</strong>：搜集目标域名的DNS记录，如A记录、MX记录、TXT记录等。
+- <strong>搜索引擎</strong>：利用Google
+hacking等搜索引擎技巧，查找与目标相关的信息。 -
+<strong>社交媒体和论坛</strong>：搜集员工或组织在社交媒体和行业论坛上发布的信息。
+-
+<strong>公开信息查询</strong>：查询目标组织的公开信息，如企业注册信息、员工信息等。
+-
+<strong>网络空间测绘</strong>：使用网络空间测绘工具搜集目标在互联网上的暴露面。
+### 3. 社会工程学
+利用人性的弱点，通过欺骗、引诱等手段从人员那里获取信息。 -
+<strong>钓鱼攻击</strong>：发送带有恶意链接或附件的邮件，诱骗目标点击或下载。
+-
+<strong>伪装身份</strong>：假装成内部人员或合作伙伴，通过电话或邮件套取信息。
+### 工具和技术 - <strong>Whois查询</strong>：查询域名的注册信息。 -
+<strong>网络爬虫</strong>：自动化地从网站上搜集信息。 -
+<strong>Maltego</strong>：一款信息收集和取证工具，可以用来图形化地展示收集到的信息。
+在进行信息收集时，应严格遵守法律法规，不得侵犯个人隐私和网络安全。对于企业和组织来说，了解这些信息收集的方法也很重要，以便采取相应的防护措施，保护自身的信息安全。在中国，网络安全法和相关的法律法规对网络信息收集和使用有严格的规定，任何个人和组织在进行网络信息收集时都应遵循法律规定，不得从事非法侵入、干扰、破坏网络系统的活动。</p>
+<h1 id="域名信息">域名信息</h1>
+<h2 id="whois信息">1.whois信息</h2>
+<p>很多网站上都可以收集到whois信息，比如：<br />
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">国外的who.is：https://who.is/   </span><br><span class="line">站长之家：http://whois.chinaz.com/  </span><br><span class="line">爱站：https://whois.aizhan.com/  </span><br><span class="line">微步：https://x.threatbook.cn/  </span><br></pre></td></tr></table></figure>
+<strong>主要关注：注册商、注册人、邮件、DNS解析服务器、注册人联系电话。</strong><br />
+<font color=greee>小技巧：如果在站长之家上隐藏了信息，可在who.is上再次查看。</font></p>
+<h2 id="查企业的备案信息">2.查企业的备案信息</h2>
+<p>主要有三种方式：<br />
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">天眼查：https://www.tianyancha.com/  </span><br><span class="line">ICP备案查询网：http://www.beianbeian.com/  </span><br><span class="line">国家企业信用信息公示系统：http://www.gsxt.gov.cn/index.html </span><br></pre></td></tr></table></figure>
+<strong>注意：国外的服务器一般来说是查不到的，因为他们不需要备案。国内的基本上都可以查到。</strong></p>
+<h1 id="子域名信息">子域名信息</h1>
+<h2 id="google语法">1.Google语法</h2>
+<p>可以利用Google和Bing这样的搜索引擎进行搜索查询（<code>site:www.xxx.com</code>）<br />
+Google还支持额外的减号运算符，以排除我们对“网站:<code>wikimedia.org -www -store</code>”不感兴趣的子域名。<br />
+## 2.第三方服务器
+有许多第三方服务聚合了大量的DNS数据集，并通过它们来检索给定域名的子域名。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VirusTotal：https://www.virustotal.com/#/home/search </span><br><span class="line">DNSdumpster：https://dnsdumpster.com/ </span><br></pre></td></tr></table></figure> ## 3.Sublist3r
+Sublist3r是一款python开发的子域名枚举工具，通过各种搜索引擎
+（例如Google，Yahoo，Bing，Baidu和Ask）枚举子域。Sublist3r还使用Netcraft，Virustotal，ThreatCrowd，DNSdumpster和ReverseDNS枚举子域。也集合了subbrute的暴力枚举功能。
+## 4.基于SSL证书查询
+查找一个域名证书的最简单方法是使用搜索引擎来收集计算机的CT日志，并让任何搜索引擎搜索它们。前两种比较常用。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://crt.sh/</span><br><span class="line">https://censys.io/</span><br><span class="line">https://developers.facebook.com/tools/ct/</span><br><span class="line">https://google.com/transparencyreport/https/ct/</span><br></pre></td></tr></table></figure> ## 5.简单的在线子域名收集（不推荐） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://phpinfo.me/domain/</span><br><span class="line">http://i.links.cn/subdomain/</span><br></pre></td></tr></table></figure> ##
+6.爆破枚举 这个就有很多工具可以用了，比较常见的是： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">（1）layer子域名挖掘机</span><br><span class="line">（2）subDomainsBrute</span><br><span class="line">（3）K8</span><br><span class="line">（4）orangescan</span><br><span class="line">（5）DNSRecon</span><br></pre></td></tr></table></figure>
+这里重点推荐<code>layaer</code>和<code>subDomainsBrute</code>工具，可以从子域名入侵到主站。</p>
+<p><font color=greee>小技巧：在https://github.com/
+上也可以搜索子域名，运气好的话，会有意想不到的收获。</font></p>
+<h1 id="端口">端口</h1>
+<p>很多时候，网站都会开启CDN加速，导致我们查询到的IP不是真实的IP，所以得先查询到真实的IP地址。</p>
+<ul>
+<li><p>通过让服务器给你发邮件(看邮箱头源 ip
+)找真实ip（最可靠）。</p></li>
+<li><p>通过 zmpap 全网爆破查询真实ip（可靠）。</p></li>
+<li><p>通过查询域名历史ip，http://toolbar.netcraft.com（借鉴）。</p></li>
+<li><p>通过国外冷门的DNS的查询：nslookup
+xxx.com国外冷门DNS地址（借鉴）。</p></li>
+</ul>
+<p>收集到大量IP，那就要进行端口扫描了，看看有什么常见的漏洞。</p>
+<p><em>kali linux自带NAMP可以扫描</em><br />
+<em>教程：https://blog.csdn.net/2302_82189125/article/details/135961736</em></p>
+<p>知名端口漏洞<br />
+Github
+详情：https://github.com/BestBDs/port-bug/blob/master/%E5%B8%B8%E8%A7%81%E7%AB%AF%E5%8F%A3%E6%BC%8F%E6%B4%9E</p>
+<h1 id="网站架构探测">网站架构探测</h1>
+<p>当我们探测目标站点网站架构时，比如操作系统，中间件，脚本语言，数据库，服务器，web容器等等，可以使用以下方法查询。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wappalyzer插件——火狐插件</span><br><span class="line">云悉：http://www.yunsee.cn/info.html</span><br><span class="line">查看数据包响应头</span><br><span class="line">CMS指纹识别：http://whatweb.bugscaner.com/look/ </span><br></pre></td></tr></table></figure>
+CMS指纹识别又有很多方法，比如说御剑指纹识别、Webrobot工具、whatweb工具、还有在线查询的网站等等。</p>
+<p><em>kali linux自带whatweb可以扫描</em><br />
+<em>教程：https://blog.csdn.net/2302_82189125/article/details/135976188</em></p>
+<h1 id="敏感信息收集">敏感信息收集</h1>
+<p>通常我们所说的敏感文件、敏感目录大概有以下几种： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Git</span><br><span class="line">hg/Mercurial</span><br><span class="line">svn/Subversion</span><br><span class="line">bzr/Bazaar</span><br><span class="line">Cvs</span><br><span class="line">WEB-INF泄露</span><br><span class="line">备份文件泄露、配置文件泄露</span><br></pre></td></tr></table></figure>
+敏感文件、敏感目录挖掘一般都是靠工具、脚本来找。 ## 1.谷歌黑客
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">site：指定域名</span><br><span class="line">inurl：指定url中存在的关键字</span><br><span class="line">intext：指定网页正文中的关键字</span><br><span class="line">filetype：指定文件类型</span><br><span class="line">intitle：指定网页标题中的关键字</span><br><span class="line">link：返回所有和link做了链接的url</span><br><span class="line">info：查找指定站点的一些基本信息</span><br><span class="line">cache：搜索Google里关于某些内容的缓存</span><br></pre></td></tr></table></figure> <img
+src="https://s3.bmp.ovh/imgs/2024/08/14/46828bf9d91923f3.png" /> ##
+2.国内/外IP地址查询 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">国内：https://www.17ce.com/</span><br><span class="line">国外：https://asm.ca.com/en/ping.php</span><br></pre></td></tr></table></figure> ## 3.绕过CDN查询IP地址
+https://www.virustotal.com/gui/</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/08/13/HTTP%E8%AF%B7%E6%B1%82%E5%8F%8ABurp%20Suite%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/08/13/HTTP%E8%AF%B7%E6%B1%82%E5%8F%8ABurp%20Suite%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" class="post-title-link" itemprop="url">HTTP请求及Burp Suite的使用（更新中）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-13 23:12:49" itemprop="dateCreated datePublished" datetime="2024-08-13T23:12:49+08:00">2024-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-08-21 21:47:39" itemprop="dateModified" datetime="2024-08-21T21:47:39+08:00">2024-08-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF-study/" itemprop="url" rel="index"><span itemprop="name">CTF study</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言">前言</h2>
+<p>HTTP请求是客户端（通常是用户的网页浏览器）与服务器之间进行通信的一种方式。它遵循超文本传输协议（HTTP,
+Hypertext Transfer Protocol）的标准，用于在Web上传输数据。
+以下是HTTP请求的基本组成部分和过程： ### 1. HTTP请求的组成部分
+一个HTTP请求通常包含以下几个部分： -
+<strong>请求行</strong>：包括请求方法、URL和HTTP版本。 -
+<strong>请求头</strong>（Headers）：包含关于客户端环境和请求本身的信息，例如用户代理、内容类型、接受类型等。
+- <strong>空行</strong>：请求头和请求体之间必须有一个空行。 -
+<strong>请求体</strong>（Body）：包含要发送给服务器的数据，不是所有请求都有请求体。
+### 2. HTTP请求方法 以下是一些常见的HTTP请求方法： -
+<strong>GET</strong>：请求指定的资源。 -
+<strong>POST</strong>：向服务器提交数据，通常用于提交表单或上传文件。 -
+<strong>PUT</strong>：更新服务器上的资源。 -
+<strong>DELETE</strong>：删除服务器上的资源。 -
+<strong>HEAD</strong>：类似于GET请求，但服务器不会返回请求体，只返回响应头。
+- <strong>OPTIONS</strong>：用于描述目标资源的通信选项。 -
+<strong>PATCH</strong>：用于对资源进行部分更新。 ### 3. 例子
+以下是一个简单的HTTP GET请求的例子： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GET /index.html HTTP/1.1</span><br><span class="line">Host: www.example.com</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line">Accept-Language: en-US,en;q=0.5</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: keep-alive</span><br></pre></td></tr></table></figure> 在这个例子中： -
+<code>GET</code> 是请求方法。 - <code>/index.html</code> 是请求的资源。
+- <code>HTTP/1.1</code> 是使用的HTTP版本。 - <code>Host</code>
+是请求的服务器地址。 -
+其他行都是请求头，提供了关于客户端环境和请求的附加信息。 ### 4.
+发起HTTP请求 可以通过多种方式发起HTTP请求： -
+<strong>浏览器</strong>：用户在浏览器地址栏输入URL或点击链接时，浏览器会发起HTTP请求。
+-
+<strong>cURL</strong>：命令行工具，常用于服务器端脚本或在命令行中发起HTTP请求。
+-
+<strong>编程语言</strong>：大多数编程语言都提供了HTTP请求的库或模块，例如Python的<code>requests</code>库、JavaScript的<code>fetch</code>
+API等。 ### 5. 响应
+服务器在接收到HTTP请求后，会处理请求并返回一个HTTP响应，响应包含状态码（如200表示成功）、响应头和响应体。
+HTTP请求和响应是Web工作的基础，对于Web开发人员来说，理解HTTP请求的细节对于调试和优化Web应用至关重要。
+# Burp Suite工具（Proxy、Intruder、Repeater）使用 ## 1.Proxy 模块的使用
+Burp
+Suite中的Proxy模块是其中一个最常用和最强大的模块之一，它允许用户拦截、查看和修改Web应用程序的HTTP和HTTPS流量，使用户能够识别和利用各种不同类型的漏洞。Proxy模块又分为四部分，分别是Intercept(拦截)，HTTP
+history，WebSockets history，Option(选项)。</p>
+<p>下面是对四部分的基本解释： 1. <strong>Intercept（拦截）</strong>: -
+拦截功能允许Proxy服务器监控并修改客户端和服务器之间的数据传输。 -
+开发者可以利用这个功能来调试应用，例如查看、修改请求和响应。 -
+安全测试人员可能会用它来注入攻击载荷，测试应用的漏洞。<br />
+- 该模块功能如图所示： <img
+src="https://i-blog.csdnimg.cn/blog_migrate/d4edc8579687a4ae69431e352f5f29a2.png" />
+2. <strong>HTTP history</strong>: -
+HTTP历史记录了通过Proxy的所有HTTP请求的详细信息。 -
+这包括请求的方法、URL、头部信息、发送的数据和从服务器接收的响应。 -
+开发者可以通过历史记录来分析应用的行为，检查错误，优化性能。 -
+该模块功能如图所示： <img
+src="https://i-blog.csdnimg.cn/blog_migrate/8c5d9f68fe52589dcad4eb04362f4926.png" />
+3. <strong>WebSockets history</strong>: -
+WebSocket历史记录了WebSocket连接的详细信息，这包括打开的连接、通过连接发送的消息和从服务器接收的消息。
+-
+WebSocket是一种在单个TCP连接上进行全双工通信的协议，常用于需要快速、实时通信的应用，如在线游戏、实时交易系统等。
+- 通过查看WebSocket历史，开发者可以调试和优化实时通信功能。 -
+该模块功能如图所示： <img
+src="https://i-blog.csdnimg.cn/blog_migrate/fc7c0e91aec7b662c9a13cb425474aff.png" />
+4. <strong>Option（选项）</strong>: - 选项部分允许用户配置Proxy的行为。
+-
+这可能包括设置规则来拦截特定的请求，配置证书用于解密HTTPS流量，设置流量规则，以及调整其他各种代理设置。
+- 通过这些选项，用户可以根据自己的需求定制Proxy的工作方式。 -
+该模块功能如图所示： <img
+src="https://i-blog.csdnimg.cn/blog_migrate/ec979601a91f43a84249ca206eba8977.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/17fe9e2f787479c4da81eb07e323327c.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/d6a8275746d078410d9dbc46354a63e3.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/d6a8275746d078410d9dbc46354a63e3.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/8cc5c2c82bfcef92877ea0c9c311c1d8.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/cb432bfe5e294cb4d37ce38c271c3774.png" />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/cb432bfe5e294cb4d37ce38c271c3774.png" /></p>
+<h2 id="intruder-模块的使用">2.Intruder 模块的使用</h2>
+<p>Burp
+Suite的Intruder模块是一个非常强大的工具，用于自动化定制攻击以发现Web应用程序中的安全漏洞。以下是简要介绍：
+### 功能： 1. <strong>攻击类型</strong>: -
+<strong>Sniper</strong>：使用相同的载荷集合，一次更改一个目标位置。 -
+<strong>Battering
+ram</strong>：使用相同的载荷集合，同时更改所有目标位置。 -
+<strong>Pitchfork</strong>：为每个目标位置使用不同的载荷集合，组合不同的载荷。
+- <strong>Cluster
+bomb</strong>：为每个目标位置使用不同的载荷集合，尝试所有可能的载荷组合。
+2. <strong>目标</strong>: -
+用户可以指定HTTP请求中的哪些部分（如参数、头、cookie等）作为攻击的目标位置。
+3. <strong>载荷</strong>: - Intruder允许用户从文件、自定义列表或内置的
+payloads 列表中选择载荷。 - 支持使用变量和宏来生成复杂的载荷。 4.
+<strong>攻击配置</strong>: -
+用户可以配置攻击的详细信息，如并发线程数、请求延迟、重试策略等。 5.
+<strong>结果分析</strong>: -
+Intruder捕获每个请求的响应，并允许用户根据响应长度、状态码、响应时间或其他自定义参数来筛选和排序结果。
+- 支持使用正则表达式来识别感兴趣的响应模式。 ### 使用步骤： 1.
+<strong>发送请求</strong>: -
+在浏览器或其他Burp工具（如Proxy或Repeater）中捕获一个HTTP请求。 -
+将该请求发送到Intruder模块。 2. <strong>配置攻击</strong>: -
+选择攻击类型。 - 标记目标位置。 - 选择或创建载荷。 3.
+<strong>启动攻击</strong>: - 配置攻击选项并启动攻击。 -
+Intruder开始发送请求并捕获响应。 4. <strong>分析结果</strong>: -
+查看结果表格，分析异常或有趣的响应。 - 使用结果过滤器来识别潜在的漏洞。
+### 应用场景： -
+<strong>密码破解</strong>：通过自动化尝试密码组合来破解登录表单。 -
+<strong>参数篡改</strong>：测试应用程序对异常输入的响应。 -
+<strong>目录/文件枚举</strong>：发现Web服务器上的隐藏目录或文件。 -
+<strong>SQL注入</strong>：检测和利用SQL注入漏洞。</p>
+<p><img
+src="https://i-blog.csdnimg.cn/blog_migrate/e90df3902de09cafcef6d6c7cbf9ca7f.png" /><br />
+该模块界面如上图所示。</p>
+<p>由四个部分组成： 1. Target（目标）：攻击的目标URL或网站。 2.
+Positions（位置）：在HTTP请求中插入负载的位置，如GET参数、POST表单字段等。
+3.
+Payloads（负载）：要插入到请求中的数据，可以是文本、二进制文件或其他类型的数据。
+4.
+Options（选项）：附加的设置或配置，例如攻击类型、延迟时间、重复次数等。</p>
+<h3 id="position部分">Position部分</h3>
+<p><strong>Intruder模块的测试模式分为4种：</strong><br />
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/b5229292e85046aac022caf3fb14f406.png" />
+-
+Sniper(Sniper)：逐个地对每个目标参数进行测试。这种方式适用于需要具体指定某个参数值进行测试的情况。<br />
+- Battering
+Ram(破城槌)：选择多个不同的参数值集合作为测试数据进行并行测试，以找出所有可能的漏洞点。这种方式适用于需要大量测试数据的情况。<br />
+-
+Pitchfork(干草叉)：同时对多个参数进行测试，将不同的参数组合在一起进行测试。这种方式适用于需要测试多个参数交互情况的情况。<br />
+- Cluster Bomb(集束炸弹)：类似于Battering
+Ram，不同之处在于它将多个参数值集合作为测试数据，但会对每个参数集合都进行逐次的单元素组合测试。这种方式适用于需要详细测试每个参数值的情况。</p>
+<p>说人话：<br />
+- <strong>Sniper</strong><br />
+就是爆破单个位置，你指定哪就爆破哪<br />
+如下图，就是不同的用户名，密码不变为123456。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zhangsan 123456  </span><br><span class="line">lisi 123456  </span><br><span class="line">wangwu 123456  </span><br></pre></td></tr></table></figure> -
+<strong>Battering Ram</strong><br />
+指定多个位置 他只需要你一个字典文件，所有位置的参数一样。<br />
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">admin admin  </span><br><span class="line">1111 1111  </span><br><span class="line">zhangsan zhangsan  </span><br><span class="line">lisi lisi  </span><br></pre></td></tr></table></figure> - <strong>Pitchfork(干草叉)</strong><br />
+一般加入两个变量值进去，比如说dict1: admin,test,root dict2: 123456,
+admin123,root.<br />
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">admin 123456  </span><br><span class="line">test admin123  </span><br><span class="line">root root  </span><br></pre></td></tr></table></figure> - <strong>Cluster Bomb(集束炸弹)</strong><br />
+一般加入两个变量值进去，比如说dict1: admin,test,root dict2: 123456,
+admin123,root. <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">admin 123456</span><br><span class="line">admin admin123</span><br><span class="line">admin root</span><br><span class="line">test 123456</span><br><span class="line">test admin123</span><br><span class="line">test root</span><br><span class="line">root 123456</span><br><span class="line">root admin123</span><br><span class="line">root root</span><br></pre></td></tr></table></figure></p>
+<h3 id="payloads部分">Payloads部分</h3>
+<p>在Payload
+Type选项中共有：<code>Simple list</code>，<code>Runtime file</code>，<code>Custom iterator</code>，<code>Character substitution</code>，<code>Case modification</code>，<code>Recursive grep</code>，<code>Illegal Unicode</code>，<code>Character blocks</code>，<code>Numbers</code>，<code>Dates</code>，<code>Brute forcer</code>，<code>Null payloads</code>，<code>Character frobber</code>，<code>Bit flipper</code>，<code>Username generator</code>，<code>ECB block shuffler</code>，<code>Extension-generated</code>，<code>Copy other payload</code>
+这18种类型，接下来我将一一介绍。</p>
+<p><strong>1.Simple list(简单列表)</strong><br />
+-
+描述：提供一组预定义的payload列表。这些payload可以是手动输入的，也可以是从文件中导入的。
+- 用途：适用于当已知一组特定的测试用例，需要重复测试这些用例时。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/13f5998e05041f20ede1ae52dc42dcbf.png" /></p>
+<p><strong>2.Runtime file（运行时文件）</strong> -
+描述：引用一个外部文件，该文件在测试过程中可以动态更新。 -
+用途：当payload需要实时更新，或者是从其他工具或脚本生成的动态列表时。
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/ff0813936a7940c31a91b3f12657e970.png" /></p>
+<p><strong>3.Custom iterator(自定义迭代)</strong> -
+描述：基于多个参数的笛卡尔积生成payload。可以设置多个参数，每个参数都有自己的值列表。
+- 用途：用于需要测试大量组合的情况，如参数化攻击。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/67f52444daf97a2ebab1f691e8d8d331.png" /></p>
+<p><strong>4.Character substitution(单个字符替换)</strong><br />
+- 描述：将payload中的字符替换为指定的替代字符。 -
+用途：测试字符编码问题或输入过滤器的绕过。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/311c3e212c6ea7fd70eb29c541544cd0.png" /></p>
+<p><strong>5.Case modification（大小写替换）</strong> -
+描述：生成原始payload的所有大小写变体。 -
+用途：测试应用程序是否对大小写敏感。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/158418619c7df200d078fca60b0031ad.png" /></p>
+<p><strong>6.Recursive grep（递归grep）</strong> -
+描述：从应用程序的响应中提取信息，并使用这些信息作为新的payload。 -
+用途：发现并利用应用程序的动态行为。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/a6f7b9e2f1d91430f595ce4915214575.png" /></p>
+<p><strong>7. Illegal Unicode</strong> -
+描述：生成包含非法Unicode字符序列的payload。 -
+用途：测试应用程序对异常或非法字符序列的处理。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/4a5742563baaae32c2329f759df25c3e.png" /></p>
+<p><strong>8. Character blocks</strong> -
+描述：生成包含预定义字符块（如字母、数字、符号等）的payload。 -
+用途：测试应用程序对特定字符集的过滤和验证。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/11fa18c31c361cf596f2b29cc0ea9f75.png" /></p>
+<p><strong>9. Numbers</strong> -
+描述：生成一系列数字，可以指定起始值、结束值和步长。 -
+用途：测试数字输入字段，例如ID、序列号或日期。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/3edf20d338ab9b7e9ec0a1f24c706358.png" /></p>
+<p><strong>10. Dates</strong><br />
+- 描述：生成一系列日期，可以指定日期格式、起始日期和结束日期。 -
+用途：测试日期输入字段，特别是格式化错误或SQL注入。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/5db1b03c411c4ec9dc257367cb694be9.png" /></p>
+<p><strong>11. Brute forcer</strong> -
+描述：基于预定义的字符集和长度范围生成payload。 -
+用途：用于执行暴力破解攻击，如密码破解。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/c34d905b1695c719884097aa3c22221a.png" /></p>
+<p><strong>12. Null payloads</strong> - 描述：生成空或null的payload。 -
+用途：测试应用程序如何处理空值或缺失的参数。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/c68bbbee38d52e8fb36ea2443b8f6e50.png" /></p>
+<p><strong>13. Character frobber</strong> -
+描述：随机修改原始payload中的字符，通常用于测试缓冲区溢出。 -
+用途：检测应用程序对字符变异的稳健性。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/c4780d56693d7de5692a4a7470edbf4a.png" /></p>
+<p><strong>14. Bit flipper</strong> -
+描述：对原始payload中的每个字符进行位翻转操作。 -
+用途：测试应用程序对数据损坏的敏感度。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/b95195bf9f6e49b5cd37e76f3dbe98bc.png" /></p>
+<p><strong>15. Username generator</strong> -
+描述：结合常见的前缀、后缀和单词列表生成用户名字符串。 -
+用途：用于测试用户认证机制，特别是当需要猜测或枚举用户名时。 <img
+src="https://i-blog.csdnimg.cn/blog_migrate/96ee1536136d2204a8872a67e9e45b8e.png" /></p>
+<p><strong>16.ECB block shuffler</strong> -
+描述：这个payload类型专门用于测试基于ECB（Electronic
+Codebook）模式的加密。它会对加密块进行重新排列，以尝试破坏加密数据的完整性或发现模式。
+-
+用途：用于检测加密实现中的弱点，尤其是当使用ECB模式时，该模式因其对相同明文块产生相同密文块的特性而容易受到某些类型攻击的影响。
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/7266d16f33b67d4aac01986ff292fee3.png" /></p>
+<p><strong>17.Extension-generated</strong> -
+描述：这种payload类型允许用户使用Burp
+Suite的扩展来生成payload。这意味着任何编写了Burp扩展的开发者都可以创建自定义的payload生成器。
+-
+用途：当内置的payload类型不足以满足特定测试需求时，可以使用扩展来生成更复杂的payload。
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/3858231f870c2490ef963a67147edbdb.png" /></p>
+<p><strong>18.Copy other payload</strong> -
+描述：这个payload类型允许用户从一个payload位置复制另一个位置的payload。例如，你可以将一个请求参数的值复制到另一个参数中。
+-
+用途：当需要在不同的位置测试相同的payload，或者需要根据其他参数的值动态生成payload时，这个功能非常有用。
+<img
+src="https://i-blog.csdnimg.cn/blog_migrate/c5ef76a6817cff29fcfd08b06c46cf8f.png" /></p>
+<h2 id="target-模块的使用">3.Target 模块的使用</h2>
+<p>Target模块是一个功能强大的工具，用于管理和分析在渗透测试期间涉及的目标应用程序。以下是Target模块的简要介绍：
+-
+<strong>功能</strong>：Target模块提供了一个结构化的视图，帮助测试人员理解目标应用程序的结构、功能和潜在的安全漏洞。
+-
+<strong>站点地图</strong>：该模块的核心是站点地图，它以可视化的方式展示应用程序的URL结构，包括所有的页面、目录和参数。
+- <strong>应用程序分析</strong>： -
+<strong>Scope</strong>：允许测试人员定义测试的范围，包括哪些URL应该包含在测试中，哪些应该排除。
+-
+<strong>Annotations</strong>：可以在站点地图上添加注释，记录观察到的信息或未来的测试计划。
+-
+<strong>Issues</strong>：Target模块会显示由其他Burp工具（如Scanner、Intruder等）发现的安全问题。
+- <strong>内容发现</strong>： -
+<strong>Spider</strong>：Target模块可以启动Spider工具来自动发现应用程序的内容。
+-
+<strong>Scanner</strong>：可以启动Scanner工具来自动识别已知的安全漏洞。
+- <strong>手动测试</strong>： -
+<strong>Repeater</strong>：Target模块允许将请求发送到Repeater工具进行手动测试和修改。
+- <strong>Decoder</strong>：可以快速解码或编码URL、HTML实体等。 -
+<strong>配置和监控</strong>： -
+<strong>Cookies</strong>：可以查看和管理应用程序的cookies。 -
+<strong>WebSockets</strong>：支持监控和分析WebSocket通信。 -
+<strong>HTTP请求和响应</strong>：Target模块可以记录所有的HTTP请求和响应，便于后续分析。
+- <strong>报告</strong>： -
+Target模块可以生成详细的报告，总结应用程序的安全状况和发现的问题。</p>
+<p>总的来说，Target模块是Burp
+Suite的一个组织中心，它帮助测试人员更好地理解、管理和测试目标应用程序，同时确保测试活动是有序和高效的。</p>
+<p>接下来我将开始学习如何使用Target模块。</p>
+<h3 id="site-map">1.Site map</h3>
+<h3 id="scope">2.Scope</h3>
+<h3 id="issue-definitions">3.Issue definitions</h3>
+<hr />
+<ul>
+<li><p>声明：本文借鉴自CSDN平台文章</p></li>
+<li><p>原文链接：</p>
+<ul>
+<li>https://blog.csdn.net/Javachichi/article/details/135837378<br />
+</li>
+<li>https://blog.csdn.net/2201_75735270/article/details/137224361</li>
+<li>https://blog.csdn.net/elmoyan/article/details/127243467</li>
+</ul></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/08/13/SQL%E6%B3%A8%E5%85%A5%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/08/13/SQL%E6%B3%A8%E5%85%A5%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" class="post-title-link" itemprop="url">SQL注入（更新中）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-13 23:12:17" itemprop="dateCreated datePublished" datetime="2024-08-13T23:12:17+08:00">2024-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-08-20 20:14:13" itemprop="dateModified" datetime="2024-08-20T20:14:13+08:00">2024-08-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF-study/" itemprop="url" rel="index"><span itemprop="name">CTF study</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言">前言</h2>
+<p>SQL注入是一种常见的网络攻击技术，它主要针对基于SQL语言的数据库系统。攻击者通过在Web应用的输入字段或者URL参数中输入恶意的SQL代码，这些代码在后端数据库执行时，能够绕过正常的访问控制，非法读取、修改、删除数据库中的数据，甚至有可能控制数据库管理系统。
+下面简要介绍一下SQL注入的工作原理： 1.
+<strong>输入验证不严格</strong>：当应用程序没有正确地验证或者转义用户的输入，就有可能发生SQL注入。
+2.
+<strong>构造恶意输入</strong>：攻击者会在输入字段中输入特殊的SQL语句片段，这些片段会在原有SQL查询的基础上，改变其语义。
+3.
+<strong>SQL语句拼接</strong>：应用程序在处理用户输入时，如果没有正确处理，可能会直接将其拼接到SQL查询语句中。
+4.
+<strong>执行恶意SQL</strong>：拼接后的SQL语句被发送到数据库执行，恶意部分也得以执行。
+5.
+<strong>获取数据或权限</strong>：通过执行恶意的SQL语句，攻击者可以读取敏感数据、修改数据库内容、甚至执行数据库管理系统中的命令。
+例如，一个基于SQL的登录查询，如果不对用户输入进行适当的处理，可能如下：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;[用户输入的用户名]&#x27;</span> <span class="keyword">AND</span> password <span class="operator">=</span> <span class="string">&#x27;[用户输入的密码]&#x27;</span></span><br></pre></td></tr></table></figure> 如果攻击者在用户名输入框中输入
+<code>admin' --</code>（注意，这里 <code>--</code>
+是SQL中的注释符号，表示其后的内容被忽略），那么实际的SQL查询可能会变成：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;admin&#x27;</span> <span class="comment">--&#x27; AND password = &#x27;[任何密码]&#x27;</span></span><br></pre></td></tr></table></figure>
+这样，密码部分被注释掉，攻击者无需知道密码即可通过认证。</p>
+<p><strong>防护措施</strong>： - 使用预编译的SQL语句（参数化查询）。 -
+对所有用户输入进行严格的验证和转义。 -
+限制数据库操作的权限，遵循最小权限原则。 -
+定期进行安全审计和测试，包括SQL注入漏洞的检测。 -
+使用专业的安全工具和框架来防御SQL注入攻击。
+了解和防范SQL注入攻击对于保障网络安全至关重要。在中国，网络安全法也强调了网络产品和服务提供者在安全方面的责任，要求采取措施防范网络违法犯罪活动，保障网络数据的安全。</p>
+<p>接下来我将开始学习关于SQL注入的内容。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/08/13/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/08/13/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">流量分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-13 23:10:37" itemprop="dateCreated datePublished" datetime="2024-08-13T23:10:37+08:00">2024-08-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/08/13/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/08/13/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" class="post-title-link" itemprop="url">图片隐写</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-13 23:10:02" itemprop="dateCreated datePublished" datetime="2024-08-13T23:10:02+08:00">2024-08-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/08/01/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AB%9E%E8%B5%9B%E5%9F%B9%E8%AE%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/08/01/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AB%9E%E8%B5%9B%E5%9F%B9%E8%AE%AD/" class="post-title-link" itemprop="url">数学建模竞赛培训</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-01 23:04:49" itemprop="dateCreated datePublished" datetime="2024-08-01T23:04:49+08:00">2024-08-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-08-03 21:36:50" itemprop="dateModified" datetime="2024-08-03T21:36:50+08:00">2024-08-03</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="数学建模竞赛介绍">数学建模竞赛介绍</h1>
+<p>全国大学生数学建模竞赛（CUMCM）<br />
+时间：2024.9.5 18：00 至 2024.9.8 20：00 共74小时<br />
+题目：三选一<br />
+报名费：CNY300<br />
+<img
+src="https://s3.bmp.ovh/imgs/2024/08/02/042aa8037db40eda.png" /></p>
+<h1 id="线性规划和整数规划模型">线性规划和整数规划模型</h1>
+<p>eg1:
+2023年高教社杯全国大学生数学建模竞赛题目A题:定日镜场的优化设计</p>
+<h1 id="非线性规划和多目标规范模型">非线性规划和多目标规范模型</h1>
+<h1 id="常微分方程">常微分方程</h1>
+<h1 id="差分方程">差分方程</h1>
+<h1 id="偏微分方程">偏微分方程</h1>
+<p>偏微分方程用于求解有明显公式的物理问题。例如：<span
+class="math inline">\(F=ma\)</span>，<span
+class="math inline">\(E_k=mgh\)</span>，<span
+class="math inline">\(v=ds/dt\)</span><br />
+引例：热传导方程：<span class="math inline">\(u_t=k\Delta
+u\)</span><br />
+## 1.三类偏微分方程的定解问题 ### 1.1 ### 1.2 ### 1.3
+双曲型偏微分方程</p>
+<h1 id="python数学建模基础">Python数学建模基础</h1>
+<h1 id="插值方法">插值方法</h1>
+<h1 id="最短路问题最小生成树问题">最短路问题、最小生成树问题</h1>
+<h1 id="最大流与最小费用问题">最大流与最小费用问题</h1>
+<h1 id="背包问题指派问题旅行商问题">背包问题、指派问题、旅行商问题</h1>
+<h1 id="智能优化算法">智能优化算法</h1>
+<h1 id="matlab软件处理1">Matlab软件处理1</h1>
+<h1 id="matlab软件处理2">Matlab软件处理2</h1>
+<h1 id="数据处理方法python">数据处理方法（Python）</h1>
+<h1 id="统计分析方法">统计分析方法</h1>
+<h1 id="回归模型与分析">回归模型与分析</h1>
+<h1 id="聚类分析方法与判别分析">聚类分析方法与判别分析</h1>
+<h1 id="主成分分析方法数据降维">主成分分析方法（数据降维）</h1>
+<h1 id="预测方法">预测方法</h1>
+<h1 id="spss统计分析">SPSS统计分析</h1>
+<h1 id="几何模型">几何模型</h1>
+<h1 id="博弈模型">博弈模型</h1>
+<h1 id="综合评价方法">综合评价方法</h1>
+<h1 id="数字图像处理">数字图像处理</h1>
+<h1 id="数学建模竞赛论文写作">数学建模竞赛论文写作</h1>
+<h1
+id="年全国大学生数学建模竞赛a题">2022年全国大学生数学建模竞赛A题</h1>
+<h1
+id="年全国大学生数学建模竞赛b题">2022年全国大学生数学建模竞赛B题</h1>
+<h1
+id="年全国大学生数学建模竞赛c题">2022年全国大学生数学建模竞赛C题</h1>
+<h1
+id="年全国大学生数学建模竞赛a题-1">2023年全国大学生数学建模竞赛A题</h1>
+<h1
+id="年全国大学生数学建模竞赛b题-1">2023年全国大学生数学建模竞赛B题</h1>
+<h1
+id="年全国大学生数学建模竞赛c题-1">2023年全国大学生数学建模竞赛C题</h1>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/07/03/python%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/07/03/python%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" class="post-title-link" itemprop="url">python学习（更新中）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-07-03 10:27:49" itemprop="dateCreated datePublished" datetime="2024-07-03T10:27:49+08:00">2024-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-08-22 21:01:55" itemprop="dateModified" datetime="2024-08-22T21:01:55+08:00">2024-08-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/basic-knowledge/" itemprop="url" rel="index"><span itemprop="name">basic knowledge</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="第一部分-基础函数">第一部分 基础函数</h1>
+<h3 id="print函数">1.print函数</h3>
+<p>1.0使用方式：<br />
+把要输出的内容放在()内。</p>
+<p>例如：<br />
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">90</span>) <span class="comment"># 输出的是数字</span></span><br></pre></td></tr></table></figure> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">50</span></span><br><span class="line"><span class="built_in">print</span>(a) <span class="comment"># 输出的是变量的值</span></span><br></pre></td></tr></table></figure> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line">b=<span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(a+b) <span class="comment"># 输出的是运算结果</span></span><br></pre></td></tr></table></figure> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;没有网络安全，就没有国家安全&#x27;</span>) <span class="comment"># 输出的是字符串</span></span><br><span class="line"><span class="comment"># 需要注意的是，字符串还可以放在&#x27;&#x27;&#x27;与&#x27;&#x27;&#x27;间，&quot;与&quot;间，&quot;&quot;&quot;与&quot;&quot;&quot;间。</span></span><br></pre></td></tr></table></figure>
+<font color=red><strong>需要注意的是：代码段中可以有多个<em>print</em>函数，输出在屏幕上时每个<em>print</em>函数锁输出的内容占一行。</strong></font></p>
+<p><em>1.1使用print函数一行输出多组数据：</em><br />
+<em>把要输出的内容用","隔开。</em><br />
+<em>例如：</em><br />
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">114514</span>,<span class="number">1919810</span>)</span><br></pre></td></tr></table></figure> <em>输出结果：</em> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">114514</span> <span class="number">1919810</span></span><br></pre></td></tr></table></figure></p>
+<p><em>1.2使用print函数输出ASCII码对应字符</em><br />
+<em>用chr()包裹ASCII码。</em><br />
+<em>例如：要输出字符b。</em><br />
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">chr</span>(<span class="number">98</span>))</span><br></pre></td></tr></table></figure> <em>输出结果：</em> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b</span><br></pre></td></tr></table></figure></p>
+<p><em>1.3使用print函数输出中文Unicode码</em><br />
+<em>用ord('')包裹中文字符。</em><br />
+<em>例如：要输出“北”的Unicode码。</em><br />
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">ord</span>(<span class="string">&#x27;北&#x27;</span>))</span><br></pre></td></tr></table></figure> <em>输出结果：</em> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">21271</span></span><br></pre></td></tr></table></figure></p>
+<p><em><font color=skyblue>T1.1：Unicode编码是在ASCII码上演化而来，所以可以用chr()将Unicode编码转换为中文字符。</font></em></p>
+<p><em>1.4使用print函数将内容写入到文件</em><br />
+<em>step1:需要创建一个供写入的文件</em><br />
+<em>step2:将内容使用print函数写入到文件</em><br />
+<em>step3:关闭文件</em><br />
+<em>例如：输出“没有网络安全，就没有国家安全”到文本文档ChairmanXi.txt</em>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fp=<span class="built_in">open</span>(<span class="string">&#x27;ChairmanXi.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="comment"># open()函数--&gt;打开文件 w--&gt;文件操作类型：写入</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;没有网络安全，就没有国家安全&#x27;</span>,file=fp) <span class="comment"># 将内容写入到指定文件</span></span><br><span class="line">fp.close <span class="comment"># 关闭文件</span></span><br></pre></td></tr></table></figure></p>
+<p><font color=skyblue><em>T1.2：文件操作类型一览表</em></font><br />
+<img
+src="https://s3.bmp.ovh/imgs/2024/07/28/0f7339ded191f509.png" /></p>
+<p><em>1.5使用print函数进行复杂输出</em><br />
+<em>首先需要了解print函数完整的语法结构：</em> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(value,...,sep=<span class="string">&#x27; &#x27;</span>,end=<span class="string">&#x27;\n&#x27;</span>,file=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<em>其中：</em><font color=lightgreen><br />
+<em>value：表示要输出的内容，可以是数字、字符串、变量等。</em><br />
+<em>sep=' '：用于指定输出多个 value
+时它们之间的分隔符。默认是空格，但可以设置为其他字符，例如逗号、分号等。</em><br />
+<em>end=''：用于指定输出内容的结尾字符。默认是换行符 ，这意味着每次调用
+print 函数后，输出都会换到下一行。可以将其设置为其他字符，例如空字符串
+''，这样输出就不会自动换行。</em><br />
+<em>file=None：用于指定输出的目标。默认情况下，print
+函数输出到屏幕（即标准输出）。但也可以将其指定为一个文件对象，这样输出就会写入文件。</em></font><br />
+<em>例如：a.用两个print函数输出“专线--&gt;灵隐”</em> <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;专线&#x27;</span>,end=<span class="string">&#x27;--&gt;&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;灵隐&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<em>输出结果：</em> <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">专线--&gt;灵隐</span><br><span class="line">           <span class="comment"># 这里会多出一个空行</span></span><br></pre></td></tr></table></figure>
+<em>又或是：b.用一个print函数输出“专线”“--&gt;”“灵隐”</em>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;专线&#x27;</span>+<span class="string">&#x27;--&gt;&#x27;</span>+<span class="string">&#x27;灵隐&#x27;</span>) <span class="comment"># &quot;+&quot;为连接符，只能用于字符串连接。若不是，则需要用str()指令转换后连接。</span></span><br></pre></td></tr></table></figure> <em>输出结果：</em> <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">专线--&gt;灵隐</span><br></pre></td></tr></table></figure></p>
+<h3 id="input函数">2.input函数</h3>
+<p>2.0使用方式：<br />
+把要输入的内容放在()内。</p>
+<p><font color=red><strong>注意：无论输入的数据是什么，其数据类型都为<em>字符串</em>类型。</strong></font></p>
+<p><em>2.1使用input函数输入自己的姓名</em><br />
+<em>例如：</em><br />
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&#x27;请输入你的姓名：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的姓名是：&#x27;</span>+name)</span><br></pre></td></tr></table></figure> <em>运行后会出现如下窗口：</em><br />
+<img
+src="https://s3.bmp.ovh/imgs/2024/07/28/203b94bfc8e021d8.png" /><br />
+<em>此时我们需要键入我们的名字（当然也可以是别的信息，然后按下回车。</em><br />
+<img
+src="https://s3.bmp.ovh/imgs/2024/07/28/f7aa44ac34adcdcb.png" /></p>
+<p><em>2.2使用input函数输入整数类型的数据</em><br />
+<em>使用int函数将输入内容转换为整数类型。</em> <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num=<span class="built_in">input</span>(<span class="string">&#x27;请输入一个数字:&#x27;</span>)</span><br><span class="line"><span class="built_in">int</span>(num)</span><br><span class="line"><span class="built_in">print</span>(num)</span><br></pre></td></tr></table></figure></p>
+<p><font color=red><strong>注意：整数类型数据并不能与字符串类型一起输出，需要用逗号连接。</strong></font></p>
+<h3 id="注释">3.注释</h3>
+<p>3.0使用方式：<br />
+把要注释的内容写在标记符后。注释可以提高代码的可读性。</p>
+<p><em>3.1单行注释</em><br />
+<em>把注释内容写在#后面，例如：</em><br />
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这是一个注释</span></span><br></pre></td></tr></table></figure></p>
+<p><em>3.2多行注释</em><br />
+<em>用两个```包裹的就是多行注释。本质：字符串。</em></p>
+<p><em>3.3中文文档声明注释</em><br />
+<em><font color=red><strong>注意：一定要写在第一行！</strong></font></em><br />
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding=utf-8</span></span><br><span class="line"><span class="comment"># ↑中文文档声明注释要写在第一行</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="代码缩进">4.代码缩进</h3>
+<p>4.0使用方法：<br />
+代码缩进是每行语句开始前的空白区域，用来表示语句间的包含和层次关系。通常使用4个空格作为1个缩进量。</p>
+<p><em>4.1代码缩进的使用</em><br />
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一般代码 不需要缩进</span></span><br><span class="line"><span class="built_in">print</span>(hello)</span><br><span class="line"><span class="built_in">print</span>(world)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特殊情况 需要缩进</span></span><br><span class="line"><span class="comment"># 类的定义</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>:</span><br><span class="line">    <span class="keyword">pass</span> <span class="comment"># 换行自动缩进1缩进量</span></span><br><span class="line"><span class="comment"># 函数的定义</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">    <span class="keyword">pass</span> <span class="comment"># 换行自动缩进1缩进量</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="第二部分-数据类型和运算符">第二部分 数据类型和运算符</h1>
+<h3 id="保留字keyword">1.保留字（keyword）</h3>
+<p>1.0定义：<br />
+在python语言中被赋予特定意义的一些单词。在开发程序时，不可以将这些保留字（keyword）作为变量、函数、类、模块和其他对象的名称来使用。</p>
+<p><em><font color=skyblue>T2.1：python中的保留字（keyword）</font></em>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">False</span>      <span class="keyword">await</span>      <span class="keyword">else</span>       <span class="keyword">import</span>     <span class="keyword">pass</span></span><br><span class="line"><span class="literal">None</span>       <span class="keyword">break</span>      <span class="keyword">except</span>     <span class="keyword">in</span>         <span class="keyword">raise</span></span><br><span class="line"><span class="literal">True</span>       <span class="keyword">class</span>      <span class="title class_">finally</span>    <span class="keyword">is</span>         <span class="keyword">return</span></span><br><span class="line"><span class="keyword">and</span>        <span class="keyword">continue</span>   <span class="keyword">for</span>        <span class="keyword">lambda</span>     <span class="keyword">try</span></span><br><span class="line"><span class="keyword">as</span>         <span class="keyword">def</span>        <span class="title function_">from</span>       <span class="keyword">nonlocal</span>   <span class="keyword">while</span></span><br><span class="line"><span class="keyword">assert</span>     <span class="keyword">del</span>        <span class="keyword">global</span>     <span class="keyword">not</span>        <span class="keyword">with</span></span><br><span class="line"><span class="keyword">async</span>      <span class="keyword">elif</span>       <span class="keyword">if</span>         <span class="keyword">or</span>         <span class="keyword">yield</span></span><br></pre></td></tr></table></figure></p>
+<p><strong><font color=red>保留字（keyword）严格区分大小写！！！</font></strong></p>
+<p><em>1.1查询python中的保留字（keyword）</em><br />
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> keyword</span><br><span class="line"><span class="built_in">print</span>(keyword.kwlist) <span class="comment"># 获得保留字（keyword）列表</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(keyword.kwlist)) <span class="comment"># 获取保留字（keyword）的个数</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="标识符">2.标识符</h3>
+<p>2.0定义和命名规则<br />
+a.可以是字符（英文、中文）、下划线 "_"
+和数字，并且第一个字符不能是数字。<br />
+b.不能使用Python中的保留字。<br />
+c.标识符严格区分大小写。<br />
+d.以下划线开头的标识符有特殊意义，一般应避免使用相似的标识符。<br />
+e.允许使用中文作为标识符，但不建议使用。</p>
+<p><em><font color=skyblue>T2.2：python标识符的命名规范</em><br />
+<em>a.模块名尽量短小，并且全部使用小写字母，可以使用下划线分隔多个字母。例如:
+grame_main。</em><br />
+<em>b.包名尽量短小，并且全部使用小写字母，不推荐使用下划线。例如:
+com.ysjpython ，不推荐使用com_ysjpython。</em><br />
+<em>c.类名采用单词首字母大写形式(Pascal风格)。例如: MyClass。</em><br />
+*d.模块内部的类采用 "_" +Pascal
+风格的类名组成，例如:在MyClass中的内部类_InnerMyClass。*<br />
+<em>e.函数、类的属性和方法的命名，全部使用小写字母，多个字母之间使用下划线分隔。</em><br />
+<em>f.常量命名时采用全部大写字母，可以使用下划线。</em><br />
+*g.使用单下划线“_”开头的模块变量或函数是受保护的，在使用“from xxx import
+<em>”语句从模块中导入时，这些模块变量或函数不能被导入。</em><br />
+*h.使用双下划线“___”开头的实例变量或方法是类私有的。*<br />
+<em>i.以双下划线开头和结尾的是Python的专用标识，例如：<strong>init</strong>()表示初始化函数。</em></font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/07/01/JPEG/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/07/01/JPEG/" class="post-title-link" itemprop="url">JPEG</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-07-01 12:24:57" itemprop="dateCreated datePublished" datetime="2024-07-01T12:24:57+08:00">2024-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-07-03 11:22:54" itemprop="dateModified" datetime="2024-07-03T11:22:54+08:00">2024-07-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF-study/" itemprop="url" rel="index"><span itemprop="name">CTF study</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>一道题的引入</strong><br />
+&gt;你知道一张JPEG图片是怎样炼成的吗？<br />
+灰度图像，8x8分块，DCT变化，接下来应该是？<br />
+将flag{}替换为NSSCTF{}后提交<br />
+hint：https://www.bilibili.com/video/BV1H2421F7sg/ &gt;
+<em>-题目名称：JPEG是怎样炼成的-</em><br />
+<em>-题目来源：GHCTF 2024-</em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/06/30/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/30/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" class="post-title-link" itemprop="url">PHP反序列化（更新中）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-06-30 23:54:35" itemprop="dateCreated datePublished" datetime="2024-06-30T23:54:35+08:00">2024-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-08-20 20:14:12" itemprop="dateModified" datetime="2024-08-20T20:14:12+08:00">2024-08-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF-study/" itemprop="url" rel="index"><span itemprop="name">CTF study</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言">前言</h2>
+<p>在PHP中，序列化和反序列化是两种常用的处理对象的方法。序列化是将对象转换成一个可以存储或传输的字符串的过程，而反序列化则是将这个字符串转换回原始对象的过程。</p>
+<p>以下是在PHP中进行反序列化的基本步骤：</p>
+<ol type="1">
+<li><p>序列化对象
+首先，你需要有一个已经被序列化的对象。在PHP中，你可以使用<code>serialize()</code>函数来序列化一个对象。
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$var1</span> = <span class="string">&#x27;value1&#x27;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$var2</span> = <span class="string">&#x27;value2&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$obj</span> = <span class="keyword">new</span> <span class="title class_">MyClass</span>();<span class="variable">$serializedObj</span> = <span class="title function_ invoke__">serialize</span>(<span class="variable">$obj</span>);</span><br></pre></td></tr></table></figure></p></li>
+<li><p>存储序列化字符串
+序列化后的字符串可以存储在文件、数据库或通过HTTP请求发送。</p></li>
+<li><p>反序列化对象
+当你需要使用这个对象时，可以使用<code>unserialize()</code>函数来反序列化字符串。
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$unserializedObj</span> = <span class="title function_ invoke__">unserialize</span>(<span class="variable">$serializedObj</span>);</span><br></pre></td></tr></table></figure>
+现在<code>$unserializedObj</code>是一个<code>MyClass</code>的实例，并且拥有原始对象的属性值。</p></li>
+</ol>
+<p><strong>示例</strong><br />
+以下是一个完整的示例，展示了如何在PHP中序列化和反序列化对象：
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$var1</span> = <span class="string">&#x27;value1&#x27;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$var2</span> = <span class="string">&#x27;value2&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个对象</span></span><br><span class="line"><span class="variable">$obj</span> = <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 序列化对象</span></span><br><span class="line"><span class="variable">$serializedObj</span> = <span class="title function_ invoke__">serialize</span>(<span class="variable">$obj</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 假设我们将序列化的字符串存储在某个地方，现在我们将其读取回来</span></span><br><span class="line"><span class="comment">// 在实际应用中，你可能从文件、数据库或网络中读取这个字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 反序列化对象</span></span><br><span class="line"><span class="variable">$unserializedObj</span> = <span class="title function_ invoke__">unserialize</span>(<span class="variable">$serializedObj</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用反序列化后的对象</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$unserializedObj</span>-&gt;var1; <span class="comment">// 输出: value1</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$unserializedObj</span>-&gt;var2; <span class="comment">// 输出: value2</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="类和对象">类和对象</h1>
+<h2 id="类是什么">1.类是什么</h2>
+<p>在PHP中，类（Class）是面向对象编程（OOP）的一个基本概念，它是创建对象（Object）的蓝图或者模板。类定义了一组属性（也称为成员变量）和方法（也称为成员函数），它们共同描述了一个对象的状态和行为。
+以下是关于PHP中类的一些关键点： ### 类的定义
+一个类通过<code>class</code>关键字来定义，后面跟着类的名称和一对花括号，其中包含类的属性和方法的定义。
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 属性定义</span></span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$property1</span>;</span><br><span class="line">    <span class="comment">// 方法定义</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">myMethod</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 方法体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ### 属性（Properties）
+属性是类中定义的变量，它们用于存储数据。属性可以具有不同的访问修饰符，比如<code>public</code>、<code>protected</code>和<code>private</code>，这些修饰符决定了属性在类的外部是否可以被访问。
+### 方法（Methods）
+方法是类中定义的函数，它们用于执行操作。和属性一样，方法也可以有访问修饰符，并且可以接受参数和返回值。
+### 创建对象
+通过使用<code>new</code>关键字和类名，可以创建一个类的实例（即对象）。
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$obj</span> = <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br></pre></td></tr></table></figure> ### 访问属性和方法
+创建对象后，可以使用对象操作符<code>-&gt;</code>来访问对象的属性和方法。
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$obj</span>-&gt;property1 = <span class="string">&quot;value1&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$obj</span>-&gt;property1; <span class="comment">// 输出: value1</span></span><br><span class="line"><span class="variable">$obj</span>-&gt;<span class="title function_ invoke__">myMethod</span>();    <span class="comment">// 调用对象的方法</span></span><br></pre></td></tr></table></figure> ### 构造函数和析构函数 -
+构造函数<code>__construct()</code>在创建对象时自动调用，用于初始化对象。
+-
+析构函数<code>__destruct()</code>在对象被销毁时自动调用，用于执行清理工作。
+### 继承
+PHP支持继承，允许一个类继承另一个类（称为父类或基类）的属性和方法。
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildClass</span> <span class="keyword">extends</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 继承MyClass的属性和方法，并可以添加新的或覆盖已有的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ### 封装
+封装是指将对象的实现细节隐藏起来，只暴露出必要的接口。在PHP中，通过定义属性和方法的访问修饰符来实现封装。
+### 多态
+多态是指同一个方法在不同类型的对象上有不同的行为。在PHP中，多态通常通过继承和接口来实现。
+### 静态属性和方法
+静态属性和方法属于类本身，而不是类的任何特定实例。它们可以通过类名直接访问，无需创建对象。
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">static</span> <span class="variable">$staticProperty</span> = <span class="string">&quot;Static Property&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">staticMethod</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;Static Method&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="title class_">MyClass</span>::<span class="variable">$staticProperty</span>; <span class="comment">// 输出: Static Property</span></span><br><span class="line"><span class="title class_">MyClass</span>::<span class="title function_ invoke__">staticMethod</span>();       <span class="comment">// 输出: Static Method</span></span><br></pre></td></tr></table></figure>
+PHP的类机制为开发者提供了强大的面向对象编程能力，是构建复杂数据结构和功能模块的基础。
+## 2.对象是什么
+在PHP中，对象是面向对象编程（OOP）的一个核心概念。一个对象是一个具体的数据实体，它是根据类的定义创建的。类（Class）可以视为一个模板或蓝图，而对象（Object）则是根据这个模板创建的实例。
+以下是关于PHP中对象的一些关键点： ### 对象的定义 -
+<strong>对象</strong>：是类的一个实例，它具有类定义中的属性（变量）和方法（函数）。
+### 创建对象 在PHP中，使用<code>new</code>关键字加上类名来创建一个对象。
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$property</span> = <span class="string">&quot;I am a property!&quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">myMethod</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;I am a method!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$obj</span> = <span class="keyword">new</span> <span class="title class_">MyClass</span>(); <span class="comment">// 创建一个MyClass类的实例</span></span><br></pre></td></tr></table></figure> ### 对象的属性
+对象的属性是存储在对象内部的变量，它们用于表示对象的状态。 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="variable">$obj</span>-&gt;property; <span class="comment">// 输出：I am a property!</span></span><br></pre></td></tr></table></figure>
+### 对象的方法
+对象的方法是存储在对象内部的函数，它们用于定义对象的行为。
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$obj</span>-&gt;<span class="title function_ invoke__">myMethod</span>(); <span class="comment">// 输出：I am a method!</span></span><br></pre></td></tr></table></figure> ### 对象的特性 -
+<strong>封装</strong>：对象将数据（属性）和操作数据的方法（函数）封装在一起，外部只能通过对象公开的方法来访问和修改对象的状态。
+-
+<strong>继承</strong>：对象可以继承另一个对象的属性和方法，子对象可以扩展或修改继承来的行为。
+-
+<strong>多态</strong>：对象可以以不同的形式实现相同的方法，这意味着多个对象可以响应同一个消息，但以不同的方式执行。
+### 对象的操作 -
+<strong>访问属性</strong>：使用<code>-&gt;</code>操作符来访问对象的属性。
+-
+<strong>调用方法</strong>：使用<code>-&gt;</code>操作符来调用对象的方法。
+- <strong>修改属性</strong>：可以直接给对象的属性赋值来修改它们。 ###
+示例 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$name</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$age</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$name</span>, <span class="variable">$age</span></span>) </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;name = <span class="variable">$name</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;age = <span class="variable">$age</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">introduce</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;My name is &quot;</span> . <span class="variable language_">$this</span>-&gt;name . <span class="string">&quot; and I am &quot;</span> . <span class="variable language_">$this</span>-&gt;age . <span class="string">&quot; years old.&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$person</span> = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Alice&quot;</span>, <span class="number">30</span>); <span class="comment">// 创建Person类的实例</span></span><br><span class="line"><span class="variable">$person</span>-&gt;<span class="title function_ invoke__">introduce</span>(); <span class="comment">// 调用对象的方法</span></span><br></pre></td></tr></table></figure>
+在这个例子中，<code>$person</code>是一个对象，它是<code>Person</code>类的一个实例，具有<code>name</code>和<code>age</code>两个属性，以及<code>introduce</code>一个方法。<br />
+对象在PHP中的应用非常广泛，它们使得代码更加模块化、可重用和易于维护。通过使用对象，开发者可以构建出结构清晰、功能强大的应用程序。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -344,9 +1572,21 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
