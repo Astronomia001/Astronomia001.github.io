@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"astronomia001.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"astronomia001.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-08-22 21:02:29" itemprop="dateModified" datetime="2024-08-22T21:02:29+08:00">2024-08-22</time>
+                <time title="修改时间：2024-08-22 21:22:34" itemprop="dateModified" datetime="2024-08-22T21:22:34+08:00">2024-08-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -292,9 +292,9 @@ hacking等搜索引擎技巧，查找与目标相关的信息。 -
 <h1 id="子域名信息">子域名信息</h1>
 <h2 id="google语法">1.Google语法</h2>
 <p>可以利用Google和Bing这样的搜索引擎进行搜索查询（<code>site:www.xxx.com</code>）<br />
-Google还支持额外的减号运算符，以排除我们对“网站:<code>wikimedia.org -www -store</code>”不感兴趣的子域名。<br />
-## 2.第三方服务器
-有许多第三方服务聚合了大量的DNS数据集，并通过它们来检索给定域名的子域名。
+Google还支持额外的减号运算符，以排除我们对“网站:<code>wikimedia.org -www -store</code>”不感兴趣的子域名。</p>
+<h2 id="第三方服务器">2.第三方服务器</h2>
+<p>有许多第三方服务聚合了大量的DNS数据集，并通过它们来检索给定域名的子域名。
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VirusTotal：https://www.virustotal.com/#/home/search </span><br><span class="line">DNSdumpster：https://dnsdumpster.com/ </span><br></pre></td></tr></table></figure> ## 3.Sublist3r
 Sublist3r是一款python开发的子域名枚举工具，通过各种搜索引擎
 （例如Google，Yahoo，Bing，Baidu和Ask）枚举子域。Sublist3r还使用Netcraft，Virustotal，ThreatCrowd，DNSdumpster和ReverseDNS枚举子域。也集合了subbrute的暴力枚举功能。
