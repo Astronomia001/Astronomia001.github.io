@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>外网打点步骤</title>
+      <link href="/2024/08/23/%E5%A4%96%E7%BD%91%E6%89%93%E7%82%B9%E6%AD%A5%E9%AA%A4/"/>
+      <url>/2024/08/23/%E5%A4%96%E7%BD%91%E6%89%93%E7%82%B9%E6%AD%A5%E9%AA%A4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="信息收集">1.信息收集</h2><h3 id="情报数据类型">情报数据类型</h3><p>常见的情报数据类型分为以下三种：</p><ul><li><p>web资产</p></li><li><p>IP</p></li><li><p>邮箱</p></li></ul><h3 id="收集方式">收集方式</h3><ul><li><p>web资产</p><ul><li><p>空间测绘平台、威胁情报（Virustotal、QAX、360、微步）</p></li><li><p>企业信息（企查查、天眼查、小蓝书等）</p></li><li><p>证书、github、资产特征、APK反编译、子域名、目录检测</p></li></ul></li><li><p>IP</p><ul><li><p>域名反查</p></li><li><p>空间测绘平台（FOFA、360Quake、Shodan、钟道之眼、鹰图平台等）</p></li><li><p>IP相关工具（Nmap、Goby、Masscan）</p></li></ul></li><li><p>邮箱</p><ul><li><p>招投标网站、招聘渠道、github、百度文库、网盘搜索</p></li><li><p>搜索引擎</p></li><li><p>目标资产站点 -&gt; 爬取</p></li><li><p>企业信息（企查查、天眼查、小蓝书等）</p></li><li><p>在线查询平台（skymem.info、hunter.io、email-format.com）</p></li></ul></li></ul><p><font color=greee>提示：在外网打点的前期，可以尝试在Wooyun漏洞库里搜索与“靶标”相关的漏洞报告。</font></p><h2 id="资产有效性确认">2.资产有效性确认</h2><p>进行资产有效性确认是网络安全和信息技术管理中的一个重要步骤。这可以防止在核对资产归属时发现，资产与本次靶标无关联的情况发生（也就是我们常说的“日偏了”）。</p><h2 id="情报数据处理">3.情报数据处理</h2><ul><li><p>web资产</p><ul><li><p>存活测试（HTTPX）</p></li><li><p>指纹特征识别（Finger、云悉、Wapplyzer、WhatWeb等）</p></li><li><p>子域名（子域名挖掘机、OneForAll、Sublist3r等）</p></li><li><p>目录（御剑、dirmap、dirsearch、搜索语句等）</p></li></ul></li><li><p>IP</p><ul><li><p>常见端口/未授权访问漏洞常用端口/全量端口 -&gt;扫描</p></li><li><p>FOFA -&gt; C段信息</p></li></ul></li><li><p>邮箱</p><ul><li>邮箱有效性校验（mailtester.com、email-checker.net）</li></ul></li></ul><h2 id="输出情报资产数据">4.输出情报资产数据</h2><h2 id="入口权限获取">5.入口权限获取</h2><h2 id="打点方式">6.打点方式</h2><ul><li><p>web资产</p><ul><li><p>漏洞场景识别（登录、上传、搜索、后台等）-&gt;根据漏洞场景优先检测对应的漏洞</p></li><li><p>CMS识别:漏洞利用(Nday、0day)</p></li><li><p>入口权限获取-常用漏洞:(Jboss、Struts2、Tomcat、Weblogic、Shiro、log4j2等)</p></li><li><p>网站设备:弱口令、命令执行、VPN</p></li><li><p>OA:泛微、通达、致远、金蝶</p></li></ul></li><li><p>IP</p><ul><li><p>端口爆破(超级弱口令检查工具-&gt;SSH、RDP、Mysql、FTP、Telnet等等)</p></li><li><p>未授权访问漏洞相关</p></li></ul></li><li><p>邮箱</p><ul><li><p>社工钓鱼:邮件收集、邮件文案、匿名邮箱、钓鱼方式(钓鱼链接、木马)等</p></li><li><p>邮箱登录场景:弱口令(TOP500、常用强逻辑密码字典)、逻辑漏洞、暴力破解/撞库</p></li><li><p>账号密码泄露(QQ群、giuhub、百度文库等)</p></li><li><p>邮箱系统:漏洞利用(Nday、0day)</p></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>漏洞扫描</title>
+      <link href="/2024/08/23/%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/"/>
+      <url>/2024/08/23/%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>漏洞扫描是一种自动化的网络安全评估方法，旨在检测计算机系统、网络或网络应用程序中的安全漏洞。其基本目的是帮助组织识别和评估可能被黑客利用的安全缺陷，从而及时采取措施进行修复，以保护信息系统的安全。以下是漏洞扫描的几个关键点：</p><ol type="1"><li><p><strong>扫描过程</strong>：</p><ul><li><p><strong>信息收集</strong>：收集目标系统的相关信息，如操作系统类型、开放的服务和端口等。</p></li><li><p><strong>检测识别</strong>：根据收集的信息，检测系统中可能存在的已知漏洞。</p></li><li><p><strong>评估分析</strong>：分析检测到的漏洞，评估其可能对系统安全造成的影响。</p></li><li><p><strong>报告生成</strong>：生成详细的扫描报告，列出发现的漏洞和推荐的安全加固措施。</p></li></ul></li><li><p><strong>扫描类型</strong>：</p><ul><li><p><strong>网络扫描</strong>：检测网络中的设备和服务，如防火墙、路由器、交换机等。</p></li><li><p><strong>主机扫描</strong>：针对单个主机进行深入的漏洞检测。</p></li><li><p><strong>应用程序扫描</strong>：专注于Web应用程序或软件中的安全漏洞。</p></li></ul></li><li><p><strong>用途</strong>：</p><ul><li><p><strong>合规性要求</strong>：许多行业标准和法规要求定期进行漏洞扫描。</p></li><li><p><strong>风险管理</strong>：帮助组织了解其面临的安全风险，并进行优先级排序。</p></li><li><p><strong>安全加固</strong>：通过识别和修复漏洞来增强系统的安全性。</p></li></ul></li></ol><p>通过定期的漏洞扫描，组织可以及时发现并修复安全漏洞，降低被攻击的风险，是维护网络安全的重要措施之一。</p><hr /><h2 id="工具使用">工具使用</h2><h3 id="流量转发">流量转发</h3><ol type="1"><li><p>使用工具：Venom</p></li><li><p>使用方法：</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信息收集（已完结）</title>
       <link href="/2024/08/14/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%EF%BC%88%E5%B7%B2%E5%AE%8C%E7%BB%93%EF%BC%89/"/>
       <url>/2024/08/14/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%EF%BC%88%E5%B7%B2%E5%AE%8C%E7%BB%93%EF%BC%89/</url>
