@@ -195,6 +195,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/09/23/KPCUP2024-WP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Astronomia001">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/23/KPCUP2024-WP/" class="post-title-link" itemprop="url">KPCUP2024-WP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-23 21:53:11 / 修改时间：22:18:15" itemprop="dateCreated datePublished" datetime="2024-09-23T21:53:11+08:00">2024-09-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>太好丸辣！！！</p>
+<h1 id="misc">misc</h1>
+<h2 id="俺は東京レ">1.俺は東京レ</h2>
+<h3 id="hint">hint</h3>
+<ul>
+<li>浏览器当然要找找浏览记录</li>
+<li>我们的秘密</li>
+<li>9E 97 BA
+2A，这似乎不应该是音频文件中存在的hex部分，反而应该是……</li>
+</ul>
+<p>首先打开附件，发现是一个类似浏览器的文件。 <img
+src="https://s3.bmp.ovh/imgs/2024/09/23/707865dbf57ca8d4.png" />
+hint中说找浏览记录。众所周知，浏览记录是一个数据库文件。那就去找一个好用的小东西打开它。（本来想用navicat的，但是出题人偷偷跟我说其它工具就可以打开，那我当然用别的工具啦~）<br />
+<img
+src="https://s3.bmp.ovh/imgs/2024/09/23/af84431415d17487.png" /><br />
+这里在框中搜索“His”，就可以看到History.db这个文件了。然后我选择用SQLiteSPY打开。<br />
+<img
+src="https://s3.bmp.ovh/imgs/2024/09/23/6fd4b56e08b2d0b9.png" /><br />
+打开后发现两个关键信息：其一是出题人的B站主页，其二是百度网盘链接。
+然后出题人的B站签名告诉我们uid就是一个key（原神！启动！），再去下载一下那个小文件。发现是个压缩包，包里面就是这首歌（但是被伪加密过，需要一些力气和手段/doge）。<br />
+<img
+src="https://s3.bmp.ovh/imgs/2024/09/23/9bfbe530f934319e.png" /><br />
+解压出来后把文件放到010editor里面去，查看文件16进制码。<br />
+<img
+src="https://s3.bmp.ovh/imgs/2024/09/23/0661a5dc0dbb7aae.png" /><br />
+hint中给出了提示，这9E97BA2A不对劲啊，我想到了文件分离。 <img
+src="https://s3.bmp.ovh/imgs/2024/09/23/96fb397dd005dd16.png" /><br />
+必应一查发现是OurSecret隐写，然后找个小工具解一下密（好吧，hint其实讲了，但我不知道什么意思），得到flag.txt。
+<img
+src="https://s3.bmp.ovh/imgs/2024/09/23/ff1a7f60d6057f0e.png" /><br />
+打开flag.txt，里面就是flag。 <img
+src="https://s3.bmp.ovh/imgs/2024/09/23/6feb871bd1484969.png" /></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/08/23/%E5%A4%96%E7%BD%91%E6%89%93%E7%82%B9%E6%AD%A5%E9%AA%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1102,7 +1192,7 @@ Suite的一个组织中心，它帮助测试人员更好地理解、管理和测
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-08-20 20:14:13" itemprop="dateModified" datetime="2024-08-20T20:14:13+08:00">2024-08-20</time>
+                <time title="修改时间：2024-08-26 13:30:54" itemprop="dateModified" datetime="2024-08-26T13:30:54+08:00">2024-08-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1126,30 +1216,31 @@ Suite的一个组织中心，它帮助测试人员更好地理解、管理和测
 
       
           <h2 id="前言">前言</h2>
-<p>SQL注入是一种常见的网络攻击技术，它主要针对基于SQL语言的数据库系统。攻击者通过在Web应用的输入字段或者URL参数中输入恶意的SQL代码，这些代码在后端数据库执行时，能够绕过正常的访问控制，非法读取、修改、删除数据库中的数据，甚至有可能控制数据库管理系统。
-下面简要介绍一下SQL注入的工作原理： 1.
-<strong>输入验证不严格</strong>：当应用程序没有正确地验证或者转义用户的输入，就有可能发生SQL注入。
-2.
-<strong>构造恶意输入</strong>：攻击者会在输入字段中输入特殊的SQL语句片段，这些片段会在原有SQL查询的基础上，改变其语义。
-3.
-<strong>SQL语句拼接</strong>：应用程序在处理用户输入时，如果没有正确处理，可能会直接将其拼接到SQL查询语句中。
-4.
-<strong>执行恶意SQL</strong>：拼接后的SQL语句被发送到数据库执行，恶意部分也得以执行。
-5.
-<strong>获取数据或权限</strong>：通过执行恶意的SQL语句，攻击者可以读取敏感数据、修改数据库内容、甚至执行数据库管理系统中的命令。
-例如，一个基于SQL的登录查询，如果不对用户输入进行适当的处理，可能如下：
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;[用户输入的用户名]&#x27;</span> <span class="keyword">AND</span> password <span class="operator">=</span> <span class="string">&#x27;[用户输入的密码]&#x27;</span></span><br></pre></td></tr></table></figure> 如果攻击者在用户名输入框中输入
-<code>admin' --</code>（注意，这里 <code>--</code>
-是SQL中的注释符号，表示其后的内容被忽略），那么实际的SQL查询可能会变成：
+<p>SQL注入是一种常见的网络攻击技术，它主要针对基于SQL语言的数据库系统。攻击者通过在Web应用的输入字段或者URL参数中输入恶意的SQL代码，这些代码在后端数据库执行时，能够绕过正常的访问控制，非法读取、修改、删除数据库中的数据，甚至有可能控制数据库管理系统。</p>
+<p>下面简要介绍一下SQL注入的工作原理：</p>
+<ol type="1">
+<li><p><strong>输入验证不严格</strong>：当应用程序没有正确地验证或者转义用户的输入，就有可能发生SQL注入。</p></li>
+<li><p><strong>构造恶意输入</strong>：攻击者会在输入字段中输入特殊的SQL语句片段，这些片段会在原有SQL查询的基础上，改变其语义。</p></li>
+<li><p><strong>SQL语句拼接</strong>：应用程序在处理用户输入时，如果没有正确处理，可能会直接将其拼接到SQL查询语句中。</p></li>
+<li><p><strong>执行恶意SQL</strong>：拼接后的SQL语句被发送到数据库执行，恶意部分也得以执行。</p></li>
+<li><p><strong>获取数据或权限</strong>：通过执行恶意的SQL语句，攻击者可以读取敏感数据、修改数据库内容、甚至执行数据库管理系统中的命令。</p></li>
+</ol>
+<p>例如，一个基于SQL的登录查询，如果不对用户输入进行适当的处理，可能如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;[用户输入的用户名]&#x27;</span> <span class="keyword">AND</span> password <span class="operator">=</span> <span class="string">&#x27;[用户输入的密码]&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>如果攻击者在用户名输入框中输入 <code>admin' --</code>（注意，这里
+<code>--</code>
+是SQL中的注释符号，表示其后的内容被忽略），那么实际的SQL查询可能会变成：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;admin&#x27;</span> <span class="comment">--&#x27; AND password = &#x27;[任何密码]&#x27;</span></span><br></pre></td></tr></table></figure>
-这样，密码部分被注释掉，攻击者无需知道密码即可通过认证。</p>
-<p><strong>防护措施</strong>： - 使用预编译的SQL语句（参数化查询）。 -
-对所有用户输入进行严格的验证和转义。 -
-限制数据库操作的权限，遵循最小权限原则。 -
-定期进行安全审计和测试，包括SQL注入漏洞的检测。 -
-使用专业的安全工具和框架来防御SQL注入攻击。
-了解和防范SQL注入攻击对于保障网络安全至关重要。在中国，网络安全法也强调了网络产品和服务提供者在安全方面的责任，要求采取措施防范网络违法犯罪活动，保障网络数据的安全。</p>
-<p>接下来我将开始学习关于SQL注入的内容。</p>
+<p>这样，密码部分被注释掉，攻击者无需知道密码即可通过认证。</p>
+<p><strong>防护措施</strong>：</p>
+<ul>
+<li><p>使用预编译的SQL语句（参数化查询）。</p></li>
+<li><p>对所有用户输入进行严格的验证和转义。</p></li>
+<li><p>限制数据库操作的权限，遵循最小权限原则。</p></li>
+<li><p>定期进行安全审计和测试，包括SQL注入漏洞的检测。</p></li>
+<li><p>使用专业的安全工具和框架来防御SQL注入攻击。</p></li>
+</ul>
+<h2 id="什么是sql注入">什么是SQL注入？</h2>
 
       
     </div>
@@ -1195,6 +1286,13 @@ Suite的一个组织中心，它帮助测试人员更好地理解、管理和测
 
               <time title="创建时间：2024-08-13 23:10:37" itemprop="dateCreated datePublished" datetime="2024-08-13T23:10:37+08:00">2024-08-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-09-25 11:35:33" itemprop="dateModified" datetime="2024-09-25T11:35:33+08:00">2024-09-25</time>
+              </span>
 
           
 
@@ -1207,7 +1305,48 @@ Suite的一个组织中心，它帮助测试人员更好地理解、管理和测
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h2 id="例题陇剑杯2021-webshell-7问">例题：陇剑杯2021 webshell 7问</h2>
+<h3 id="问1">问1</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客登录系统使用的密码是_____________。</li>
+</ul>
+<p>在wireshake打开流量包，搜索<em>http contains
+"password"</em>找到密码。 <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/662584bfd3916b1b.png" /></p>
+<h3 id="问2">问2</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客修改了一个日志文件，文件的绝对路径为_____________。（请确认绝对路径后再提交）</li>
+</ul>
+<p>搜索<em>http contains "log" &amp;&amp; http.request.method ==
+POST</em>，找到日志文件的绝对路径。 <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/4835883a25cd03b3.png" />
+上面一段和下面一段需要拼接（第一段的data和第二段的1.php是同级）</p>
+<h3 id="问3">问3</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客获取webshell之后，权限是______？</li>
+</ul>
+<p>搜索<em>whoami</em>，发现317-319有回显 <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/29bfb2eafaaa09d1.png" /> <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/4cc261468ef084e0.png" />
+在319中找到flag <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/f700c1c78f5572e1.png" /></p>
+<h3 id="问4">问4</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客写入的webshell文件名是_____________。(请提交带有文件后缀的文件名，例如x.txt)</li>
+</ul>
+<p>在不远处就看到了1.php <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/93eca2bbfe4cd572.png" /></p>
+<h3 id="问5">问5</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客上传的代理工具客户端名字是_____________。</li>
+</ul>
+<p>在最末一行找到上传工具。 <a target="_blank" rel="noopener" href="https://postimg.cc/HrHDpp2Q"><img
+src="https://i.postimg.cc/Hk8p9n8P/image.png" alt="image.png" /></a></p>
 
       
     </div>
@@ -1578,86 +1717,6 @@ com.ysjpython ，不推荐使用com_ysjpython。</em><br />
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://astronomia001.github.io/2024/07/01/JPEG/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Astronomia001">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/01/JPEG/" class="post-title-link" itemprop="url">JPEG</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-07-01 12:24:57" itemprop="dateCreated datePublished" datetime="2024-07-01T12:24:57+08:00">2024-07-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-07-03 11:22:54" itemprop="dateModified" datetime="2024-07-03T11:22:54+08:00">2024-07-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CTF-study/" itemprop="url" rel="index"><span itemprop="name">CTF study</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>一道题的引入</strong><br />
-&gt;你知道一张JPEG图片是怎样炼成的吗？<br />
-灰度图像，8x8分块，DCT变化，接下来应该是？<br />
-将flag{}替换为NSSCTF{}后提交<br />
-hint：https://www.bilibili.com/video/BV1H2421F7sg/ &gt;
-<em>-题目名称：JPEG是怎样炼成的-</em><br />
-<em>-题目来源：GHCTF 2024-</em></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1729,7 +1788,7 @@ hint：https://www.bilibili.com/video/BV1H2421F7sg/ &gt;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -22,13 +22,15 @@
     var CONFIG = {"hostname":"astronomia001.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="例题：陇剑杯2021 webshell 7问 问1  单位网站被黑客挂马，请您从流量中分析出webshell，进行回答： 黑客登录系统使用的密码是_____________。  在wireshake打开流量包，搜索http contains &quot;password&quot;找到密码。  问2  单位网站被黑客挂马，请您从流量中分析出webshell，进行回答： 黑客修改了一个日志文件，文">
+<meta property="og:type" content="article">
 <meta property="og:title" content="流量分析">
 <meta property="og:url" content="http://astronomia001.github.io/2024/08/13/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="例题：陇剑杯2021 webshell 7问 问1  单位网站被黑客挂马，请您从流量中分析出webshell，进行回答： 黑客登录系统使用的密码是_____________。  在wireshake打开流量包，搜索http contains &quot;password&quot;找到密码。  问2  单位网站被黑客挂马，请您从流量中分析出webshell，进行回答： 黑客修改了一个日志文件，文">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-13T15:10:37.000Z">
-<meta property="article:modified_time" content="2024-08-13T15:10:37.948Z">
+<meta property="article:modified_time" content="2024-09-25T03:35:33.992Z">
 <meta property="article:author" content="Astronomia001">
 <meta name="twitter:card" content="summary">
 
@@ -223,6 +225,13 @@
 
               <time title="创建时间：2024-08-13 23:10:37" itemprop="dateCreated datePublished" datetime="2024-08-13T23:10:37+08:00">2024-08-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-09-25 11:35:33" itemprop="dateModified" datetime="2024-09-25T11:35:33+08:00">2024-09-25</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -242,7 +251,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h2 id="例题陇剑杯2021-webshell-7问">例题：陇剑杯2021 webshell 7问</h2>
+<h3 id="问1">问1</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客登录系统使用的密码是_____________。</li>
+</ul>
+<p>在wireshake打开流量包，搜索<em>http contains
+"password"</em>找到密码。 <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/662584bfd3916b1b.png" /></p>
+<h3 id="问2">问2</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客修改了一个日志文件，文件的绝对路径为_____________。（请确认绝对路径后再提交）</li>
+</ul>
+<p>搜索<em>http contains "log" &amp;&amp; http.request.method ==
+POST</em>，找到日志文件的绝对路径。 <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/4835883a25cd03b3.png" />
+上面一段和下面一段需要拼接（第一段的data和第二段的1.php是同级）</p>
+<h3 id="问3">问3</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客获取webshell之后，权限是______？</li>
+</ul>
+<p>搜索<em>whoami</em>，发现317-319有回显 <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/29bfb2eafaaa09d1.png" /> <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/4cc261468ef084e0.png" />
+在319中找到flag <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/f700c1c78f5572e1.png" /></p>
+<h3 id="问4">问4</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客写入的webshell文件名是_____________。(请提交带有文件后缀的文件名，例如x.txt)</li>
+</ul>
+<p>在不远处就看到了1.php <img
+src="https://s3.bmp.ovh/imgs/2024/09/25/93eca2bbfe4cd572.png" /></p>
+<h3 id="问5">问5</h3>
+<ul>
+<li>单位网站被黑客挂马，请您从流量中分析出webshell，进行回答：
+黑客上传的代理工具客户端名字是_____________。</li>
+</ul>
+<p>在最末一行找到上传工具。 <a target="_blank" rel="noopener" href="https://postimg.cc/HrHDpp2Q"><img
+src="https://i.postimg.cc/Hk8p9n8P/image.png" alt="image.png" /></a></p>
 
     </div>
 
@@ -340,6 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E9%99%87%E5%89%91%E6%9D%AF2021-webshell-7%E9%97%AE"><span class="nav-number">1.</span> <span class="nav-text">例题：陇剑杯2021 webshell 7问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE1"><span class="nav-number">1.1.</span> <span class="nav-text">问1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE2"><span class="nav-number">1.2.</span> <span class="nav-text">问2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE3"><span class="nav-number">1.3.</span> <span class="nav-text">问3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE4"><span class="nav-number">1.4.</span> <span class="nav-text">问4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE5"><span class="nav-number">1.5.</span> <span class="nav-text">问5</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -355,7 +406,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
