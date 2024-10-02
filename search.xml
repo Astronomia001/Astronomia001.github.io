@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title>操作系统安全（更新中）</title>
+      <link href="/2024/10/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/"/>
+      <url>/2024/10/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机网络（更新中）</title>
+      <link href="/2024/10/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/"/>
+      <url>/2024/10/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机组成原理（更新中）</title>
+      <link href="/2024/10/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/"/>
+      <url>/2024/10/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="计算机系统概述">1.计算机系统概述</h1>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>KPCUP2024-WP</title>
       <link href="/2024/09/23/KPCUP2024-WP/"/>
       <url>/2024/09/23/KPCUP2024-WP/</url>
@@ -159,7 +198,7 @@
       <link href="/2024/08/13/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/"/>
       <url>/2024/08/13/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="修改png图片宽高">1.修改png图片宽高</h2><p><em>eg.LitCTF2023_羽毛球</em><br />开始时题目中提到“羽毛球不完整”“下半身是什么”，所以会很自然的想到图片的宽高出了问题。<imgsrc="https://s3.bmp.ovh/imgs/2024/09/25/d09438f5aaaee8aa.png" /><br />所以用010editor打开，修改图片高度。<br /><img src="https://s3.bmp.ovh/imgs/2024/09/25/aae576286291e4d1.png" />然后输出图片为flag.png。<br /><img src="https://s3.bmp.ovh/imgs/2024/09/25/904b0755dd999d4a.png" />就可以得到flag了。</p><p><em>ps:我是直接修改图片高度，当然也可以通过CRC检测的方式算出正确的宽高。</em></p>]]></content>
       
       
       
