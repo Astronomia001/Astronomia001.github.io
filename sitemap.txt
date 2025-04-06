@@ -31,6 +31,6 @@ http://astronomia001.github.io/
 http://astronomia001.github.io/tags/CTF/
 http://astronomia001.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87/
 http://astronomia001.github.io/tags/basic-knowledge/
-http://astronomia001.github.io/categories/CTF-study/
 http://astronomia001.github.io/categories/CTF-WP/
+http://astronomia001.github.io/categories/CTF-study/
 http://astronomia001.github.io/categories/basic-knowledge/
