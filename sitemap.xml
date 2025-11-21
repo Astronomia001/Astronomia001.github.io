@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://astronomia001.github.io/2025/11/21/php%E5%A4%8D%E4%B9%A0/</loc>
+    
+    <lastmod>2025-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://astronomia001.github.io/2025/04/06/NSSRound-29/</loc>
     
     <lastmod>2025-04-08</lastmod>
@@ -265,7 +274,7 @@
 
   <url>
     <loc>http://astronomia001.github.io/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -273,21 +282,21 @@
   
   <url>
     <loc>http://astronomia001.github.io/tags/CTF/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://astronomia001.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://astronomia001.github.io/tags/basic-knowledge/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -296,21 +305,21 @@
   
   <url>
     <loc>http://astronomia001.github.io/categories/CTF-WP/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://astronomia001.github.io/categories/CTF-study/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://astronomia001.github.io/categories/basic-knowledge/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
